@@ -5,18 +5,25 @@
 </template>
 
 <script>
+import rem from '../static/js/rem.js'
+
 export default {
-  name: 'App'
+  name: 'App',
+  mounted(){
+    rem.setrem();
+    window.onresize = rem.setrem;
+  }
 }
 </script>
 
-<style scoped lang='less'>
+<style scoped lang='less' >
+@import './../static/css/common.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  // text-align: center;
+  // color: #2c3e50;
+  // margin-top: 60px;
 }
 </style>
