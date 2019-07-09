@@ -7,6 +7,9 @@ import store from './vuex/index'
 Vue.config.productionTip = false
 //引入mint ui
 import Mint from 'mint-ui';
+//引入axios
+import axios from 'axios'
+Vue.use(axios)
 Vue.use(Mint);
 /* eslint-disable no-new */
 new Vue({
