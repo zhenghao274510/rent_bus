@@ -1,11 +1,28 @@
 <template>
-  <div class="box">
-     <mt-header title="标题过长会隐藏后面的内容啊哈哈哈哈">
+  <div class="top">
+     <mt-header class="text" title="选择车型">
   <router-link to="/" slot="left">
-    <mt-button icon="back">返回</mt-button>
+    <mt-button > <img class="img" src="./img/fanhui@2x.png" alt=""></mt-button>
   </router-link>
-  <mt-button icon="more" slot="right"></mt-button>
 </mt-header>
+    <div class="tab">
+        <mt-navbar v-model="selected">
+  <mt-tab-item id="1">选项一</mt-tab-item>
+  <mt-tab-item id="2">选项二</mt-tab-item>
+</mt-navbar>
+
+<!-- tab-container -->
+<mt-tab-container v-model="selected">
+  <mt-tab-container-item id="1">
+    <mt-cell :title="'内容 '" />
+    <mt-cell :title="'内容 '" />
+  </mt-tab-container-item>
+  <mt-tab-container-item id="2">
+    <mt-cell  :title="'测试 '" />
+    <mt-cell  :title="'测试 '" />
+  </mt-tab-container-item>
+</mt-tab-container>
+    </div>
   </div>
 </template>
 
@@ -25,8 +42,21 @@ export default {
 }
 </script>
 
-<style scoped>
-.box{
-    font-size: .2rem
+<style scoped lang='less'>
+.top{
+    overflow: hidden;
+    // height: .46rem;
+    .text{
+    font-size: .16rem;
+    height: 100%;
+    }
+    .mint-header{
+ color: #222;
+    }
+   
+}
+.img{
+    // width: .22rem;
+    // height: .22rem;
 }
 </style>
