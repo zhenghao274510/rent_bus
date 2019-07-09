@@ -9,7 +9,8 @@ Vue.config.productionTip = false
 import Mint from 'mint-ui';
 //引入axios
 import axios from 'axios'
-Vue.use(axios)
+Vue.prototype.axios=axios;
+// Vue.use(axios)
 Vue.use(Mint);
 /* eslint-disable no-new */
 new Vue({
