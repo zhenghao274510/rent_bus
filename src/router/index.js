@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import type from '../page/type/type'
-
 Vue.use(Router)
 
 export default new Router({
@@ -9,7 +8,11 @@ export default new Router({
     {
       path: '/',
       name: 'type',
-      component: type
-    }
+      component: type,
+      
+      // children:
+      
+    },
+    
   ]
 })

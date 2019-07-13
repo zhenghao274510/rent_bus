@@ -6,7 +6,6 @@
 
 <script>
 import rem from '../static/js/rem.js'
-
 export default {
   name: 'App',
   mounted(){
@@ -16,15 +15,15 @@ export default {
 }
 </script>
 
-<style scoped lang='less' >
+<style>
 @import './../static/css/common.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  // color: #2c3e50;
-  // margin-top: 60px;
+  width: 100%;
+  height: 100%;
+
 }
 
 </style>
