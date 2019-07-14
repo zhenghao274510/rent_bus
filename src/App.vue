@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import details from './page/details/index'
+
 import rem from '../static/js/rem.js'
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
 
 <style>
 @import './../static/css/common.css';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
