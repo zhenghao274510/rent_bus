@@ -6,6 +6,7 @@
 
 <script>
 import rem from '../static/js/rem.js'
+// import details from './page/details/index'
 
 export default {
   name: 'App',
