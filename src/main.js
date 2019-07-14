@@ -10,8 +10,8 @@ Vue.config.productionTip = false
 //引入mint ui
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
-//引入axios
 
+//引入axios
 import axios from 'axios'
 Vue.prototype.axios=axios;
 // Vue.use(axios)

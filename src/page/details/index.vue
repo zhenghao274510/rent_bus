@@ -169,13 +169,13 @@ export default {
        
         .car>ul>li:nth-child(1){
             font-size:.14rem;
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
 
         }
         .car>ul>li:nth-child(2){
             font-size:.11rem;
             color: #cccccc;
-            padding-top: 0.1rem;
+            padding-top: 0.2rem;
         }
         .car>ul>li:nth-child(3){
             width: 0.87rem;

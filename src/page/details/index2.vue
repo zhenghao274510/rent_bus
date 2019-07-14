@@ -52,7 +52,7 @@
     </div>
     <div  id="hide" v-show="show1" @click="show1=!show1">
          <div class="clear">
-        <router-link to="/datt"><p id="zi">取消订单</p></router-link>
+        <router-link to="/datd"><p id="zi">取消订单</p></router-link>
         <div class="small">
              <span></span>
         </div>
@@ -153,13 +153,13 @@ export default {
        
         .car>ul>li:nth-child(1){
             font-size:.14rem;
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
 
         }
         .car>ul>li:nth-child(2){
             font-size:.11rem;
             color: #cccccc;
-            padding-top: 0.1rem;
+            padding-top: 0.2rem;
         }
         .car>ul>li:nth-child(3){
             width: 0.87rem;

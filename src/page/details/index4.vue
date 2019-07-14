@@ -39,7 +39,7 @@
     <div class="black  yellow">
         <p><img src="./img/anniu2-2@2x.png" alt="">&nbsp;郑州
         <br>
-        <span>郑州花园路接送点 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span> <span id="skyblue">修改</span></p>
+        <span>郑州花园路接送点</span> <span id="skyblue"></span></p>
         <p>|    <span>     门店详情</span></p>
     </div>
     <!-- <div class="zheng">
@@ -169,13 +169,13 @@ export default {
        
         .car>ul>li:nth-child(1){
             font-size:.14rem;
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
 
         }
         .car>ul>li:nth-child(2){
             font-size:.11rem;
             color: #cccccc;
-            padding-top: 0.1rem;
+            padding-top: 0.2rem;
         }
         .car>ul>li:nth-child(3){
             width: 0.87rem;
@@ -334,6 +334,7 @@ export default {
             font-size:0;
             text-align: center;
             background: #f6f6f6;
+            /* padding-bottom: .5rem; */
         }
         .foot>p{
             height: 0.2rem;
@@ -344,6 +345,9 @@ export default {
         .foot>p:last-child{
              height: 0.1rem;
         }
+        /* .foot>a{
+            padding-bottom: .3rem;
+        } */
         .foot>a>button{
             background: #FFCC00;
             color: white;
@@ -351,7 +355,8 @@ export default {
             height: 0.39rem;
             border-radius: .05rem;
             border: 0 ;
-            margin-top: 1rem;
+            margin-top: .95rem;
+            padding-bottom: .2rem;
         }
         .clear{
             width: 1.16rem;
