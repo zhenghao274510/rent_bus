@@ -6,8 +6,7 @@
         <img src="./img/fanhui@2x.png" alt />
       </router-link>
     </Branch>
-    <Nthings :p='p'>
-    </Nthings>
+    <Nthings :p="p"></Nthings>
   </div>
 </template>
 
@@ -19,7 +18,7 @@ export default {
   data() {
     return {
       title: "开票历史记录",
-      p:'您目前没有开票历史记录'
+      p: "您目前没有开票历史记录"
     };
   },
   methods: {},
