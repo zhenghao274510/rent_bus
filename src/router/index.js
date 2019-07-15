@@ -15,12 +15,23 @@ import Domestic from './../component/customer-second/domestic.vue'
 import Timesharing from './../component/customer-second/timesharing.vue'
 import Testdrive from './../component/customer-second/testdrive.vue'
 import Globalrent from './../component/customer-second/globalrent.vue'
-
+// import type from '../page/type/type'
 import details from '../page/details/index2'
 import data from '../page/details/index'
 import date from '../page/details/index3'
 import datt from '../page/details/index4'
 import datd from '../page/details/index5'
+
+
+
+import type from '../page/type/type'
+import City from '@/page/storeCity/chooseCity/city.vue'
+import denglu from '../page/登录页切图/denglu'
+import pass from '../page/登录页切图/pass.vue'
+import shop_xiangqing from '../page/shop_xiangqing/shop_xanigqing'
+
+
+
 
 //确认订单
 import Affirm from './../page/orders/affirm_order'
@@ -43,7 +54,7 @@ import Timeshare from './../page/Main_branch/makeInvi/time_share'
 import Domesticrent from './../page/Main_branch/makeInvi/domestic_rent'
 //常用发票设置
 import Invoicemess from './../page/Main_branch/invoice_set/invoice_mess'
-import Shippingaddress from './../page/Main_branch/invoice_set/shipping_address'
+import Shippingaddress from '../page/Main_branch/invoice_set/shipping_address'
 import Emils from './../page/Main_branch/invoice_set/emils'
 //违章
 import Illegal from './../page/regulations/Illegal_processing'
@@ -52,12 +63,6 @@ import Ruledescription from './../page/regulations/rule_description'
 import Pending from './../page/regulations/two_regua/pending'
 import Discretions from './../page/regulations/two_regua/discretion'
 import Otherprocessing from './../page/regulations/two_regua/other_processing'
-
-import type from '../page/type/type'
-import City from '@/page/storeCity/chooseCity/city.vue'
-import denglu from '../page/登录页切图/denglu'
-import pass from '../page/登录页切图/pass.vue'
-import shop_xiangqing from '../page/shop_xiangqing/shop_xanigqing'
 
 Vue.use(Router)
 export default new Router({
@@ -117,6 +122,11 @@ export default new Router({
       name: 'data',
       redirect: 'data'
     },
+    // {
+    //   path: '/',
+    //   name: 'data',
+    //   redirect: 'data'
+    // },
     {
       path: '/data',
       name: 'data',
@@ -149,8 +159,9 @@ export default new Router({
       path: "/datd",
       name: 'datd',
       component: datd,
-    }, {
-      path: '/shop_xanigqing',
+    },
+     {
+      path:'/shop_xiangqing',
       name: 'shop_xiangqing',
       component: shop_xiangqing,
     },
@@ -179,8 +190,8 @@ export default new Router({
       name: 'type',
       component: type
     },
-    //确认订单fan
-    {
+     //确认订单fan
+     {
       path: '/affirm_order',
       name: 'Affirm',
       component: Affirm
@@ -280,7 +291,7 @@ export default new Router({
           name: 'Otherprocessing',
           component: Otherprocessing,
         },
-      ]
     },
+
   ]
 })

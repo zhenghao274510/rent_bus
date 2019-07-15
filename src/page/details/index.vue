@@ -24,7 +24,7 @@
     </div>
     <div class="time">
         <span>07月07日<br> <span>周日10：00</span></span>
-        <span>2天
+        <span id="a2">2天
             <br>
             <img src="./img/jiantou@2x.png" alt="">
         </span>
@@ -66,7 +66,7 @@
         <p></p>
     </div>
     
-    <div  id="hide"v-show="show1" @click="show1=!show1">
+    <div  id="hide" v-show="show1" @click="show1=!show1">
         <div class="clear">
         <router-link to="/date"><p id="zi">取消订单</p></router-link>
         <div class="small">
@@ -153,7 +153,7 @@ export default {
     .car>img{
         display: inline-block;
         width: 0.9rem;
-        height: 0.52rem;
+        height: 0.62rem;
         /* padding-top: .04rem; */
         vertical-align: top;
         padding-top: .13rem;
@@ -175,8 +175,9 @@ export default {
         .car>ul>li:nth-child(2){
             font-size:.11rem;
             color: #cccccc;
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
         }
+        
         .car>ul>li:nth-child(3){
             width: 0.87rem;
             height: 0.23rem;
@@ -206,7 +207,9 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.69rem;width: 0.88rem;
+            padding-left: 0.69rem;
+            width: 1.68rem;
+
             color:#FFCC00;
             text-align: center;
         }
@@ -242,6 +245,7 @@ export default {
         .black>p>img{
             width: 0.12rem;
             height: 0.12rem;
+            display: inline-block;
             margin-left: 0.15rem;
         }
         .black>p>span{
@@ -270,6 +274,7 @@ export default {
         }
         .zheng>ul>li>img{
             width: 0.24rem;
+            margin:0 auto;
             height: 0.18rem;
         }
         .zheng>ul>li{
