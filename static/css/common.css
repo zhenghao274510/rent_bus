@@ -16,8 +16,8 @@ html {
 html ,body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    background-color: #fff;
+    overflow: hidden;
+    background-color: #F6F6F6;
 }
 
 /* 去除iPhone中默认的input样式 */
@@ -68,7 +68,7 @@ menu,
 nav,
 section {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: Microsoft YaHei;
+    /* font-family: Microsoft YaHei; */
 }
 
 /* 设置HTML5元素为块 */
@@ -165,10 +165,7 @@ section {
     border: none;
 }
 
-body {
-    font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
-    color: #555;
-}
+
 
 em,
 i {
@@ -193,7 +190,7 @@ strong {
 
 a {
     text-decoration: none;
-    color: #42bd56;
+     color: #000;
     font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
 }
 
@@ -214,7 +211,7 @@ h6 {
     font-weight: normal;
 }
 
-fieldset,
+
 img {
     border: none;
 }
@@ -228,3 +225,4 @@ caption,
 th {
     text-align: left;
 }
+
