@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import rem from '../static/js/rem.js'
+import details from './page/details/index'
 
+import rem from '../static/js/rem.js'
 export default {
   name: 'App',
   mounted(){
@@ -16,15 +17,14 @@ export default {
 }
 </script>
 
-<style scoped lang='less' >
+<style>
 @import './../static/css/common.css';
-body{
-  height: 100%;
-  margin: 0;
-}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
 }
+
 </style>
