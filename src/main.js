@@ -5,6 +5,11 @@ import App from './App'
 import router from './router'
 import store from './vuex/index'
 Vue.config.productionTip = false
+
+//引入vant
+import { Rate } from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Rate);
 //引入mint ui
 import Mint from 'mint-ui';
 //引入axios
