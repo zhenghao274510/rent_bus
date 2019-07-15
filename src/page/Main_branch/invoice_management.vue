@@ -2,9 +2,9 @@
   <div class="invoice">
     <!-- 头部 -->
     <Branch :title="title">
-      <router-link to="/" class="leftImg" slot="left">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
     </Branch>
     <!-- 内容 -->
     <router-link to="/make_invoice">
@@ -29,7 +29,11 @@ export default {
       arr: ["根据订单开票", "开票历史记录", "常用信息设置"]
     };
   },
-  methods: {},
+  methods: {
+     wein(){
+      window.history.go(-1);
+    }
+  },
   components: {
     Setinvoce,Branch
   }

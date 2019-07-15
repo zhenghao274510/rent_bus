@@ -2,9 +2,9 @@
   <div class="setting">
     <!-- 头部 -->
     <Branch :title="title">
-      <router-link to="/" class="leftImg" slot="left">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
     </Branch>
     <!-- 内容 -->
     <router-link to="/">
@@ -38,7 +38,11 @@ export default {
       arr: ["设置支付密码", "关于我们", "隐私声明"]
     };
   },
-  methods: {},
+  methods: {
+     wein(){
+      window.history.go(-1);
+    }
+  },
   components: {
     Setinvoce,
     Branch
