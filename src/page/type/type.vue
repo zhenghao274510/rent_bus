@@ -350,7 +350,7 @@ selected:{
     // height: .46rem;
     .text{
     font-size: .16rem;
-    height: 100%;
+    // height: 100%;
     }
     .mint-header{
  color: #222;

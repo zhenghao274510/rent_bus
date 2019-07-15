@@ -5,7 +5,9 @@
 </template>
 
 <script>
-import rem from '../static/js/rem'
+import details from './page/details/index'
+
+import rem from '../static/js/rem.js'
 export default {
   name: 'App',
   mounted(){
@@ -23,6 +25,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
+overflow: hidden;
 }
 
 </style>

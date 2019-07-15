@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/index'
+import storn from './vuex/index'
+// import details from './page/details/index'
 Vue.config.productionTip = false
 //引入mint ui
 import Mint from 'mint-ui';
@@ -23,7 +25,7 @@ Vue.prototype.axios=axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,store,
+  router,store,storn,
   components: { App },
   template: '<App/>'
 })
