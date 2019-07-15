@@ -34,10 +34,10 @@ export default new Router({
     },
     {
       path: '/home',
-      name:'home',
+      name:'',
       component:Home,
       children:[
-        {path:'/',name:'',redirect:'china'},
+       
         {path:'china',name:'china',component:China},
         {path:'allearth',name: 'allearth',component:Allearth},
         {path:'share',name:'share',component:Share},
