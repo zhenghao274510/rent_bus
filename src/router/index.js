@@ -1,11 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//我的钱包
 import Moeny from '../page/moneybag/bag.vue'
 import Lost from '../page/moneybag/lost.vue'
 import Invest from '../page/moneybag/invest.vue'
 import Pay from '../page/moneybag/payMoney.vue'
 
+import Success from './../page/success/success.vue'
+import Payment from './../page/payment/payment.vue'
+import Customer from './../page/customer-service/customer.vue'
+import Evaluate from './../page/evaluate/evaluate.vue'
 
+import Domestic from './../component/customer-second/domestic.vue'
+import Timesharing from './../component/customer-second/timesharing.vue'
+import Testdrive from './../component/customer-second/testdrive.vue'
+import Globalrent from './../component/customer-second/globalrent.vue'
 
 import details from '../page/details/index2'
 import data from '../page/details/index'
@@ -74,6 +83,37 @@ export default new Router({
     },
     {
       path: '/',
+      name: 'Success',
+      component: Success
+    },
+    {
+      path: '/success',
+      name: 'Success',
+      component: Success
+    },
+    {
+      path: '/payment',
+      name: 'Payment',
+      component: Payment
+    },
+    {
+      path: '/customer',
+      name: 'Customer',
+      component: Customer,
+      children:[
+        // {path: '/',name: 'Domestic',redirect: 'Domestic'},
+        {path: '/domestic',name: 'Domestic',component: Domestic},
+        {path: '/timesharing',name: 'Timesharing',component: Timesharing},
+        {path: '/testdrive',name: 'Testdrive',component: Testdrive},
+        {path: '/globalrent',name: 'Globalrent',component: Globalrent},
+      ]
+    },
+    {
+      path:'/evaluate',
+      name:'Evaluate',
+      component:Evaluate
+    },{
+      path:'/data',
       name: 'data',
       redirect: 'data'
     },
