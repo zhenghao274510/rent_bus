@@ -290,7 +290,7 @@ export default new Router({
           path: 'other_processing',
           name: 'Otherprocessing',
           component: Otherprocessing,
-        },
+        },]
     },
 
   ]
