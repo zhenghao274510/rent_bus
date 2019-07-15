@@ -8,7 +8,6 @@ import datt from '../page/details/index4'
 import datd from '../page/details/index5'
 
 
-
 import type from '../page/type/type'
 import City from '@/page/storeCity/chooseCity/city.vue'
 import denglu from '../page/登录页切图/denglu'
@@ -55,7 +54,9 @@ export default new Router({
       path:"/datd",
       name: 'datd',
       component: datd,
-    }
+    },
+    {
+      path:'/shop_xiangqing',
       name: 'shop_xiangqing',
       component: shop_xiangqing,
     },

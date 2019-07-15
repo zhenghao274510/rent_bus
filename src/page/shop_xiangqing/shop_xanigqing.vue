@@ -107,11 +107,11 @@ export default {
         display: flex;
         align-items: baseline;
         font-size: .13rem;
-        .pan{
+        // .pan{
             // display: inline-block;
             // padding-left: .2rem;
             // margin-left: .1rem;
-        }
+        // }
         img{
             width:.14rem;
             height: .13rem;

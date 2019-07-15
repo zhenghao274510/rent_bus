@@ -66,7 +66,7 @@
         <p></p>
     </div>
     
-    <div  id="hide"v-show="show1" @click="show1=!show1">
+    <div  id="hide" v-show="show1" @click="show1=!show1">
         <div class="clear">
         <router-link to="/datt"><p id="zi">取消订单</p></router-link>
         <div class="small">
@@ -208,6 +208,7 @@ export default {
         .time>span:nth-child(2){
             padding-left: 0.69rem;width: 0.88rem;
             color:#FFCC00;
+            width: 1.68rem;
             text-align: center;
         }
         .time>span>img{
