@@ -1,5 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//我的钱包
+import Moeny from '../page/moneybag/bag.vue'
+import Lost from '../page/moneybag/lost.vue'
+import Invest from '../page/moneybag/invest.vue'
+import Pay from '../page/moneybag/payMoney.vue'
+
+import Success from './../page/success/success.vue'
+import Payment from './../page/payment/payment.vue'
+import Customer from './../page/customer-service/customer.vue'
+import Evaluate from './../page/evaluate/evaluate.vue'
+
+import Domestic from './../component/customer-second/domestic.vue'
+import Timesharing from './../component/customer-second/timesharing.vue'
+import Testdrive from './../component/customer-second/testdrive.vue'
+import Globalrent from './../component/customer-second/globalrent.vue'
 // import type from '../page/type/type'
 import details from '../page/details/index2'
 import data from '../page/details/index'
@@ -26,7 +41,7 @@ import Enjoyable from './../page/orders/enjoyable_service'
 //导航页下的设置
 import Branch from './../page/Main_branch/branch_head'
 import Nothings from './../page/Main_branch/nothings'
-  //设置
+//设置
 import Setting from './../page/Main_branch/setting'
 // 发票管理
 import Invoice from './../page/Main_branch/invoice_management'
@@ -51,7 +66,62 @@ import Otherprocessing from './../page/regulations/two_regua/other_processing'
 
 Vue.use(Router)
 export default new Router({
-  routes: [
+  routes: [{
+      path: '/money',
+      name: 'Moeny',
+      component: Moeny,
+    },
+    {
+      path: '/invest',
+      name: 'Invest',
+      component: Invest,
+    },
+    {
+      path: '/lost',
+      name: 'Lost',
+      component: Lost,
+    },
+    {
+      path: '/pay',
+      name: 'Pay',
+      component: Pay,
+    },
+    {
+      path: '/',
+      name: 'Success',
+      component: Success
+    },
+    {
+      path: '/success',
+      name: 'Success',
+      component: Success
+    },
+    {
+      path: '/payment',
+      name: 'Payment',
+      component: Payment
+    },
+    {
+      path: '/customer',
+      name: 'Customer',
+      component: Customer,
+      children:[
+        // {path: '/',name: 'Domestic',redirect: 'Domestic'},
+        {path: '/domestic',name: 'Domestic',component: Domestic},
+        {path: '/timesharing',name: 'Timesharing',component: Timesharing},
+        {path: '/testdrive',name: 'Testdrive',component: Testdrive},
+        {path: '/globalrent',name: 'Globalrent',component: Globalrent},
+      ]
+    },
+    {
+      path:'/evaluate',
+      name:'Evaluate',
+      component:Evaluate
+    },{
+      path:'/data',
+      name: 'data',
+      redirect: 'data'
+    },
     // {
     //   path: '/',
     //   name: 'data',
@@ -76,20 +146,21 @@ export default new Router({
       path: '/datt',
       name: 'datt',
       component: datt
-    },{
-      path:'/city',
+    }, {
+      path: '/city',
       name: 'City',
       component: City,
-    },{
-      path:"/type",
+    }, {
+      path: "/type",
       name: 'type',
       component: type,
     },
     {
-      path:"/datd",
+      path: "/datd",
       name: 'datd',
       component: datd,
-    },{
+    },
+     {
       path:'/shop_xiangqing',
       name: 'shop_xiangqing',
       component: shop_xiangqing,
@@ -153,19 +224,18 @@ export default new Router({
       component: Invoice,
     },
     {
-      path:'/make_invoice',
-      name:'Makeinvoice',
-      component:Makeinvoice,
-      children:[
-        {
-          path:'time_share',
-          name:'Timeshare',
-          component:Timeshare
+      path: '/make_invoice',
+      name: 'Makeinvoice',
+      component: Makeinvoice,
+      children: [{
+          path: 'time_share',
+          name: 'Timeshare',
+          component: Timeshare
         },
         {
-          path:'domestic_rent',
-          name:'Domesticrent',
-          component:Domesticrent
+          path: 'domestic_rent',
+          name: 'Domesticrent',
+          component: Domesticrent
         },
       ],
     },
@@ -200,29 +270,27 @@ export default new Router({
       path: '/rule_description',
       name: 'Ruledescription',
       component: Ruledescription,
-      
+
     },
     {
       path: '/Illegal_processing',
       name: 'Illegal',
       component: Illegal,
-      children:[
-        {
-          path:'pending',
-          name:'Pending',
-          component:Pending,
+      children: [{
+          path: 'pending',
+          name: 'Pending',
+          component: Pending,
         },
         {
-          path:'discretion',
-          name:'Discretions',
-          component:Discretions,
+          path: 'discretion',
+          name: 'Discretions',
+          component: Discretions,
         },
         {
-          path:'other_processing',
-          name:'Otherprocessing',
-          component:Otherprocessing,
+          path: 'other_processing',
+          name: 'Otherprocessing',
+          component: Otherprocessing,
         },
-      ]
     },
 
   ]

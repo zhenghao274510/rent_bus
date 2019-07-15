@@ -14,13 +14,19 @@ import 'vant/lib/index.css';
 Vue.use(Rate);
 //引入mint ui
 import Mint from 'mint-ui';
-import 'mint-ui/lib/style.css'
+import 'mint-ui/lib/style.css';
+Vue.use(Mint);
+
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
 
 //引入axios
 import axios from 'axios'
 Vue.prototype.axios=axios;
 // Vue.use(axios)
-Vue.use(Mint);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
