@@ -7,6 +7,11 @@ import store from './vuex/index'
 import storn from './vuex/index'
 // import details from './page/details/index'
 Vue.config.productionTip = false
+
+//引入vant
+import { Rate } from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Rate);
 //引入mint ui
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
