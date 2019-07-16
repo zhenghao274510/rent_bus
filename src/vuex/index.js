@@ -2,15 +2,22 @@ import Vue from 'vue'
 import vuex from 'vuex'
 Vue.use(vuex)
 export default new vuex.Store({
-    state:{
-        //确认订单fan
-        affirm_order:false,
-        basic_service:false,
-        enjoyable_service:false,
-        //钱包
-        num:''
+  state: {
+    //确认订单fan
+     //钱包
+     num:'',
+    affirm_order: false,
+    basic_service: false,
+    enjoyable_service: false,
+    homedata: {
+      show: false
     },
+
+  
     mutations:{
+       changehome(state, val) {
+      state.homedata.show = val;
+    },
         //确认订单fan
         affirm_orders(state,value){
             state.affirm_order=value;
@@ -29,5 +36,8 @@ export default new vuex.Store({
             state.num = val1;
         }
     },
-    getters:{},
-})
+    
+
+  },
+  getters: {},
+});

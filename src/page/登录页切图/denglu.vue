@@ -14,17 +14,18 @@
       <div class="box1">
         <img src="./shouji@2x.png" />
         <span>+86</span>
-        <input id="ipt1" type="text" placeholder="请输入手机号" />
+        <input id="ipt1" type="text" placeholder="请输入手机号" v-model="value1"/>
       </div>
       <div class="box2">
         <img src="./yanzhengma@2x.png" />
-        <input type="text" placeholder="请输入验证码" />
+        <input type="text" placeholder="请输入验证码" v-model="value2"/>
         <span id="btn" @click="btn">获取验证码</span>
       </div>
       <p>
         <router-link to="/pass"> <span id="p_">用密码登录</span> </router-link>  <router-link to="/pass"><span id="span" style="display:none">密码登陆</span></router-link>
       </p>
-      <button class="btn">登录</button>
+      <router-link to="/city">
+      <button class="btn" :disabled='active' >登录</button></router-link>
       <p>
         登录即已同意
         <span>《服务协议》</span>和
@@ -38,13 +39,19 @@
 export default {
   data() {
     return {
-        timer:1
+        timer:1,
+        value1:'',
+        value2:'',
+        active:true
     }
   },
   methods: {
+    right(){
+      
+    },
       btn(){
         var inp1=document.getElementById('ipt1').val
-        var inp2=document.getElementById('ipt2')
+        var inp2=document.getElementById('ipt2');
         if(inp1==''){
 
         }
@@ -59,7 +66,7 @@ export default {
             num--;
             if(num<=0){
                 clearInterval(time);
-                b.innerHTML='重新获取验证码';
+                b.innerHTML='重发验证码';
                 num=6;
                 p_.innerHTML='没有收到验证码?';
                 span.style.display='inline'
@@ -76,8 +83,16 @@ export default {
 
       }
   },
+  updated(){
+    if(this.value1!==''&& this.value2!==''){
+      this.active = false
+    }
+  },
   components: {
 
+  },
+  mounted(){
+    this.right();
   }
 }
 </script>
@@ -143,6 +158,7 @@ input{
   }
   .box2 {
     padding: 0.22rem 0 0.18rem 0;
+    overflow: hidden;
     input {
       padding-left: 0.1rem;
     }
@@ -152,8 +168,8 @@ input{
       text-align: right;
       display: flex;
       white-space: nowrap;
-      color: #ffcc00;
-      justify-content: flex-end;
+      color: #CFCFCF;
+      justify-content: flex-start;
       padding-right: 0;
     }
   }
@@ -162,6 +178,7 @@ input{
     height: 0.4rem;
     border-radius: 0.075rem;
     color: #ffff;
+    background-color: yellow;
     font-size: 0.18rem;
   }
   p:nth-child(6) {
