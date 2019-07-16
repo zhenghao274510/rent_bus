@@ -7,15 +7,15 @@
       </a>
     </Branch>
     <!-- 内容 -->
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[0]">
       </Setinvoce>
     </router-link>
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[1]">
       </Setinvoce>
     </router-link>
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[2]"  style="border:none">
       </Setinvoce>
     </router-link>
