@@ -60,9 +60,11 @@ export default {
     height: .22rem;
 }
 }
-
+input{
+    background-color:#f6f6f6 ;
+}
 .mint-header{
-  background-color:white;
+  background-color: #f6f6f6;
 }
 .foot{
     font-size: .15rem;

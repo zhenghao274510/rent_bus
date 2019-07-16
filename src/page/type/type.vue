@@ -353,7 +353,7 @@ selected:{
     // height: 100%;
     }
     .mint-header{
- color: #222;
+    color: #222;
     }
    
 }

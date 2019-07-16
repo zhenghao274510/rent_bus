@@ -1,7 +1,7 @@
 <template>
   <div class=".box">
     <div class="top">
-      <mt-header class="text" title>
+      <mt-header class="text" title="登录">
         <router-link to="/" slot="left">
           <mt-button>
            <img class="img" src="./fanhui@2x.png" alt />
@@ -83,11 +83,18 @@ export default {
 </script>
 
 <style scoped lang='less'>
+.mint-header{
+   background-color: #f6f6f6;
+}
 .box {
   display: flex;
   height: 100%;
 }
+input{
+    background-color:#f6f6f6 ;
+}
 .top {
+  background-color: #f6f6f6;
   overflow: hidden;
   // height: .46rem;
   .text {
@@ -100,10 +107,6 @@ export default {
     // width: .22rem;
     height: 0.22rem;
   }
-}
-
-.mint-header {
-  background-color: white;
 }
 .foot {
   font-size: 0.15rem;

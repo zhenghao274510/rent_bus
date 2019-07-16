@@ -165,11 +165,6 @@ export default new Router({
       component: denglu,
     },
     {
-      path: '/denglu',
-      name: 'denglu',
-      component: denglu,
-    },
-    {
       path: '/pass',
       name: 'pass',
       component: pass
