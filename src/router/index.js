@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import type from '../page/type/type'
 import details from '../page/details/index2'
-import data from '../page/details/index.vue'
+import data from '../page/details/index'
 import date from '../page/details/index3'
 import datt from '../page/details/index4'
 import datd from '../page/details/index5'
@@ -26,6 +26,11 @@ export default new Router({
     //   name: 'data',
     //   component: data
     // },
+    {
+      path: '/',
+      name: 'data',
+      redirect: 'data'
+    },
     {
       path: '/data',
       name: 'data',
@@ -78,7 +83,10 @@ export default new Router({
     },{
       path:'/shop_xiangqing',
       name:'shop_xiangqing',
-      component: shop_xiangqing,
+    },
+  {
+      name:'shop_xiangqing',
+      component:shop_xiangqing,
     },
     {
       path: '/denglu',
