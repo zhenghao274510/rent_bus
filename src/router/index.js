@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//我的钱包
 import Moeny from '../page/moneybag/bag.vue'
 import Lost from '../page/moneybag/lost.vue'
 import Invest from '../page/moneybag/invest.vue'
@@ -53,6 +54,7 @@ import shop_xiangqing from '../page/shop_xiangqing/shop_xanigqing'
 Vue.use(Router)
 export default new Router({
   routes: [{
+    //我的钱包
       path: '/money',
       name: 'Moeny',
       component: Moeny,
@@ -68,14 +70,10 @@ export default new Router({
       component: Lost,
     },
     {
+      //支付
       path: '/pay',
       name: 'Pay',
       component: Pay,
-    },
-    {
-      path: '/',
-      name: 'data',
-      redirect: 'data'
     },
     {
       path: '/data',
@@ -96,7 +94,9 @@ export default new Router({
       path: '/datt',
       name: 'datt',
       component: datt
-    }, {
+    }, 
+    //选择城市
+    {
       path: '/city',
       name: 'City',
       component: City,

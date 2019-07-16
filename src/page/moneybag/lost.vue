@@ -1,7 +1,7 @@
 <template> 
   <div class="box">
     <mt-header title="余额" style="width:100%">
-      <router-link to="/" slot="left">
+      <router-link to="/money" slot="left">
         <mt-button>
           <img src="./img/back.png" alt class="back" />
         </mt-button>
@@ -11,7 +11,7 @@
     <section>
         <div class="top">
             <span>当前余额(平驾币)</span>
-            <span class="num1">2030</span>
+            <span class="num1" v-text="num1"></span>
         </div>
         <div class="center">
             <h3>说明</h3>
@@ -23,7 +23,7 @@
         </div>
         <div class="bottom_top">
             <span>当前积分</span>
-            <span class="num2">1000</span>
+            <span class="num2" v-text="num2"></span>
         </div>
         <div class="bottom_b">
            <h3>说明</h3>
@@ -44,7 +44,10 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      num1:2030,
+      num2:1000
+    };
   },
   methods: {},
   components: {

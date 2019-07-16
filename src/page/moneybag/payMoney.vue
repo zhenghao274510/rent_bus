@@ -2,7 +2,7 @@
   <div class="box">
     <!-- 头部 -->
     <mt-header title="充值支付" style="width:100%">
-      <router-link to="/lost" slot="left">
+      <router-link to="/invest" slot="left">
         <mt-button>
           <img src="./img/back.png" alt class="back" />
         </mt-button>
@@ -12,7 +12,7 @@
     <section>
       <div class="top">
         <span>充值金额</span>
-        <span class="num1">1000</span>
+        <span class="num1">{{$store.state.num|num1}}</span>
       </div>
       <div class="center_content">
         <div class="in" v-for="(item,index) in payList" :key="index" @click="change(index)">
@@ -30,8 +30,8 @@
       <div class="footer">
         <p class="footer_top">
           <span @click="confirm">
-            <img src="./img/arc.png" alt v-if="right" />
-            <img src="./img/active.png" alt v-else/>
+
+            <img src="./img/active.png" alt/>
           </span>
           <span>
             以仔细阅读并同意
@@ -41,7 +41,7 @@
       </div>
       <div class="bottom">
         <router-link to="/invest">
-          <input type="button" :class="right?'active':''" value="确认支付" :disabled='right'/>
+          <input type="button"  value="确认支付"/>
         </router-link>
       </div>
     </section>
@@ -86,10 +86,15 @@ export default {
       this.payList[index].vg = true;
     },
     confirm(){
-        this.right = !this.right;
+        // this.right = !this.right;
     }
   },
-  components: {}
+  components: {},
+  filters: {
+    num1:function(num){
+      return '￥'+num;
+    }
+  },
 };
 </script>
 
