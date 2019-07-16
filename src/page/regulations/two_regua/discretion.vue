@@ -61,6 +61,7 @@ export default {
         display: block;
         text-align: center;
         padding: 0.16rem 0;
+        color: #444;
       }
       .toplin {
         color: #ffcc00;

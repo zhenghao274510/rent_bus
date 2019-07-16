@@ -21,7 +21,6 @@
         v-text="$options.filters.change(item)"
       ></mt-cell>
     </mt-search>
-    <div v-show="show" class="ban" @click="show=false">111</div>
     <!-- 主题内容 -->
     <section>
       <!-- 字母 -->
@@ -97,7 +96,7 @@
               <span></span>
             </p>
             <ul class="city_name">
-              <li v-for="(ritem,index) in item.cityList" :key="index">{{ritem.airportName}}</li>
+              <li v-for="(ritem,index) in item.cityList" :key="index" @click="add(ritem)">{{ritem.airportName}}</li>
             </ul>
           </div>
         </div>
@@ -153,12 +152,19 @@ export default {
       value: "", //搜框
       hisCitys: [], //历史城市
       postions: false, //定位城市
-      texts: true
+      texts: true,
+      txt:'没有匹配到数据'
     };
   },
   methods: {
     search() {
       this.show = true;
+        let a = document.getElementsByClassName("mint-searchbar-cancel")[0];
+        a.style.display = 'block';
+    },
+    add(index){
+      console.log(index.airportName);
+      this.hisCitys.push(index.airportName);
     },
     remove() {
       setTimeout(() => {
@@ -258,8 +264,6 @@ export default {
           item.cityName.indexOf(this.value) !== -1
         ) {
           result.push(item.cityName);
-        }else{
-          // alert('没有数据')
         }
       });
       return result;
@@ -416,12 +420,9 @@ a {
       .city_list {
         font-size: 0.12rem;
         list-style: none;
-        list-style: none;
-        overflow: hidden;
         width: 100%;
-        display: flex;
-        flex-direction: row;
         li {
+          display: inline-block;
           background: #fff;
           border-radius: 0.5rem;
           text-align: center;

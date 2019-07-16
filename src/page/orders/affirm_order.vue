@@ -230,6 +230,9 @@ export default {
             vertical-align: bottom;
           }
         }
+        p{
+          color:#222;
+        }
         .car_site {
           flex: 5;
           p {
@@ -346,6 +349,9 @@ export default {
             width: 0.1rem;
             height: 0.1rem;
             margin-top: -0.02rem;
+          }
+          span{
+            color:#444;
           }
         }
         .active {

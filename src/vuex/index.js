@@ -7,6 +7,8 @@ export default new vuex.Store({
         affirm_order:false,
         basic_service:false,
         enjoyable_service:false,
+        //钱包
+        num:''
     },
     mutations:{
         //确认订单fan
@@ -19,6 +21,13 @@ export default new vuex.Store({
         enjoyable_service(state){
             state.enjoyable_service=!state.enjoyable_service
         },
+        //钱包
+        add(state,val){
+            state.num = val;
+        },
+        add2(state,val1){
+            state.num = val1;
+        }
     },
     getters:{},
 })
