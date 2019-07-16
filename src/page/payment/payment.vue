@@ -26,7 +26,7 @@
           </div>
       </div>
       <div class="payment-out">
-          <div class="payment-out-place"></div>
+          <!-- <div class="payment-out-place"></div> -->
           <div class="payment-out-btn">
               <!-- <div>确认支付</div> -->
               <router-link to="customer" class="payment-out-btn-div">确认支付</router-link>
@@ -55,7 +55,7 @@ export default {
     .payment{
         .payment-head{
             height: .45rem;
-            margin-top: .2rem;
+            // margin-top: .2rem;
             font-size: .16rem;
             text-align: center;
             line-height: .45rem;
@@ -64,7 +64,7 @@ export default {
             .payment-head-icon{
                 position: absolute;
                 left: .15rem;
-                top: .31rem;
+                top: .11rem;
                 width: .22rem;
                 height: .22rem;
                 background: url('./img/fanhui@2x@2x.png') no-repeat;
@@ -75,14 +75,18 @@ export default {
             height: 1.12rem;
             background: #f6f6f6;
             .details1{
+                display: flex;
+                align-items: center;
                 font-size: .14rem;
                 margin-left: 1.2rem;
                 line-height: .74rem;
                 color: #888;
                 position: relative;
                 img{
-                    position: absolute;
-                    top: .13rem;
+                    // position: absolute;
+                    // top: .13rem;
+                    display: inline-block;
+                    
                 }
             }
             .details2{
@@ -129,7 +133,7 @@ export default {
         }
         .payment-out{
             width: 100%;
-            height: 3.2rem;
+            height: 2.83rem;
             background: #f6f6f6;
             position: relative;
             .payment-out-place{
