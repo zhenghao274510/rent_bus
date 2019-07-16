@@ -2,6 +2,7 @@
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: myFirstFont;
 }
 
 /* 禁用iPhone中Safari的字号自动调整 */
@@ -17,7 +18,10 @@ html ,body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #F6F6F6;
+    /* background-color: #F6F6F6; */
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    background-color: #fff;
 }
 
 /* 去除iPhone中默认的input样式 */
@@ -68,7 +72,7 @@ menu,
 nav,
 section {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /* font-family: Microsoft YaHei; */
+    font-family: myFirstFont;
 }
 
 /* 设置HTML5元素为块 */
@@ -166,6 +170,10 @@ section {
 }
 
 
+body {
+    font-family: myFirstFont,Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+    color: #555;
+}
 
 em,
 i {
@@ -189,9 +197,9 @@ strong {
 }
 
 a {
+   color: #444444;
     text-decoration: none;
-     color: #000;
-    font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+    font-family:myFirstFont, Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
 }
 
 ul,
@@ -207,7 +215,7 @@ h4,
 h5,
 h6 {
     font-size: 100%;
-    font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+    font-family:myFirstFont, Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
     font-weight: normal;
 }
 
@@ -225,4 +233,13 @@ caption,
 th {
     text-align: left;
 }
-
+@font-face
+{
+    font-family: myFirstFont;
+    src: url('../font/PingFangBold.ttf')
+        ,url('../font/PingFangExtraLight.ttf')
+        ,url('../font/PingFangHeavy.ttf')
+        ,url('../font/PingFangLight.ttf')
+        ,url('../font/PingFangMedium.ttf')
+        ,url('../font/PingFangRegular.ttf')
+}

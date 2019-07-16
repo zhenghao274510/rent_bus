@@ -9,9 +9,10 @@
 </template>
 
 <script>
+import details from './page/details/index'
+
+
 import rem from '../static/js/rem.js'
-
-
 export default {
   name: 'App',
   data () {
@@ -47,14 +48,16 @@ export default {
 @import url('./../static/css/other.css');
 
 
+
 #app {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  font-family:'pingfang';
+  /* overflow: hidden; */
+  font-family:'myfirstFont';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
 
 }
+
 </style>
