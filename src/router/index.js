@@ -84,6 +84,7 @@ import Otherprocessing from './../page/regulations/two_regua/other_processing'
 Vue.use(Router)
 export default new Router({
   routes: [{
+    //我的钱包
       path: '/money',
       name: 'Moeny',
       component: Moeny,
@@ -99,6 +100,7 @@ export default new Router({
       component: Lost,
     },
     {
+      //支付
       path: '/pay',
       name: 'Pay',
       component: Pay,
@@ -164,16 +166,7 @@ export default new Router({
       path:'/evaluate',
       name:'Evaluate',
       component:Evaluate
-    },{
-      path:'/data',
-      name: 'data',
-      redirect: 'data'
     },
-    // {
-    //   path: '/',
-    //   name: 'data',
-    //   redirect: 'data'
-    // },
     {
       path: '/data',
       name: 'data',
@@ -193,7 +186,9 @@ export default new Router({
       path: '/datt',
       name: 'datt',
       component: datt
-    }, {
+    }, 
+    //选择城市
+    {
       path: '/city',
       name: 'City',
       component: City,
