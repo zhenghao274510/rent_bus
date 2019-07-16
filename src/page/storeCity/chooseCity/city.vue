@@ -90,13 +90,13 @@
       <div class="city city-wap">
         <div class="city-list">
           <div class="block-60"></div>
-          <div v-for="item in cityListData" class="clearfix">
+          <div v-for="(item,index) in cityListData" class="clearfix" :key="index">
             <p :id="item.ckey" class="sort">
               {{item.ckey}}
               <span></span>
             </p>
             <ul class="city_name">
-              <li v-for="ritem in item.cityList">{{ritem.airportName}}</li>
+              <li v-for="(ritem,index) in item.cityList" :key="index" @click="add(ritem)">{{ritem.airportName}}</li>
             </ul>
           </div>
         </div>
@@ -107,7 +107,7 @@
 
 <script>
 import DataList from "./../../../../static/json/city.json";
-
+import BScroll from "better-scroll";
 export default {
   data() {
     return {
@@ -145,34 +145,37 @@ export default {
         "Z"
       ],
       dataList: DataList.dataList,
-      showCity: false,
-      activeKey: "",
       upCityList: "",
       show: false,
-      show1: 0,//字母
+      show1: 0, //字母
       list: false,
-      value: "",//搜框
+      value: "", //搜框
       hisCitys: [], //历史城市
-      postions:false,//定位城市
-      texts:true
+      postions: false, //定位城市
+      texts: true,
+      txt:'没有匹配到数据'
     };
   },
   methods: {
     search() {
       this.show = true;
+        let a = document.getElementsByClassName("mint-searchbar-cancel")[0];
+        a.style.display = 'block';
+    },
+    add(index){
+      console.log(index.airportName);
+      this.hisCitys.push(index.airportName);
     },
     remove() {
-      setTimeout(()=>{
+      setTimeout(() => {
         this.postions = true;
         this.texts = false;
-      },2000)
-
+      }, 2000);
       let a = document.getElementsByClassName("mint-searchbar-cancel")[0];
       a.style.fontSize = 0.12 + "rem";
       a.onclick = () => {
         this.show = false;
       };
-
       setTimeout(() => {
         let his = document.getElementsByClassName("mint-cell");
         for (let i = 0; i < his.length; i++) {
@@ -192,21 +195,24 @@ export default {
         this.show1 = 0;
       }, 1000);
       let targetTop = document.querySelector("#" + key + "").offsetTop;
-      window.scrollTo({
-        top: targetTop - 60,
+      let a = document.getElementsByTagName("body")[0];
+      a.scrollTo({
+        top: targetTop + 60,
         behavior: "smooth"
       });
     },
-    top(){
-       let windowTop = document.getElementsByClassName('hot_city')[0].offsetTop;
-       window.scrollTo({
-        top: windowTop-60,
+    top() {
+      let windowTop = document.getElementsByClassName("hot_city")[0].offsetTop;
+      let a = document.getElementsByTagName("body")[0];
+      a.scrollTo({
+        top: windowTop - 60,
         behavior: "smooth"
       });
     },
-    near(){
-       let windowTop = document.documentElement.offsetTop;
-       window.scrollTo({
+    near() {
+      let windowTop = document.documentElement.offsetTop;
+      let a = document.getElementsByTagName("body")[0];
+      a.scrollTo({
         top: windowTop,
         behavior: "smooth"
       });
@@ -282,6 +288,7 @@ a {
 }
 .box {
   width: 100%;
+  height: 100%;
   .yin {
     font-size: 0.16rem;
     width: 0.4rem;
@@ -296,11 +303,18 @@ a {
     text-align: center;
     line-height: 0.4rem;
   }
+  .ban{
+    background: #fff;
+    position: fixed;
+    top: .44rem;
+    width: 100%;
+  }
   .mint-search {
     position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
+   font-size: .12rem;
     /deep/ .mint-search-list {
       top: 0.08rem;
       .mint-cell {
@@ -406,12 +420,9 @@ a {
       .city_list {
         font-size: 0.12rem;
         list-style: none;
-        list-style: none;
-        overflow: hidden;
         width: 100%;
-        display: flex;
-        flex-direction: row;
         li {
+          display: inline-block;
           background: #fff;
           border-radius: 0.5rem;
           text-align: center;
