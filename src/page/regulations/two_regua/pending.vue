@@ -54,6 +54,7 @@ export default {
         font-size: 0.13rem;
         display: block;
         text-align: center;
+        color:#444;
       }
      .active {
         background: #ffcc00;

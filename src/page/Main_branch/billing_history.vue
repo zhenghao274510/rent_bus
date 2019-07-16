@@ -2,7 +2,7 @@
   <!-- 开票历史记录 -->
   <div class="billing_history">
     <Branch :title="title">
-      <router-link to="/" class="leftImg" slot="left">
+      <router-link to="/invoice_management" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
       </router-link>
     </Branch>

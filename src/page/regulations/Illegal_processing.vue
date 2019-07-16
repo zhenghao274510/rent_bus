@@ -69,6 +69,7 @@ export default {
             flex: 1;
             a{
                 display: block;
+                color:#444;
             }
             a.router-link-active{
                 color:#ffcc00;
