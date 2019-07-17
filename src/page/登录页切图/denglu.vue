@@ -24,9 +24,11 @@
       <p>
         <router-link to="/pass"> <span id="p_">用密码登录</span> </router-link>  <router-link to="/pass"><span id="span" style="display:none">密码登陆</span></router-link>
       </p>
-      <router-link to="/city">
-      <button class="btn" :disabled='active' >登录</button></router-link>
+      <!-- <router-link to="/city"> -->
+      <button class="btn"  @click="axios_">登录</button>
+      <!-- </router-link> -->
       <p>
+        <!-- :disabled='active' -->
         登录即已同意
         <span>《服务协议》</span>和
         <span>《服务协议及补充协议》</span>
@@ -46,6 +48,11 @@ export default {
     }
   },
   methods: {
+    axios_(){
+      this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
+        console.log(data)
+      }).catch((err)=>{console.log(err)})
+    },
     right(){
       
     },
