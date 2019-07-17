@@ -5,7 +5,7 @@
     </div>
     <ul class="list">
       <li>
-        <a href="javaScript:;">
+        <a  @click='changefrom("from")'>
           <div class="list_icon">
             <img src="./img/anniu1-2@2x.png" alt />
           </div>
@@ -13,9 +13,9 @@
             <span>郑州</span>
             <img src="./img/xiala@2x.png" alt />
           </div>
-          <div class="list_auto">
-            <p>郑州动物园自助点</p>
-            <span class="self">该门店仅支持自助还车</span>
+          <div class="list_auto" >
+            <p>{{$store.state.homedata.from}}</p>
+            <span class="self" v-if="$store.state.homedata.spfrom==2">该门店仅支持自助还车</span>
           </div>
         </a>
           <div class="list_take">
@@ -24,7 +24,7 @@
           </div>
       </li>
        <li>
-        <a href="javaScript:;">
+        <a  @click="changeto('to')">
           <div class="list_icon">
 
             <img src="./img/anniu2-2@2x.png" alt />
@@ -34,8 +34,8 @@
             <img src="./img/xiala@2x.png" alt />
           </div>
           <div class="list_auto">
-            <p>郑州动物园自助点</p>
-            <span class="self">该门店仅支持自助还车</span>
+            <p>{{$store.state.homedata.to}}</p>
+            <span class="self" v-if="$store.state.homedata.spto==2">该门店仅支持自助还车</span>
 
           </div>
         </a>
@@ -91,13 +91,7 @@
 
 
   </div>
-  <!-- <mt-datetime-picker
 
-  type="date"
-  year-format="{value} 年"
-  month-format="{value} 月"
-  date-format="{value} 日">
-</mt-datetime-picker> -->
 
   </div>
 </template>
@@ -116,6 +110,16 @@ export default {
     };
   },
   methods: {
+    //  选择门店
+     changefrom(a){
+        this.$store.commit('changedir',a);
+        this.$router.push('/choseshop');
+     },
+    changeto(b){
+        this.$store.commit('changedir',b);
+        this.$router.push('/choseshop');
+     },
+    //滑动部分
     _initScroll(){
         this.container=new BScroll(this.$refs.container,{
           click:true,
@@ -125,7 +129,7 @@ export default {
         this.gotop=true;
         this.$refs.container.style.top=1.2+'rem';
 
-        
+
 
        });
 

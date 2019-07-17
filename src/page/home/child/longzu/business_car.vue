@@ -26,27 +26,27 @@ export default {
         {
           name: "取车城市",
           chess: "请选择",
-          url: "/annual_rental"
+          url: "/city"
         },
         {
           name: "取车门店",
           chess: "请选择",
-          url: "/annual_rental"
+          url: "/choseshop"
         },
         {
           name: "取车时间",
           chess: "2019年07月12日 周五",
-          url: "/annual_rental"
+          url: ""
         },
         {
           name: "租期",
           chess: "一年",
-          url: "/annual_rental"
+          url: ""
         },
         {
           name: "车型",
           chess: "请选择",
-          url: "/annual_rental"
+          url: ""
         }
       ]
     };

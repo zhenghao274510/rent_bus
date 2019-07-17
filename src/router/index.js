@@ -83,7 +83,9 @@ import Otherprocessing from './../page/regulations/two_regua/other_processing'
 
 Vue.use(Router)
 export default new Router({
+
   routes: [{
+    //我的钱包
       path: '/money',
       name: 'Moeny',
       component: Moeny,
@@ -99,15 +101,18 @@ export default new Router({
       component: Lost,
     },
     {
+      //支付
       path: '/pay',
       name: 'Pay',
       component: Pay,
     },
+    // 启动页
     {
       path: '/',
       name:'star',
       component: Star
     },
+    //引导页
     {
       path: '/guide',
       name:'guide',
@@ -117,16 +122,17 @@ export default new Router({
       path: '/home',
       name:'',
       component:Home,
+
       children:[
 
-        {path:'china',name:'china',component:China},
+        {path:'/',name:'china',component:China},
         {path:'allearth',name: 'allearth',component:Allearth},
         {path:'share',name:'share',component:Share},
         {path:'try',name:'try',component:Try},
         {path:'long',name: 'long',component:Long,
           children:[
             {path:'/',name:'',redirect:'annual_rental'},
-            {path:'annual_rental',name:'',component:Year},
+            {path:'annual_rental',name:'',component:Year,},
             {path:'business_car',name:'',component:Chang},
           ]
       }
@@ -137,7 +143,7 @@ export default new Router({
       name:'Choseshop',
       component: Choseshop
     },
-   
+
     {
       path: '/success',
       name: 'Success',
@@ -169,11 +175,6 @@ export default new Router({
       name: 'data',
       redirect: 'data'
     },
-    // {
-    //   path: '/',
-    //   name: 'data',
-    //   redirect: 'data'
-    // },
     {
       path: '/data',
       name: 'data',
@@ -193,9 +194,11 @@ export default new Router({
       path: '/datt',
       name: 'datt',
       component: datt
-    }, {
+    },
+    //选择城市
+    {
       path: '/city',
-      name: 'City',
+      name: '',
       component: City,
     }, {
       path: "/type",
@@ -227,11 +230,11 @@ export default new Router({
       name: 'pass',
       component: pass
     },
-    {
-      path: '/City',
-      name: 'City',
-      component: City,
-    },
+    // {
+    //   path: '/City',
+    //   name: 'City',
+    //   component: City,
+    // },
     {
       path: '/type',
       name: 'type',

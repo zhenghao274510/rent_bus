@@ -7,12 +7,9 @@
           <div class="twoicon"><a href="#"><i  class="search"></i></a> <a href="#"><i class="see"></i></a></div>
      </div>
      <!-- home 导航 -->
-     <ul class="home_nav" @click='changetop($event)'>
-          <li><router-link to="/home/china" :class="{'active':active}">国内租</router-link></li>
-          <li><router-link to="/home/share">分时共享</router-link></li>
-          <li><router-link to="/home/try">试驾</router-link></li>
-          <li><router-link to="/home/allearth">全球租</router-link></li>
-          <li><router-link to="/home/long">长租</router-link></li>
+     <ul class="home_nav">
+          <li v-for="(item,index) in itemlist" :key="index" @click='changetop($event,index)' ref="add"><router-link :to="item.url" :class="{'active':$store.state.homedata.index==index}">{{item.name}}</router-link></li>
+
      </ul>
     <div>
 
@@ -32,29 +29,40 @@ import Mine from './navigation'
 export default{
     data(){
         return{
-          active:true,
+
           transitionName:'',
           //  控制我的信息显示隐藏
-          show:false
+          show:false,
+          itemlist:[
+            {name:'国内租',url:'/home'},
+            {name:'分时共享',url:'/home/share'},
+            {name:'试驾',url:'/home/try'},
+            {name:'全球租',url:'/home/allearth'},
+            {name:'长租',url:'/home/long'}
+          ]
 
         }
+    },
+    mounted () {
+
     },
     components:{
    Mine
     },
-    mounted(){
-      this.$router.push('/home/china');
-      this.show=false;
-    },
-    methods:{
+  methods:{
       //  控制影藏
       mine(){
         this.show=true;
         this.$store.commit('changehome',this.show)
       },
       // 导航切换
-      changetop(e){
-          this.active=false;
+      changetop(e,ind){
+        console.log(ind)
+           this.$store.commit('changeindex',ind);
+          //  if(ind!=0){
+          //   this.$refs.add[0].className="";
+          //  }
+          // this.num=this.$store.state.homedata.index;
           e.target.className='active';
 
       },
@@ -72,7 +80,7 @@ export default{
           this.transitionName = 'slide-left';
         }
       }
-     }
+     },
 
         }
 

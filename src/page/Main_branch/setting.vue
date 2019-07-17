@@ -7,15 +7,15 @@
       </a>
     </Branch>
     <!-- 内容 -->
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[0]">
       </Setinvoce>
     </router-link>
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[1]">
       </Setinvoce>
     </router-link>
-    <router-link to="/">
+    <router-link to="">
       <Setinvoce :arr="arr[2]"  style="border:none">
       </Setinvoce>
     </router-link>
@@ -34,19 +34,23 @@ import Branch from "./branch_head";
 export default {
   data() {
     return {
+      // num:this.$store.state.back,
       title: "设置",
       arr: ["设置支付密码", "关于我们", "隐私声明"]
     };
   },
   methods: {
      wein(){
-      window.history.go(-1);
+       let arr=this.$store.state.homedata.myarr;
+       let ind=this.$store.state.homedata.index;
+       this.$router.push(arr[ind]);
     }
   },
   components: {
     Setinvoce,
     Branch
-  }
+  },
+
 };
 </script>
 

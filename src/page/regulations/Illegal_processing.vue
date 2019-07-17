@@ -38,7 +38,8 @@ export default {
   },
   methods: {
     wein(){
-      window.history.go(-1);
+      this.$router.push('/home');
+
     }
   },
   mounted(){
@@ -69,6 +70,7 @@ export default {
             flex: 1;
             a{
                 display: block;
+                color:#444;
             }
             a.router-link-active{
                 color:#ffcc00;

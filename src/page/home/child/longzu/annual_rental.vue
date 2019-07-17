@@ -5,7 +5,7 @@
       <li>
         <p>取车城市</p>
         <div>
-          <router-link to="/">
+          <router-link to="/city">
             <span>城市</span>
             <img src="./img/xiala@2x.png" />
           </router-link>
