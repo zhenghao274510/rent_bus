@@ -8,7 +8,8 @@
      @ready="handler">
        <!-- <bm-local-search :keyword="keyword" :auto-viewport="true" :location="location"></bm-local-search> -->
      <bm-geolocation anchor="BMAP_ANCHOR_TOP_LEFT" :showAddressBar="false" :autoLocation="true"></bm-geolocation>
-     <bm-marker :position="center" :dragging="true" animation="BMAP_ANIMATION_BOUNCE">
+     <bm-marker :position="center" :dragging="true" animation="BMAP_ANIMATION_BOUNCE" 
+     :icon="{url: './static/homeimg/dingweiweizhi@2x.png', size: {width: 30, height: 30}}">
 
 
 
@@ -24,7 +25,7 @@ export default {
           baidumapSwitch:false,
         center: "",
          zoom: 16,
-       location: "../choseshop/img/fangdajing@2x.png",
+      //  location: "../choseshop/img/fangdajing@2x.png",
        keyword: "请输入搜索关键词",
     }
   },
@@ -34,18 +35,18 @@ export default {
         let _this = this;	// 设置一个临时变量指向vue实例，因为在百度地图回调里使用this，指向的不是vue实例；
 				var geolocation = new BMap.Geolocation();
 			geolocation.getCurrentPosition(function(r){
-					console.log(r);
+					// console.log(r);
 					_this.center = {lng: r.longitude, lat: r.latitude };		// 设置center属性值
 					_this.autoLocationPoint = {lng: r.longitude, lat: r.latitude};		// 自定义覆盖物
 					_this.initLocation = true;
-					console.log('center:', _this.center)	// 如果这里直接使用this是不行的
+					// console.log('center:', _this.center)	// 如果这里直接使用this是不行的
 				},{enableHighAccuracy: true})
       },
 
 //点击获取到当前经纬度
 getClickInfo(e) {
-  console.log(e.point.lng);
-  console.log(e.point.lat);
+  // console.log(e.point.lng);
+  // console.log(e.point.lat);
   this.center.lng = e.point.lng;
   this.center.lat = e.point.lat;
 },
@@ -54,7 +55,7 @@ syncCenterAndZoom(e) {
   const { lng, lat } = e.target.getCenter();
   this.center.lng = lng;
   this.center.lat = lat;
-  // this.zoom = e.target.getZoom();
+  this.zoom = e.target.getZoom();
 },
 //经纬度同步
 baidumap(){

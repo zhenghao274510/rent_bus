@@ -23,28 +23,28 @@ export default {
       list: [
         {
           name: "取车城市",
-          chess: "",
-          url: "city"
+          chess: "请选择",
+          url: "/city"
         },
         {
           name: "取车门店",
           chess: "请选择",
-          url: "/annual_rental"
+          url: "/choseshop"
         },
         {
           name: "取车时间",
           chess: "2019年07月12日 周五",
-          url: "/annual_rental"
+          url: ""
         },
         {
           name: "租期",
           chess: "一年",
-          url: "/annual_rental"
+          url: ""
         },
         {
           name: "车型",
           chess: "请选择",
-          url: "/annual_rental"
+          url: ""
         }
       ]
     };
@@ -52,10 +52,10 @@ export default {
   methods: {
     to(){
        this.$store.commit('addcity','citys');
-       this.$router.push('/'+this.list[0].url);
+       this.$router.push(this.list[0].url);
     },
     city(){
-      
+
     }
   },
   components: {},

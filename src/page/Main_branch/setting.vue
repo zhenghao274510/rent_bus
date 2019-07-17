@@ -31,15 +31,23 @@ import Branch from "./branch_head";
 export default {
   data() {
     return {
+      // num:this.$store.state.back,
       title: "设置",
       arr: ["设置支付密码", "关于我们", "隐私声明"]
     };
   },
-  methods: {},
+  methods: {
+     wein(){
+       let arr=this.$store.state.homedata.myarr;
+       let ind=this.$store.state.homedata.index;
+       this.$router.push(arr[ind]);
+    }
+  },
   components: {
     Setinvoce,
     Branch
-  }
+  },
+
 };
 </script>
 

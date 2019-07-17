@@ -91,6 +91,7 @@ import Meal from './../page/home/borther/meal'
 
 Vue.use(Router)
 export default new Router({
+
   routes: [{
     //我的钱包
       path: '/money',
@@ -119,11 +120,13 @@ export default new Router({
       name: 'Meal',
       component: Meal,
     },
+    //启动页
     {
       path: '/',
       name:'star',
       component: Star
     },
+    //引导页
     {
       path: '/guide',
       name:'guide',
@@ -133,6 +136,7 @@ export default new Router({
       path: '/home',
       name:'',
       component:Home,
+
       children:[
 
       { path: 'china', name: 'china', component: China },
