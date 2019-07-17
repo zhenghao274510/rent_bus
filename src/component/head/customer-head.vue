@@ -26,7 +26,6 @@ export default {
 <style scoped lang="less">
     .common_head{
       height: .45rem;
-      margin-top: .2rem;
       font-size: .16rem;
       text-align: center;
       line-height: .45rem;
