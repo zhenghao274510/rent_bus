@@ -85,45 +85,55 @@ import Discretions from './../page/regulations/two_regua/discretion'
 import Otherprocessing from './../page/regulations/two_regua/other_processing'
 //顺风车
 import Ridesharing from './../page/rideSharing/ride_sharing'
+//超值套餐
+import Meal from './../page/home/borther/meal'
+
+
 Vue.use(Router)
 export default new Router({
   routes: [{
     //我的钱包
-    path: '/money',
-    name: 'Moeny',
-    component: Moeny,
-  },
-  {
-    path: '/invest',
-    name: 'Invest',
-    component: Invest,
-  },
-  {
-    path: '/lost',
-    name: 'Lost',
-    component: Lost,
-  },
-  {
-    //支付
-    path: '/pay',
-    name: 'Pay',
-    component: Pay,
-  },
-  {
-    path: '/',
-    name: 'star',
-    component: Star
-  },
-  {
-    path: '/guide',
-    name: 'guide',
-    component: Guide
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-    children: [
+      path: '/money',
+      name: 'Moeny',
+      component: Moeny,
+    },
+    {
+      path: '/invest',
+      name: 'Invest',
+      component: Invest,
+    },
+    {
+      path: '/lost',
+      name: 'Lost',
+      component: Lost,
+    },
+    {
+      //支付
+      path: '/pay',
+      name: 'Pay',
+      component: Pay,
+    },
+    //超值套餐
+    {
+      path: '/meal',
+      name: 'Meal',
+      component: Meal,
+    },
+    {
+      path: '/',
+      name:'star',
+      component: Star
+    },
+    {
+      path: '/guide',
+      name:'guide',
+      component: Guide
+    },
+    {
+      path: '/home',
+      name:'',
+      component:Home,
+      children:[
 
       { path: 'china', name: 'china', component: China },
       { path: 'allearth', name: 'allearth', component: Allearth },
@@ -227,16 +237,6 @@ export default new Router({
     path: '/shop_xiangqing',
     name: 'shop_xiangqing',
     component: shop_xiangqing,
-  },
-  {
-    path: '/shop_xiangqing',
-    name: 'shop_xiangqing',
-    component: shop_xiangqing,
-  },
-  {
-    path: '/denglu',
-    name: 'denglu',
-    component: denglu,
   },
   {
     path: '/denglu',
