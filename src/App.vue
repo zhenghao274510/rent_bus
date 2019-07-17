@@ -43,7 +43,7 @@ export default {
 </script>
 
 
-<style scoped lang='less' >
+<style lang='less' >
 @import url('./../static/css/common.css');
 @import url('./../static/css/other.css');
 

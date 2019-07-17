@@ -10,8 +10,8 @@ export default new vuex.Store({
     basic_service: false,
     enjoyable_service: false,
     //城市
-    city:'城市',
-    citys:'请选择',
+    city:'',
+    citys:'',
     direct:'city',
     //city
     city1:'郑州',

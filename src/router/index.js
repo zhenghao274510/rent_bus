@@ -89,14 +89,14 @@ import Meal from './../page/home/borther/meal'
 
 Vue.use(Router)
 export default new Router({
-  routes: [
-    // {
-    //   path: '/',
-    //   name: 'data',
-    //   component: data
-    // },
+
+  // {
+  //   path: '/',
+  //   name: 'data',
+  //   component: data
+  // },
   routes: [{
-    //我的钱包
+      //我的钱包
       path: '/money',
       name: 'Moeny',
       component: Moeny,
@@ -125,39 +125,69 @@ export default new Router({
     },
     {
       path: '/',
-      name:'star',
+      name: 'star',
       component: Star
     },
     {
       path: '/guide',
-      name:'guide',
+      name: 'guide',
       component: Guide
     },
     {
       path: '/home',
-      name:'',
-      component:Home,
-      children:[
+      name: '',
+      component: Home,
+      children: [
 
-        {path:'china',name:'china',component:China},
-        {path:'allearth',name: 'allearth',component:Allearth},
-        {path:'share',name:'share',component:Share},
-        {path:'try',name:'try',component:Try},
-        {path:'long',name: 'long',component:Long,
-          children:[
-            {path:'/',name:'',redirect:'annual_rental'},
-            {path:'annual_rental',name:'',component:Year},
-            {path:'business_car',name:'',component:Chang},
+        {
+          path: 'china',
+          name: 'china',
+          component: China
+        },
+        {
+          path: 'allearth',
+          name: 'allearth',
+          component: Allearth
+        },
+        {
+          path: 'share',
+          name: 'share',
+          component: Share
+        },
+        {
+          path: 'try',
+          name: 'try',
+          component: Try
+        },
+        {
+          path: 'long',
+          name: 'long',
+          component: Long,
+          children: [{
+              path: '/',
+              name: '',
+              redirect: 'annual_rental'
+            },
+            {
+              path: 'annual_rental',
+              name: '',
+              component: Year
+            },
+            {
+              path: 'business_car',
+              name: '',
+              component: Chang
+            },
           ]
-      }
+        }
       ]
     },
     {
       path: '/choseshop',
-      name:'Choseshop',
+      name: 'Choseshop',
       component: Choseshop
     },
-   
+
     {
       path: '/success',
       name: 'Success',
@@ -172,18 +202,34 @@ export default new Router({
       path: '/customer',
       name: 'Customer',
       component: Customer,
-      children:[
+      children: [
         // {path: '/',name: 'Domestic',redirect: 'Domestic'},
-        {path: '/domestic',name: 'Domestic',component: Domestic},
-        {path: '/timesharing',name: 'Timesharing',component: Timesharing},
-        {path: '/testdrive',name: 'Testdrive',component: Testdrive},
-        {path: '/globalrent',name: 'Globalrent',component: Globalrent},
+        {
+          path: '/domestic',
+          name: 'Domestic',
+          component: Domestic
+        },
+        {
+          path: '/timesharing',
+          name: 'Timesharing',
+          component: Timesharing
+        },
+        {
+          path: '/testdrive',
+          name: 'Testdrive',
+          component: Testdrive
+        },
+        {
+          path: '/globalrent',
+          name: 'Globalrent',
+          component: Globalrent
+        },
       ]
     },
     {
-      path:'/evaluate',
-      name:'Evaluate',
-      component:Evaluate
+      path: '/evaluate',
+      name: 'Evaluate',
+      component: Evaluate
     },
     {
       path: '/data',
@@ -204,7 +250,7 @@ export default new Router({
       path: '/datt',
       name: 'datt',
       component: datt
-    }, 
+    },
     //选择城市
     {
       path: '/city',
@@ -219,40 +265,32 @@ export default new Router({
       path: "/datd",
       name: 'datd',
       component: datd,
-      children:[
+      children: [{
+          path: "/erji",
+          name: "erji",
+          component: erji
+        },
         {
-          path:"/erji",
-          name:"erji",
-          component:erji
-         },
+          path: "/erji1",
+          name: "erji1",
+          component: erji1
+        },
         {
-          path:"/erji1",
-          name:"erji1",
-          component:erji1
-         },
-        {
-          path:"/erji2",
-          name:"erji2",
-          component:erji2
-         }
-     ]
-    },{
-      path:'/shop_xiangqing',
-      name:'shop_xiangqing',
+          path: "/erji2",
+          name: "erji2",
+          component: erji2
+        }
+      ]
     },
-  {
-      name:'shop_xiangqing',
-      component:shop_xiangqing,
-    },
-     {
-      path:'/shop_xiangqing',
+    {
+      path: '/shop_xiangqing',
       name: 'shop_xiangqing',
       component: shop_xiangqing,
     },
     {
-      path: '/denglu',
-      name: 'denglu',
-      component: denglu,
+      path: '/shop_xiangqing',
+      name: 'shop_xiangqing',
+      component: shop_xiangqing,
     },
     {
       path: '/denglu',
@@ -269,8 +307,8 @@ export default new Router({
       name: 'type',
       component: type
     },
-     //确认订单fan
-     {
+    //确认订单fan
+    {
       path: '/affirm_order',
       name: 'Affirm',
       component: Affirm
@@ -369,7 +407,8 @@ export default new Router({
           path: 'other_processing',
           name: 'Otherprocessing',
           component: Otherprocessing,
-        },]
+        },
+      ]
     },
 
   ]

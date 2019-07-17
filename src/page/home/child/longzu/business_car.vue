@@ -23,7 +23,7 @@ export default {
       list: [
         {
           name: "取车城市",
-          chess: "",
+          chess: "请选择",
           url: "city"
         },
         {
