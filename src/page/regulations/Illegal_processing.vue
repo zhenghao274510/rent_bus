@@ -50,27 +50,28 @@ export default {
 .Illegal_processing {
   font-size: 0.13rem;
   color: #444;
-  height: 100%;
-  background: #f6f6f6;
-  .list_cen {
-    background: #fff;
-    padding: 0.1rem 0;
-    font-size: 0.14rem;
-    color: #444;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    border-bottom: 1px solid #dfdfdf;
-    li {
-      flex: 1;
-      a {
-        display: block;
-        color: #444;
-      }
-      a.router-link-active {
-        color: #ffcc00;
-      }
+   height: 100%;
+    background: #f6f6f6;
+   .list_cen{
+        background: #fff;
+        padding:.1rem 0;
+        font-size: .14rem;
+        color:#444;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border-bottom:1px solid #dfdfdf;
+        li{
+            flex: 1;
+            a{
+                display: block;
+                color:#444;
+            }
+            a.router-link-active{
+                color:#ffcc00;
+            }
+        }
     }
   }
-}
+
 </style>

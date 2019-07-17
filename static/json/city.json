@@ -65,7 +65,7 @@
   }, {
     "airportCode": "AAT",
     "cityInfo": "ALT-阿勒泰-AAT",
-    "cityName": "阿勒泰地区",
+    "cityName": "阿勒泰",
     "airportName": "阿勒泰",
     "status": 0,
     "lat": 47.7598336237,
@@ -153,6 +153,14 @@
     "cityInfo": "BS-保山-BSD",
     "cityName": "保山",
     "airportName": "保山",
+    "status": 0,
+    "lat": 25.0576729834,
+    "lng": 99.1721365383
+  },{
+    "airportCode": "VS",
+    "cityInfo": "",
+    "cityName": "",
+    "airportName": "",
     "status": 0,
     "lat": 25.0576729834,
     "lng": 99.1721365383
@@ -1263,7 +1271,7 @@
     "lat": 19.1458461477,
     "lng": 110.4694325567
   }, {
-    "airportCode": "SHP",
+    "airportCode": "QHD",
     "cityInfo": "QHD-秦皇岛-SHP",
     "cityName": "秦皇岛",
     "airportName": "山海关",

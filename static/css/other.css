@@ -1,0 +1,43 @@
+/* 组件切换动画 */
+.slide-right-enter-active,
+.slide-right-leave-active,
+ .slide-left-enter-active,
+ .slide-left-leave-active {
+    /* will-change: transform; */
+      transition: all 500ms;
+        /* position: absolute; */
+      }
+.slide-right-enter {
+  opacity: 0;
+   /* transform: translate3d(-100%, 0, 0); */
+ }
+ .slide-right-leave-active {
+   opacity: 1;
+   /* transform: translate3d(100%, 0, 0); */
+ }
+ .slide-left-enter {
+   opacity: 1;
+   /* transform: translate3d(100%, 0, 0); */
+ }
+ .slide-left-leave-active {
+   opacity: 0;
+   /* transform: translate3d(-100%, 0, 0); */
+ }
+  /* 修改框架默认样式 */
+  .mint-swipe-indicator {
+    background: blue;
+
+  }
+  .mint-swipe-indicator.is-active{
+    background: red;
+  }
+  /* 隐藏滚动条 */
+ ::-webkit-scrollbar {
+     width: 0px;
+    display: none;
+  }
+/* .anchorBL{
+  display: none
+} */
+
+
