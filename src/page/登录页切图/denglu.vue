@@ -49,9 +49,9 @@ export default {
   },
   methods: {
     axios_(){
-      this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
-        console.log(data)
-      }).catch((err)=>{console.log(err)})
+      // this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
+      //   console.log(data)
+      // }).catch((err)=>{console.log(err)})
     },
     right(){
       
