@@ -38,6 +38,9 @@ import data from '../page/details/index'
 import date from '../page/details/index3'
 import datt from '../page/details/index4'
 import datd from '../page/details/index5'
+import erji from '../page/details/erji/erji.vue'
+import erji1 from '../page/details/erji/erji1'
+import erji2 from '../page/details/erji/erji2'
 
 
 
@@ -83,7 +86,13 @@ import Otherprocessing from './../page/regulations/two_regua/other_processing'
 
 Vue.use(Router)
 export default new Router({
-  routes: [{
+  routes: [
+    // {
+    //   path: '/',
+    //   name: 'data',
+    //   component: data
+    // },
+  {
     //我的钱包
       path: '/money',
       name: 'Moeny',
@@ -201,6 +210,23 @@ export default new Router({
       path: "/datd",
       name: 'datd',
       component: datd,
+      children:[
+        {
+          path:"/erji",
+          name:"erji",
+          component:erji
+         },
+        {
+          path:"/erji1",
+          name:"erji1",
+          component:erji1
+         },
+        {
+          path:"/erji2",
+          name:"erji2",
+          component:erji2
+         }
+     ]
     },
      {
       path:'/shop_xiangqing',

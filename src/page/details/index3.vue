@@ -62,7 +62,7 @@
     </div>
     <div class="foot">
         <!-- <p>车辆正在准备中，完成支付可节省取车时间</p> -->
-        <router-link to="./"><button>再来一单</button></router-link>
+        <router-link to="./type"><button>再来一单</button></router-link>
         <p></p>
     </div>
     
@@ -206,7 +206,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.69rem;width: 0.88rem;
+            padding-left: 0.25rem;width: 0.88rem;
             color:#FFCC00;
             width: 1.68rem;
             text-align: center;
@@ -216,7 +216,8 @@ export default {
         }
         .time>span:nth-child(3){
             float: right;
-            margin-right: 0.15rem;margin-top: .1rem;
+            margin-right: 0.08rem;
+            margin-top: .1rem;
         }
         .time>span>span{
             font-size:.08rem;
@@ -330,7 +331,7 @@ export default {
             border-bottom:.08rem solid #f6f6f6;
         }
         .foot{
-            font-size:0;
+            font-size:.16rem;
             text-align: center;
             background: #f6f6f6;
         }

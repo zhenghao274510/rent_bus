@@ -14,14 +14,17 @@ html {
     font-size: 100px;
 }
 
+/* body,html,#app{
+      background-color: #f6f6f6;
+    } */
 html ,body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    /* background-color: #F6F6F6; */
+    /* overflow: hidden; */
+    background-color: #F6F6F6;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
-    background-color: #fff;
+    /* overflow-y: auto; */
+    /* background-color: #fff; */
 }
 
 /* 去除iPhone中默认的input样式 */
@@ -94,7 +97,7 @@ section {
 /* 图片自适应 */
 
 img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
     height: auto;
     width: auto\9;
