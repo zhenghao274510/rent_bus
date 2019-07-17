@@ -80,6 +80,9 @@ import Ruledescription from './../page/regulations/rule_description'
 import Pending from './../page/regulations/two_regua/pending'
 import Discretions from './../page/regulations/two_regua/discretion'
 import Otherprocessing from './../page/regulations/two_regua/other_processing'
+//超值套餐
+import Meal from './../page/home/borther/meal'
+
 
 Vue.use(Router)
 export default new Router({
@@ -104,6 +107,12 @@ export default new Router({
       path: '/pay',
       name: 'Pay',
       component: Pay,
+    },
+    //超值套餐
+    {
+      path: '/meal',
+      name: 'Meal',
+      component: Meal,
     },
     {
       path: '/',
@@ -223,11 +232,6 @@ export default new Router({
       component: pass
     },
     {
-      path: '/City',
-      name: 'City',
-      component: City,
-    },
-    {
       path: '/type',
       name: 'type',
       component: type
@@ -336,8 +340,5 @@ export default new Router({
     },
 
   ]
-
-
-
 
 })
