@@ -29,13 +29,17 @@ export default {
 
 <style scoped lang="less"> 
     .success{
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        padding-top: .8rem;
         background: #f6f6f6;
         img{
             display: block;
             width: .6rem;
             height: .6rem;
             margin: 0 auto;
-            margin-top: 1.05rem;
+            // margin-top: 1.05rem;
             border-radius: 50%;
         }
         .success-placeorder{
@@ -54,7 +58,7 @@ export default {
             background: #f6f6f6;
         }
         .success-text{
-            width: 3.09rem;
+            width: 100%;
             font-size: .13rem;
             margin-top: .28rem;
             margin-left: .15rem;

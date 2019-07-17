@@ -22,32 +22,42 @@
     </ul>
 
     <Time style="height:.8rem;padding-top:.2rem;border:none;"></Time>
-     <div class="btn">
-      <button>
-        立即选车
-      </button>
+    <div class="btn">
+      <button>立即选车</button>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-import Time from './../time'
+import Time from "./../time";
 export default {
   data() {
     return {
-        // id:
+      text:'城市'
     };
   },
-  methods: {},
+  methods: {
+    to(){
+      this.$store.commit('addcity','city');
+      this.$router.push('/city');
+    }
+  },
   components: {
     Time
-  }
+  },
+  mounted(){
+    // console.log(this.$store.state.city)
+    if(this.$store.state.city!==''){
+        this.text = this.$store.state.city;
+      }
+  },
+
 };
 </script>
 
 <style scoped lang='less'>
 .annual_rental {
-  padding: 0.12rem .25rem 0 0.25rem;
+  padding: 0.12rem 0.25rem 0 0.25rem;
 
   .city {
     padding-bottom: 0.19rem;
@@ -55,14 +65,14 @@ export default {
     display: flex;
     li {
       flex: 1;
-      p{
-          font-size: .12rem;
-          color:#666;
-          margin-bottom:.05rem;
+      p {
+        font-size: 0.12rem;
+        color: #666;
+        margin-bottom: 0.05rem;
       }
-      a {
-          font-size: .14rem;
-          color:#444;
+      p {
+        font-size: 0.14rem;
+        color: #444;
         img {
           display: inline-block;
           width: 0.08rem;
@@ -70,26 +80,24 @@ export default {
         }
       }
     }
-    li:last-of-type{
-        margin-left:-.7rem;
+    li:last-of-type {
+      margin-left: -0.7rem;
     }
-
   }
-  .btn{
+  .btn {
     font-size: 0;
-    background: #FFF;
+    background: #fff;
     display: flex;
     align-items: center;
-    button{
-
+    button {
       // display: block;
       width: 3.45rem;
-      height: .4rem;
-      margin: .1rem  auto;
-      background: #FFCC00;
-      color: #FFF;
-      font-size: .16rem;
-      line-height: .4rem;
+      height: 0.4rem;
+      margin: 0.1rem auto;
+      background: #ffcc00;
+      color: #fff;
+      font-size: 0.16rem;
+      line-height: 0.4rem;
       text-align: center;
     }
   }

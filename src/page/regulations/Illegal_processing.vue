@@ -1,26 +1,26 @@
 <template>
   <!-- 违章处理也 -->
   <div class="Illegal_processing">
-      <!-- 头部 -->
-    <Branch :title="title" style='border:none'>
-      <a @click='wein' class="leftImg" slot="left">
+    <!-- 头部 -->
+    <Branch :title="title" style="border:none">
+      <router-link to="/home" class="leftImg" slot="left">
         <img src="./../Main_branch/img/fanhui@2x.png" alt />
-      </a>
-      <router-link slot="right" class="rightImg" to='/rule_description'>
+      </router-link>
+      <router-link slot="right" class="rightImg" to="/rule_description">
         <p>规则说明</p>
       </router-link>
     </Branch>
     <!-- 二级路由 -->
-     <ul class="list_cen">
-        <li>
-            <router-link to='/Illegal_processing/pending'>待处理</router-link>
-        </li>
-         <li>
-            <router-link to='/Illegal_processing/discretion'>自行处理记录</router-link>
-        </li>
-        <li>
-            <router-link to='/Illegal_processing/other_processing'>其他处理记录</router-link>
-        </li>
+    <ul class="list_cen">
+      <li>
+        <router-link to="/Illegal_processing/pending">待处理</router-link>
+      </li>
+      <li>
+        <router-link to="/Illegal_processing/discretion">自行处理记录</router-link>
+      </li>
+      <li>
+        <router-link to="/Illegal_processing/other_processing">其他处理记录</router-link>
+      </li>
     </ul>
     <div>
       <router-view></router-view>
@@ -36,14 +36,9 @@ export default {
       title: "违章处理"
     };
   },
-  methods: {
-    wein(){
-      this.$router.push('/home');
-
-    }
-  },
-  mounted(){
-    this.$router.push('/Illegal_processing/pending')
+  methods: {},
+  mounted() {
+    this.$router.push("/Illegal_processing/pending");
   },
   components: {
     Branch
@@ -77,5 +72,6 @@ export default {
             }
         }
     }
-}
+  }
+
 </style>

@@ -57,7 +57,7 @@
        <!-- 选择 服务 图标部分 -->
     <ul class="iconlist">
       <li>
-        <router-link to=""><i class="icon super"></i><p>超值套餐</p></router-link>
+        <router-link to="/meal"><i class="icon super"></i><p>超值套餐</p></router-link>
       </li>
       <li>
         <router-link to=""><i class="icon car"></i><p>顺风车</p></router-link>

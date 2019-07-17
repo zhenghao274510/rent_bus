@@ -122,18 +122,17 @@ export default {
         });
         this.list[num].show = false;
       }
-       
+       this.$store.commit("add", this.list[num].num1);
     },
     dele() {
-      this.active = false;
+      // this.active = false;
       this.list.forEach(item => {
         item.show = true;
       });
     },
     next() {
        if(this.value===''){
-      this.list.forEach(item => {
-        this.$store.commit("add", item.num1);
+       this.list.forEach(item => {
       });
        }else{
          this.$store.commit("add2", this.value);
@@ -151,6 +150,13 @@ export default {
       this.list.forEach(item => {
         item.list = false;
       });
+    }
+     let fill = document.getElementsByClassName('van-number-keyboard__close')[0];
+     fill.onclick=()=>{
+        this.active = false;
+      }
+    if(this.value !==''){
+      this.active = false;
     }
   }
 };

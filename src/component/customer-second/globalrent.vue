@@ -57,7 +57,7 @@ export default {
         ul{
             list-style: none;
             margin: 0;
-            margin-left: -0.4rem;
+            // margin-left: -0.4rem;
             margin-bottom: .1rem;
             background: #fff;
             li{

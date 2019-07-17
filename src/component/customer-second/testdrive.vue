@@ -37,7 +37,7 @@ export default {
         ul{
             list-style: none;
             margin: 0;
-            margin-left: -0.4rem;
+            // margin-left: -0.4rem;
             margin-bottom: .1rem;
             background: #fff;
             li{
@@ -69,8 +69,10 @@ export default {
             height: .55rem;
             background: #fff;
             display: flex;
+            position: absolute;
+            bottom: 0;
             flex-direction: row;
-            margin-top: 3.77rem;
+            // margin-top: 3.77rem;
             .domestic-foot-left{
                 text-decoration: none;
                 width: 1.2rem;

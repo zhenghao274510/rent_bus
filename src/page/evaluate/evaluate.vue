@@ -37,9 +37,9 @@
                 <span class="car2">郑州花园路店</span>
             </div>
             <div class="evaluate-pick-up-section">
-                <span>综合评价</span> <van-rate v-model="value1" />
-                <span>服务态度</span> <van-rate v-model="value2" />
-                <span>手续办理</span> <van-rate v-model="value3" />
+                <span>综合评价</span> <van-rate v-model="value5" />
+                <span>服务态度</span> <van-rate v-model="value6" />
+                <span>手续办理</span> <van-rate v-model="value7" />
             </div> 
             <div class="evaluate-pick-input" contenteditable="true">
                 感谢您对评价的支持，来说说您的平驾之旅吧！
@@ -62,6 +62,9 @@ export default {
       value2:4,   
       value3:4,   
       value4:4,   
+      value5:4,   
+      value6:4,   
+      value7:4,   
     }
   },
   methods: {
@@ -74,9 +77,13 @@ export default {
 </script>
 
 <style scoped lang="less">
+.evaluate{
+    background-color: #fff;
+}
     .common_head{
       height: .45rem;
-      margin-top: .2rem;
+      position: relative;
+    //   margin-top: .2rem;
       font-size: .16rem;
       text-align: center;
       line-height: .45rem;
@@ -84,7 +91,7 @@ export default {
       .common_head_icon{
           position: absolute;
           left: .15rem;
-          top: .31rem;
+          top: .11rem;
           width: .22rem;
           height: .22rem;
           background: url('./img/fanhui@2x.png') no-repeat;

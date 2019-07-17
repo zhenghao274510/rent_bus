@@ -2,22 +2,19 @@
   <div class="setting">
     <!-- 头部 -->
     <Branch :title="title">
-      <a @click="wein" class="leftImg" slot="left">
+      <router-link to="/home" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </a>
+      </router-link>
     </Branch>
     <!-- 内容 -->
-    <router-link to="">
-      <Setinvoce :arr="arr[0]">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[0]"></Setinvoce>
     </router-link>
-    <router-link to="">
-      <Setinvoce :arr="arr[1]">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[1]"></Setinvoce>
     </router-link>
-    <router-link to="">
-      <Setinvoce :arr="arr[2]"  style="border:none">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[2]" style="border:none"></Setinvoce>
     </router-link>
     <!-- 底部 -->
     <div class="foot">
@@ -55,7 +52,6 @@ export default {
 </script>
 
 <style scoped lang='less'>
-
 .setting {
   font-size: 0.13rem;
   color: #444;
@@ -82,5 +78,4 @@ export default {
     }
   }
 }
-
 </style>

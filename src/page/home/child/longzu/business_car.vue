@@ -4,17 +4,15 @@
     <ul>
       <li v-for="(item,index) in list" :key="index">
         <p>{{item.name}}</p>
-        <router-link :to="item.url">
+        <p @click="to">
           <span>{{item.chess}}</span>
           <img src="./img/fanhui-2@2x.png" />
-        </router-link>
+        </p>
       </li>
     </ul>
-      <div class="btn">
-      <button>
-        下一步
-      </button>
-  </div>
+    <div class="btn">
+      <button>下一步</button>
+    </div>
   </div>
 </template>
 
@@ -51,8 +49,23 @@ export default {
       ]
     };
   },
-  methods: {},
-  components: {}
+  methods: {
+    to(){
+       this.$store.commit('addcity','citys');
+       this.$router.push(this.list[0].url);
+    },
+    city(){
+
+    }
+  },
+  components: {},
+  mounted(){
+    if(this.$store.state.citys!==''){
+        this.list[0].chess = this.$store.state.citys;
+      }
+  },
+  computed:{
+ }
 };
 </script>
 
@@ -68,10 +81,15 @@ export default {
     p {
       flex: 3;
     }
-    a {
+    p:nth-child(2) {
+      display: flex;
+      align-items: center;
       span {
+        flex: 1;
         font-size: 0.12rem;
         color: #888;
+        text-align: right;
+        margin-right: .1rem;
       }
       img {
         display: inline-block;
@@ -80,29 +98,28 @@ export default {
       }
     }
   }
-  li:nth-child(3) span{
-      font-size: .13rem;
-      color:#444;
+  li:nth-child(3) span {
+    font-size: 0.13rem;
+    color: #444;
   }
-  li:nth-child(4) span{
-      font-size: .13rem;
-      color:#444;
+  li:nth-child(4) span {
+    font-size: 0.13rem;
+    color: #444;
   }
-  .btn{
+  .btn {
     font-size: 0;
-    background: #FFF;
+    background: #fff;
     display: flex;
     align-items: center;
-    button{
-
+    button {
       // display: block;
       width: 3.45rem;
-      height: .4rem;
-      margin: .1rem  auto;
-      background: #FFCC00;
-      color: #FFF;
-      font-size: .16rem;
-      line-height: .4rem;
+      height: 0.4rem;
+      margin: 0.1rem auto;
+      background: #ffcc00;
+      color: #fff;
+      font-size: 0.16rem;
+      line-height: 0.4rem;
       text-align: center;
     }
   }

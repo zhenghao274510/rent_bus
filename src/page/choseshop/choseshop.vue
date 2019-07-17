@@ -19,7 +19,7 @@
         <p class="title" ref="tit">{{item.title}}</p>
          <ul>
            <li v-for="(con,ind) in item.datalist" :key="ind" @click="changeinfo(con.name,con.type)">
-             <router-link to="/home">
+             <router-link to="/home/china">
                  <div>
                    <span>{{con.name}}</span>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
                    <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i> </div>

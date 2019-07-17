@@ -34,7 +34,7 @@ export default{
           //  控制我的信息显示隐藏
           show:false,
           itemlist:[
-            {name:'国内租',url:'/home'},
+            {name:'国内租',url:'/home/china'},
             {name:'分时共享',url:'/home/share'},
             {name:'试驾',url:'/home/try'},
             {name:'全球租',url:'/home/allearth'},
