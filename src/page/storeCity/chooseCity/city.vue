@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <mt-header fixed title="选择城市" style="width:100%">
-      <router-link to="/" slot="left">
+      <router-link to="" slot="left" @click.native="back">
         <mt-button>
           <img src="./../img/fanhui@2x.png" alt class="back" />
         </mt-button>
@@ -46,7 +46,7 @@
           </div>
           <div class="city">
             <span v-show="texts">定位中</span>
-            <span v-text="postion.city" v-show="postions"></span>
+            <span v-text="postion.city" v-show="postions" @click='backPage'></span>
           </div>
         </div>
       </div>
@@ -58,6 +58,7 @@
         </p>
         <div>
           <ul class="city_list">
+            <li>郑州</li>
             <li v-for="(item,index) in hisCitys" :key="index" v-text="item" class="his_list"></li>
           </ul>
         </div>
@@ -157,14 +158,23 @@ export default {
     };
   },
   methods: {
+    backPage(){
+      this.$store.commit("changecity", this.postion.city);
+      this.$router.go(-1);
+    },
+    back(){
+     window.history.go(-1);
+    },
     search() {
       this.show = true;
         let a = document.getElementsByClassName("mint-searchbar-cancel")[0];
         a.style.display = 'block';
     },
     add(index){
-      console.log(index.airportName);
+      this.$store.state.city = '';
       this.hisCitys.push(index.airportName);
+      this.$store.commit("changecity", index.airportName);
+       window.history.go(-1);
     },
     remove() {
       setTimeout(() => {
@@ -176,17 +186,6 @@ export default {
       a.onclick = () => {
         this.show = false;
       };
-      setTimeout(() => {
-        let his = document.getElementsByClassName("mint-cell");
-        for (let i = 0; i < his.length; i++) {
-          his[i].onclick = () => {
-            console.log(his[i].innerHTML);
-            this.hisCitys.push(his[i].innerHTML);
-            this.show = false;
-            this.value = "";
-          };
-        }
-      }, 1000);
     },
     slide(key) {
       this.show1 = 1;
@@ -220,6 +219,19 @@ export default {
   },
   mounted() {
     this.remove();
+     setTimeout(() => {
+        let his = document.getElementsByClassName("mint-cell");
+        for (let i = 0; i < his.length; i++) {
+          his[i].onclick = () => {
+           this.$store.commit("changecity", his[i].innerHTML);
+           console.log(his[i].innerHTML);
+            this.hisCitys.push(his[i].innerHTML);
+            this.show = false;
+            this.value = "";
+            window.history.go(-1);
+          };
+        }
+      }, 1000);
   },
   computed: {
     cityListData() {
@@ -267,7 +279,7 @@ export default {
         }
       });
       return result;
-    }
+    },
   },
   filters: {
     change(val) {
@@ -288,7 +300,7 @@ a {
 }
 .box {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   .yin {
     font-size: 0.16rem;
     width: 0.4rem;
