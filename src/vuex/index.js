@@ -4,8 +4,8 @@ Vue.use(vuex)
 export default new vuex.Store({
   state: {
     //确认订单fan
-     //钱包
-     num:'',
+    //钱包
+    num: '',
     affirm_order: false,
     basic_service: false,
     enjoyable_service: false,
@@ -21,8 +21,8 @@ export default new vuex.Store({
     }
 
   },
-    mutations:{
-       changehome(state, val) {
+  mutations: {
+    changehome(state, val) {
       state.homedata.show = val;
     },
         //确认订单fan
