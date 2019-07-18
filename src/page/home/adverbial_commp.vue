@@ -48,10 +48,11 @@
     <!-- 时间 -->
       <Wtime></Wtime>
     <div class="btn">
+      <router-link to="/type">
       <button>
         立即选车
       </button>
-
+</router-link>
     </div>
 
        <!-- 选择 服务 图标部分 -->
@@ -261,8 +262,13 @@ Wtime
     background: #FFF;
     display: flex;
     align-items: center;
+    a{
+      width: 100%;
+    }
     button{
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
       // display: block;
       width: 3.45rem;
       height: .4rem;

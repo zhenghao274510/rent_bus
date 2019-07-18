@@ -35,7 +35,7 @@ export default {
 <style lang="less" scoped>
 .guide{
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 

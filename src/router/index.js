@@ -28,6 +28,10 @@ import Payment from './../page/payment/payment.vue'
 import Customer from './../page/customer-service/customer.vue'
 import Evaluate from './../page/evaluate/evaluate.vue'
 
+import Minedata from './../page/minedata/minedata.vue'
+import Identity from './../page/identity/identity.vue'
+import Evaluatedetails from './../page/evaluatedetails/evaluatedetails.vue'
+
 import Domestic from './../component/customer-second/domestic.vue'
 import Timesharing from './../component/customer-second/timesharing.vue'
 import Testdrive from './../component/customer-second/testdrive.vue'
@@ -38,7 +42,7 @@ import data from '../page/details/index'
 import date from '../page/details/index3'
 import datt from '../page/details/index4'
 import datd from '../page/details/index5'
-import erji from '../page/details/erji/erji'
+import erji from '../page/details/erji/erji.vue'
 import erji1 from '../page/details/erji/erji1'
 import erji2 from '../page/details/erji/erji2'
 
@@ -91,8 +95,24 @@ import Meal from './../page/home/borther/meal'
 
 Vue.use(Router)
 export default new Router({
-  routes: [{
-      //我的钱包
+  routes: [
+    {
+      path:'/minedata',
+      name:'Minedata',
+      component:Minedata
+    },
+    {
+      path:'/identity',
+      name:'Identity',
+      component:Identity
+    },
+    {
+      path:'/evaluatedetails',
+      name:'Evaluatedetails',
+      component:Evaluatedetails
+    },
+      {
+    //我的钱包
       path: '/money',
       name: 'Moeny',
       component: Moeny,
@@ -173,11 +193,11 @@ export default new Router({
     name: 'Customer',
     component: Customer,
     children: [
-      // {path: '/',name: 'Domestic',redirect: 'Domestic'},
-      { path: '/domestic', name: 'Domestic', component: Domestic },
-      { path: '/timesharing', name: 'Timesharing', component: Timesharing },
-      { path: '/testdrive', name: 'Testdrive', component: Testdrive },
-      { path: '/globalrent', name: 'Globalrent', component: Globalrent },
+      {path: '/',name: 'Domestic',redirect: 'Domestic'},
+      { path: 'domestic', name: 'Domestic', component: Domestic },
+      { path: 'timesharing', name: 'Timesharing', component: Timesharing },
+      { path: 'testdrive', name: 'Testdrive', component: Testdrive },
+      { path: 'globalrent', name: 'Globalrent', component: Globalrent },
     ]
   },
   {
@@ -358,6 +378,27 @@ export default new Router({
       component: Discretions,
     },
     {
+      path: '/Illegal_processing',
+      name: 'Illegal',
+      component: Illegal,
+      children:[
+        {
+          path:'pending',
+          name:'Pending',
+          component:Pending,
+        },
+        {
+          path:'discretion',
+          name:'Discretions',
+          component:Discretions,
+        },
+        {
+          path:'other_processing',
+          name:'Otherprocessing',
+          component:Otherprocessing,
+        },
+      ]
+    },{
       path: 'other_processing',
       name: 'Otherprocessing',
       component: Otherprocessing,

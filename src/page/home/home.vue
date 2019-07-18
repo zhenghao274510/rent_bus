@@ -8,7 +8,9 @@
      </div>
      <!-- home 导航 -->
      <ul class="home_nav">
-          <li v-for="(item,index) in itemlist" :key="index" @click='changetop($event,index)' ref="add"><router-link :to="item.url" :class="{'active':$store.state.homedata.index==index}">{{item.name}}</router-link></li>
+          <li v-for="(item,index) in itemlist" :key="index" @click='changetop($event,index)' ref="add">
+            <router-link :to="item.url" :class="{'active':$store.state.homedata.index==index}">{{item.name}}</router-link>
+            </li>
 
      </ul>
     <div>

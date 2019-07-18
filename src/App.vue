@@ -43,10 +43,9 @@ export default {
 </script>
 
 
-<style  >
+<style>
 @import url('./../static/css/common.css');
 @import url('./../static/css/other.css');
-
 
 #app {
   width: 100%;

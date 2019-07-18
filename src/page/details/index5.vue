@@ -65,7 +65,8 @@ a{
 }
       .hand{
         width: 100%;
-        position: fixed;bottom: 0 0.1rem;
+        position: fixed;
+        bottom: 0 0.1rem;
         .hand1{
         background: white;
         color:black;
@@ -78,10 +79,12 @@ a{
         }
       }
       .hang{
+        padding-top: .16rem;
         font-size: 0;
         width: 100%;
         background:white;
-        position: fixed;top: .53rem;
+        position: fixed;
+        top: .39rem;
         ul{
           border-bottom: 1px solid #f6f6f6;
           li{
