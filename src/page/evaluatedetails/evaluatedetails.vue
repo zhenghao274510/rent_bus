@@ -43,6 +43,7 @@ export default {
 <style scoped lang="less">
     .evaluatedetails{
         .common_head{
+          background-color: #fff;
             height: .45rem;
             font-size: .16rem;
             text-align: center;
@@ -61,8 +62,14 @@ export default {
             }
         }
         .evaluatedetails-hao{
+          background-color: #fff;
           height: .5rem;
             p{
+              display: flex;
+              align-items: baseline;
+              padding-top: .12rem;
+              padding-bottom: .05rem;
+              padding-right: .16rem;
                 font-size:.12rem;
                 overflow: hidden;
                 .phone{
@@ -81,26 +88,30 @@ export default {
                   color: #ffcc00;
                 }
                 .time{
-                  float: right;
-                  margin-right: .16rem;
-                  color: #888;
+                  // float: right;
+                  // margin-right: .16rem;
+                  // color: #888;
+                  flex: 1;
+                  text-align: right;
                 }
             }
             .city{
-              width: .54rem;
+              width: .48rem;
               height: .18rem;
               background: #FDF2C4;
               font-size:.12rem;
               color: #444;
               margin-left: .15rem;
               text-align: center;
-              line-height: .18rem;
+              // line-height: .18rem;
             }
         }
         .evaluatedetails-section{
+          background-color: #fff;
             font-size: .14rem;
-            margin-left: .15rem;
-            margin-top: .05rem;
+            padding: .05rem 0 .15rem .15rem;
+            // margin-left: .15rem;
+            // margin-top: .05rem;
             overflow: hidden;
             span{
                 float: left;
@@ -115,7 +126,7 @@ export default {
             }
         } 
         .evaluatedetails-text{
-          margin-top: .15rem;
+          // margin-top: .15rem;
           border-top: 1px solid #dfdfdf;
           .text{
             font-size: .12rem;

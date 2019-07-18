@@ -58,6 +58,7 @@ export default {
 <style scoped lang="less">
     .identity{
         .common_head{
+            background-color: #fff;
             height: .45rem;
             font-size: .16rem;
             text-align: center;
@@ -76,6 +77,7 @@ export default {
             }
         }
         .identity-authentication{
+            background-color: #fff;
             height: .45rem;
             position: relative;
             border-bottom: 1px solid #dfdfdf;

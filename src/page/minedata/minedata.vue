@@ -50,6 +50,7 @@ export default {
             text-align: center;
             line-height: .45rem;
             color: #222;
+            background-color: #fff;
             position: relative;
             border-bottom: 1px solid #dfdfdf;
             .common_head_icon{
@@ -63,6 +64,7 @@ export default {
             }
         }
         .minedata-authentication{
+            background-color: #fff;
             height: .45rem;
             position: relative;
             border-bottom: 1px solid #dfdfdf;
