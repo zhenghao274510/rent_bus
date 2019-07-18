@@ -43,7 +43,6 @@ export default {
             display: flex;
             flex-direction: row;
             height: .32rem;
-            // margin-left: -0.4rem;
             margin-top: 0;
             margin-bottom: 0;
             border-bottom: 1px solid #dfdfdf;

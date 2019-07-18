@@ -27,7 +27,6 @@ export default {
     .common_head{
       height: .45rem;
       position: relative;
-      // margin-top: .2rem;
       font-size: .16rem;
       text-align: center;
       line-height: .45rem;
