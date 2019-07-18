@@ -2,22 +2,19 @@
   <div class="setting">
     <!-- 头部 -->
     <Branch :title="title">
-      <a @click="wein" class="leftImg" slot="left">
+      <router-link to="/home" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </a>
+      </router-link>
     </Branch>
     <!-- 内容 -->
-    <router-link to="/">
-      <Setinvoce :arr="arr[0]">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[0]"></Setinvoce>
     </router-link>
-    <router-link to="/">
-      <Setinvoce :arr="arr[1]">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[1]"></Setinvoce>
     </router-link>
-    <router-link to="/">
-      <Setinvoce :arr="arr[2]"  style="border:none">
-      </Setinvoce>
+    <router-link to>
+      <Setinvoce :arr="arr[2]" style="border:none"></Setinvoce>
     </router-link>
     <!-- 底部 -->
     <div class="foot">
@@ -34,24 +31,27 @@ import Branch from "./branch_head";
 export default {
   data() {
     return {
+      // num:this.$store.state.back,
       title: "设置",
       arr: ["设置支付密码", "关于我们", "隐私声明"]
     };
   },
   methods: {
      wein(){
-      window.history.go(-1);
+       let arr=this.$store.state.homedata.myarr;
+       let ind=this.$store.state.homedata.index;
+       this.$router.push(arr[ind]);
     }
   },
   components: {
     Setinvoce,
     Branch
-  }
+  },
+
 };
 </script>
 
 <style scoped lang='less'>
-
 .setting {
   font-size: 0.13rem;
   color: #444;
@@ -78,5 +78,4 @@ export default {
     }
   }
 }
-
 </style>

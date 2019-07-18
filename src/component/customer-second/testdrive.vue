@@ -8,8 +8,8 @@
       <div class="domestic-foot">
           <!-- <div class="domestic-foot-left">客服热线</div>
           <div class="domestic-foot-right">在线客服</div> -->
-          <router-link to="/evaluate" class="domestic-foot-left">客服热线</router-link>
-          <router-link to="#" class="domestic-foot-right">在线客服</router-link>
+          <router-link to="" class="domestic-foot-left">客服热线</router-link>
+          <router-link to="" class="domestic-foot-right">在线客服</router-link>
       </div>
   </div>
 </template>
@@ -68,8 +68,10 @@ export default {
             height: .55rem;
             background: #fff;
             display: flex;
+            position: absolute;
+            bottom: 0;
             flex-direction: row;
-            margin-top: 3.77rem;
+            // margin-top: 3.77rem;
             .domestic-foot-left{
                 text-decoration: none;
                 width: 1.2rem;

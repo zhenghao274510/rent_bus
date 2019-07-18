@@ -33,11 +33,9 @@ export default {
         font-size: .13rem;
         color:#444;
         background: #fff;
-        
         li{
             overflow: hidden;
             padding:.16rem .15rem .16rem .16rem;
-           
             .rightImg2{
                 float: right;
                 width: .08rem;

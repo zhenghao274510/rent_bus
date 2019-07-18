@@ -1,0 +1,41 @@
+{
+  "data":[
+    {
+      "src":"./static/homeimg/744@2x.png",
+      "name":"大众朗逸",
+      "card":"豫A02WD8",
+       "info":["蓝色","三箱 5座","油量48%"]
+      },
+      {
+        "src":"./static/homeimg/840@2x.png",
+        "name":"雪佛兰科鲁兹",
+        "card":"豫A02WD8",
+         "info":["蓝色","三箱 5座","油量48%"]
+        },
+        {
+          "src":"./static/homeimg/848@2x.png",
+          "name":"别克昂科拉",
+          "card":"豫A02WD8",
+           "info":["蓝色","三箱 5座","油量48%"]
+          },
+           {
+            "src":"./static/homeimg/853@2x.png",
+            "name":"宝沃BX5",
+            "card":"豫A02WD8",
+             "info":["蓝色","三箱 5座","油量48%"]
+            },
+            {
+              "src":"./static/homeimg/868@2x.png",
+              "name":"丰田致炫",
+              "card":"豫A02WD8",
+               "info":["蓝色","三箱 5座","油量48%"]
+              },
+              {
+                "src":"./static/homeimg/870@2x.png",
+                "name":"宝沃BX7两驱",
+                "card":"豫A02WD8",
+                 "info":["蓝色","三箱 5座","油量48%"]
+                }
+
+  ]
+}
