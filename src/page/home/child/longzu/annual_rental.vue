@@ -6,7 +6,7 @@
         <p>取车城市</p>
         <div>
           <p @click="to">
-            <span v-text="text"></span>
+            <span v-text='text'></span>
             <img src="./img/xiala@2x.png" />
           </p>
         </div>
@@ -14,9 +14,9 @@
       <li>
         <p>取还点</p>
         <div>
-          <router-link to="/">
+          <p >
             <span>郑州动物园自助点</span>
-          </router-link>
+          </p>
         </div>
       </li>
     </ul>
@@ -49,7 +49,7 @@ export default {
     // console.log(this.$store.state.city)
     if(this.$store.state.city!==''){
         this.text = this.$store.state.city;
-      }  
+      }
   },
 
 };

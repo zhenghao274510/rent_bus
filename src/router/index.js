@@ -119,11 +119,13 @@ export default new Router({
       name: 'Meal',
       component: Meal,
     },
+    //启动页
     {
       path: '/',
       name: 'star',
       component: Star
     },
+    //引导页
     {
       path: '/guide',
       name: 'guide',
@@ -131,9 +133,10 @@ export default new Router({
     },
     {
       path: '/home',
-      name: '',
-      component: Home,
-      children: [
+      name:'',
+      component:Home,
+
+      children:[
 
       { path: 'china', name: 'china', component: China },
       { path: 'allearth', name: 'allearth', component: Allearth },

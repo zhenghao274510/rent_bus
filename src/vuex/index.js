@@ -19,13 +19,49 @@ export default new vuex.Store({
     city1: '郑州',
     city2: '郑州',
     homedata: {
-      show: false
-    }
+      show: false,
+      to: '郑州动物园自助点',
+      from: '郑州动物园自助点',
+      dir: '',
+      index: 0,
+      spto: 2,
+      spfrom: 2,
+      lon: false,
+      myarr: ['/home/china', '/home/share', '/home/try', '/home/allearth', '/home/long']
 
+    },
   },
   mutations: {
+    //  跳回数据
+    changeback(state, val) {
+      state.back -= val;
+    },
+    // 主页 数据
+    changehomelong(state, val) {
+      state.homedata.lon = val;
+    },
+    changedir(state, val) {
+      state.homedata.dir = val;
+    },
+    changecome(state, val) {
+      if (state.homedata.dir == 'to') {
+        state.homedata.to = val;
+      } else if (state.homedata.dir == 'from') {
+        state.homedata.from = val;
+      }
+    },
+    changeindex(state, val) {
+      state.homedata.index = val;
+    },
     changehome(state, val) {
       state.homedata.show = val;
+    },
+    changespan(state, val) {
+      if (state.homedata.dir == 'to') {
+        state.homedata.spto = val;
+      } else if (state.homedata.dir == 'from') {
+        state.homedata.spfrom = val;
+      }
     },
     //确认订单fan
     affirm_orders(state, value) {
@@ -44,12 +80,12 @@ export default new vuex.Store({
     add2(state, val1) {
       state.num = val1;
     },
-    addscore(state, val) {
-      state.score = val;
-    },
     //城市
     addcity(state, val) {
       state.direct = val;
+    },
+    addscore(state, val) {
+      state.score = val;
     },
     //长租获取城市
     changecity(state, val) {
@@ -64,6 +100,5 @@ export default new vuex.Store({
       }
     }
   },
-
   getters: {},
 });
