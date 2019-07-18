@@ -1,7 +1,7 @@
 <template>
   <div class="identity">
     <div class="common_head">
-        <router-link to="#" class="common_head_icon"></router-link>
+        <router-link to="/evaluatedetails" class="common_head_icon"></router-link>
         身份认证
     </div>
     <div class="identity-authentication">

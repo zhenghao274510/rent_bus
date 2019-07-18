@@ -7,6 +7,7 @@ import Evaluate from './../page/evaluate/evaluate.vue'
 
 import Minedata from './../page/minedata/minedata.vue'
 import Identity from './../page/identity/identity.vue'
+import Evaluatedetails from './../page/evaluatedetails/evaluatedetails.vue'
 
 import Domestic from './../component/customer-second/domestic.vue'
 import Timesharing from './../component/customer-second/timesharing.vue'
@@ -60,5 +61,10 @@ export default new Router({
       name:'Identity',
       component:Identity
     },
+    {
+      path:'/evaluatedetails',
+      name:'Evaluatedetails',
+      component:Evaluatedetails
+    }
   ]
 })

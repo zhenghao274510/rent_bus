@@ -33,7 +33,7 @@ export default {
       .common_head_icon{
           position: absolute;
           left: .15rem;
-          top: .31rem;
+          top: .11rem;
           width: .22rem;
           height: .22rem;
           background: url('./img/fanhui@2x@2x.png') no-repeat;
