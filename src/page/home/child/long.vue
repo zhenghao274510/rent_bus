@@ -3,12 +3,12 @@
   <div class="enterprise">
     <div class="box">
       <ul class="list">
-        <li @click="display=false">
+        <li @click="changeyear">
           <router-link to="/home/long/annual_rental" >
             <span>年租</span>
           </router-link>
         </li>
-        <li @click="display=true">
+        <li @click="changelong">
           <router-link to="/home/long/business_car">
             <span>企业用车</span>
           </router-link>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="change">
-      <ul class="qiye" v-if="display">
+      <ul class="qiye" v-if="$store.state.homedata.lon">
         <li>企业用车说明</li>
         <li v-for="(item,index) in qiye" :key="index">
           <p>{{item}}</p>
@@ -57,7 +57,14 @@ export default {
     };
   },
   methods: {
-     
+    changeyear(){
+     this.display=false;
+     this.$store.commit('changehomelong',this.display)
+    },
+   changelong(){
+     this.display=true;
+     this.$store.commit('changehomelong',this.display)
+   }
   },
   mounted() {
 

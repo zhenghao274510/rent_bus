@@ -2,7 +2,7 @@
 <div class="box">
   <div class="top">
      <mt-header class="text" title="选择车型">
-  <router-link to="/" slot="left">
+  <router-link to="/home/china" slot="left">
     <mt-button > <img class="img" src="./img/fanhui@2x.png" alt=""></mt-button>
   </router-link>
 </mt-header></div>
@@ -21,6 +21,7 @@
         <li ref="leftlist" v-for="(item,index) in leftlist " :key="index" @click="addbg(index)">{{item}}</li>
       </ul>
       <ul class="right">
+        <router-link to="/affirm_order">
         <li v-for="(item,index) in list[p] " :key='index'>
           <div class="le">
             <img :src='item.img'>
@@ -30,7 +31,7 @@
             <p>{{item.p2}}</p>
             <p><span>{{item.span}}</span>{{item.p3}}</p>
           </div>
-        </li>
+        </li></router-link>
       </ul>
     </div>
   </mt-tab-container-item>
@@ -40,6 +41,7 @@
         <li ref="rightlist" v-for="(item,index) in rightlist " :key="index" @click="addbg2(index)">{{item}}</li>
       </ul>
       <ul class="right">
+        <router-link to="/affirm_order">
         <li v-for="(item,index) in list[pp] " :key='index'>
           <div class="le">
             <img :src='item.img'>
@@ -49,7 +51,7 @@
             <p>{{item.p2}}</p>
             <p><span>{{item.span}}</span>{{item.p3}}</p>
           </div>
-        </li>
+        </li></router-link>
       </ul>
     </div>
   </mt-tab-container-item>
@@ -304,14 +306,11 @@ export default {
         ],
        
 
-selected:{
-
-}
+selected:'1'
     }
   },
   methods: {
    addbg(index){
-     console.log(index)
      this.$refs.leftlist.forEach(item => {
        item.className='';
      });
@@ -335,6 +334,9 @@ selected:{
   },
   components: {
 
+  },mounted(){
+    this.$refs.leftlist[0].className='active'
+    this.$refs.rightlist[0].className='active'
   }
 }
 </script>

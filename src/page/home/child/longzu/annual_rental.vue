@@ -5,10 +5,10 @@
       <li>
         <p>取车城市</p>
         <div>
-          <p @click="to">
-            <span v-text="text"></span>
+          <router-link to="/city">
+            <span>城市</span>
             <img src="./img/xiala@2x.png" />
-          </p>
+          </router-link>
         </div>
       </li>
       <li>
@@ -49,7 +49,7 @@ export default {
     // console.log(this.$store.state.city)
     if(this.$store.state.city!==''){
         this.text = this.$store.state.city;
-      }  
+      }
   },
 
 };

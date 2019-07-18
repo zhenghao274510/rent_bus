@@ -16,10 +16,10 @@
    <div class="right" ref="right">
   <div class="content">
        <div class="rightlist" v-for="(item,index) in datilelist" :key="index" ref="rightlist">
-        <p :class="{'title':ding,'pos':currentIndex===index}" ref="tit">{{item.title}}</p>
+        <p class="title" ref="tit">{{item.title}}</p>
          <ul>
-           <li v-for="(con,ind) in item.datalist" :key="ind">
-             <router-link to="/home">
+           <li v-for="(con,ind) in item.datalist" :key="ind" @click="changeinfo(con.name,con.type)">
+             <router-link to="/home/china">
                  <div>
                    <span>{{con.name}}</span>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
                    <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i> </div>
@@ -57,7 +57,7 @@ export default {
    mounted(){
 
            //  数据请求
-   this.axios.get('./static/data/choseshopdata.json').then((res)=>{
+   this.$axios.get('./static/data/choseshopdata.json').then((res)=>{
         this.list=res.data.shop;
            this.datilelist=res.data.result;
    }).catch((err)=>{
@@ -69,9 +69,15 @@ export default {
    })
    },
   methods: {
+    //选择城市
+    changeinfo(a,b){
+      console.log(b)
+       this.$store.commit('changecome',a);
+       this.$store.commit('changespan',b);
+    },
     //  返回上一页
        back(){
-        // this.$router.go(-1);
+
         window.history.go(-1);
       },
        //  三栏联动

@@ -1,7 +1,7 @@
 <template>
         <div class="abverbial_time">
            <div>
-             <p class="datatime">07月07日</p>
+             <p class="datatime" @click="showdata"> 07月07日 </p>
              <p class="weektime"> 周日 &nbsp; 12:00</p>
             </div>
              <div>
@@ -12,21 +12,25 @@
              <p class="datatime">07月09日</p>
              <p class="weektime"> 周二 &nbsp; 12:00</p>
            </div>
+           <Ctime v-if="showtime"></Ctime>
        </div>
 </template>
 
 <script>
+// import Ctime from './chosetime'
 export default {
   data() {
     return {
-
+       showtime:false
     }
   },
   methods: {
-
+     showdata(){
+       this.showdata=true;
+     }
   },
   components: {
-
+  //  Ctime
   }
 }
 </script>

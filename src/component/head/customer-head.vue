@@ -1,7 +1,7 @@
 <template>
   <div class="customer_common_head">
     <div class="common_head">
-      <router-link to="#" class="common_head_icon"></router-link>
+      <router-link to="/home/china" class="common_head_icon"></router-link>
       客服
     </div>
   </div>
