@@ -29,9 +29,8 @@
       <!-- 底部 -->
       <div class="footer">
         <p class="footer_top">
-          <span @click="confirm">
-
-            <img src="./img/active.png" alt/>
+          <span>
+            <img src="./img/active.png" alt />
           </span>
           <span>
             以仔细阅读并同意
@@ -40,9 +39,9 @@
         </p>
       </div>
       <div class="bottom">
-        <router-link to="/invest">
-          <input type="button"  value="确认支付"/>
-        </router-link>
+        <p @click="confirm">
+          <input type="button" value="确认支付" />
+        </p>
       </div>
     </section>
   </div>
@@ -85,8 +84,10 @@ export default {
       });
       this.payList[index].vg = true;
     },
-    confirm(){
-        // this.right = !this.right;
+    confirm() {
+      setTimeout(() => {
+        this.$router.push("/lost");
+      }, 1000);
     }
   },
   components: {},
@@ -95,10 +96,10 @@ export default {
     this.payList[0].vg = true;
   },
   filters: {
-    num1:function(num){
-      return '￥'+num;
+    num1: function(num) {
+      return "￥" + num;
     }
-  },
+  }
 };
 </script>
 
@@ -194,19 +195,19 @@ a {
         display: flex;
         align-items: center;
         margin: 2.52rem 0.15rem 0.07rem 0.15rem;
-        font-size: .12rem;
+        font-size: 0.12rem;
         color: #888;
         span:nth-child(1) {
           img {
             width: 0.13rem;
             height: 0.13rem;
           }
-          margin-right: .06rem;
+          margin-right: 0.06rem;
         }
-        span:nth-child(2){
-            a{
-                color: #7bc7fa;
-            }
+        span:nth-child(2) {
+          a {
+            color: #7bc7fa;
+          }
         }
       }
     }
@@ -219,7 +220,7 @@ a {
       padding: 0.08rem 0.15rem;
       display: flex;
       align-items: center;
-      a {
+      p {
         display: block;
         width: 100%;
         input {
@@ -231,8 +232,8 @@ a {
           font-size: 0.16rem;
         }
       }
-      .active{
-          color:#ccc;
+      .active {
+        color: #ccc;
       }
     }
   }

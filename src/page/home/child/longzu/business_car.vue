@@ -4,7 +4,7 @@
     <ul>
       <li v-for="(item,index) in list" :key="index">
         <p>{{item.name}}</p>
-        <p @click="to">
+        <p @click="to(index)">
           <span>{{item.chess}}</span>
           <img src="./img/fanhui-2@2x.png" />
         </p>
@@ -50,22 +50,27 @@ export default {
     };
   },
   methods: {
-    to(){
-       this.$store.commit('addcity','citys');
-       this.$router.push(this.list[0].url);
+    to(index) {
+      if (index == 0) {
+        this.$store.commit("addcity", "citys");
+        this.$router.push(this.list[0].url);
+      }else if(index==1){
+        this.$store.commit('changedir','to');
+        this.$router.push(this.list[1].url);
+      }
     },
-    city(){
-
-    }
+    city() {}
   },
   components: {},
-  mounted(){
-    if(this.$store.state.citys!==''){
-        this.list[0].chess = this.$store.state.citys;
-      }
+  mounted() {
+    if (this.$store.state.citys !== "") {
+      this.list[0].chess = this.$store.state.citys;
+    }
+     if (this.$store.state.homedata.to !== "") {
+      this.list[1].chess = this.$store.state.homedata.to;
+    }
   },
-  computed:{
- }
+  computed: {}
 };
 </script>
 
@@ -89,7 +94,7 @@ export default {
         font-size: 0.12rem;
         color: #888;
         text-align: right;
-        margin-right: .1rem;
+        margin-right: 0.1rem;
       }
       img {
         display: inline-block;

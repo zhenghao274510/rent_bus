@@ -142,13 +142,13 @@ export default new Router({
     //启动页
     {
       path: '/',
-      name:'star',
+      name: 'star',
       component: Star
     },
     //引导页
     {
       path: '/guide',
-      name:'guide',
+      name: 'guide',
       component: Guide
     },
     {

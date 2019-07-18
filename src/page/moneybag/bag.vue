@@ -2,7 +2,7 @@
   <div class="box">
     <!-- 头部 -->
     <mt-header title="我的钱包" style="width:100%">
-      <router-link to="/" slot="left">
+      <router-link to="/home/china" slot="left">
         <mt-button>
           <img src="./img/back.png" alt class="back" />
         </mt-button>
@@ -46,27 +46,27 @@ export default {
           img: require("./img/moeny.png"),
           text: "优惠券",
           img2: require("./img/enter.png"),
-          To: "/city"
+          To: ""
         },
         {
           img: require("./img/bank.png"),
           text: "银行卡",
           text2: "未绑定",
           img2: require("./img/enter.png"),
-          To: "/city"
+          To: ""
         },
         {
           img: require("./img/score.png"),
           text: "可用积分",
           img2: require("./img/enter.png"),
-          To: "/city"
+          To: ""
         },
         {
           img: require("./img/card.png"),
           text: "储值卡",
           text1: "仅针对租车",
           img2: require("./img/enter.png"),
-          To: "/city"
+          To: ""
         }
       ]
     };
