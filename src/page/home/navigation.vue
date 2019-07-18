@@ -19,7 +19,7 @@
       <!-- 列表 -->
       <ul class="navigation_list">
         <li>
-         <router-link to=''>
+         <router-link to='/money'>
             <img src="./img/qianbao@2x.png" alt />
             <span>钱包</span>
       </router-link>

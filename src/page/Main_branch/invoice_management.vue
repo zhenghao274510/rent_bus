@@ -2,9 +2,9 @@
   <div class="invoice">
     <!-- 头部 -->
     <Branch :title="title">
-      <a @click="wein" class="leftImg" slot="left">
+      <router-link to='/home' class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </a>
+      </router-link>
     </Branch>
     <!-- 内容 -->
     <router-link to="/make_invoice">
@@ -30,9 +30,6 @@ export default {
     };
   },
   methods: {
-     wein(){
-      window.history.go(-1);
-    }
   },
   components: {
     Setinvoce,Branch
