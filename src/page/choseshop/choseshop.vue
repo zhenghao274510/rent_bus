@@ -22,7 +22,7 @@
              <router-link to="/home/china">
                  <div>
                    <span>{{con.name}}</span>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
-                   <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i> </div>
+                  <router-link to="/shop_xiangqing"> <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i></router-link> </div>
                  </div>
                  <p class="info">
                 {{con.details}}

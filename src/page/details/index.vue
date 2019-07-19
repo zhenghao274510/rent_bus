@@ -1,7 +1,7 @@
 <template>
   <div class="top">
       <mt-header title="订单详情" class="hand">
-        <router-link to="/" slot="left">
+        <router-link to="erji" slot="left">
       <mt-button class="button"> <img class="left" src="./img/fanhui@2x.png" alt=""></mt-button>
         </router-link>
       <mt-button class="button" slot="right"><img class="right" src="./img/gengduo@2x.png" alt=""  id="show" @click="show1=!show1" ></mt-button>
@@ -62,13 +62,13 @@
     </div>
     <div class="foot">
         <p>车辆正在准备中，完成支付可节省取车时间</p>
-        <router-link to="./"><button>订单支付</button></router-link>
+        <router-link to="/Payment"><button>订单支付</button></router-link>
         <p></p>
     </div>
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
         <div class="clear">
-        <router-link to="/date"><p id="zi">取消订单</p></router-link>
+        <router-link to="/details"><p id="zi">取消订单</p></router-link>
         <div class="small">
              <span></span>
         </div>
@@ -108,6 +108,9 @@ export default {
         padding: 0;
         margin: 0;
     }
+    body{
+        background-color: #fff;;
+    }
     .hand{
         background-color:white;
         color:black;
@@ -138,11 +141,13 @@ export default {
         border-bottom:0.01rem solid #cccccc;
     }
     .hao{
+        font-size: .12rem;
         color:#888888;
         /* padding-top: .03rem;
         padding-bottom: .03rem; */
     }
     .gong{
+        font-size: .13rem;
         color:#FFCC00;
     }
     .car{
@@ -207,7 +212,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.69rem;
+            padding-left: 0.25rem;
             width: 1.68rem;
 
             color:#FFCC00;
@@ -218,7 +223,8 @@ export default {
         }
         .time>span:nth-child(3){
             float: right;
-            margin-right: 0.15rem;margin-top: .1rem;
+            margin-right: 0.08rem;
+            margin-top: .1rem;
         }
         .time>span>span{
             font-size:.08rem;
@@ -334,7 +340,7 @@ export default {
             border-bottom:.08rem solid #f6f6f6;
         }
         .foot{
-            font-size:0;
+            font-size:.16rem;
             text-align: center;
         }
         .foot>p{

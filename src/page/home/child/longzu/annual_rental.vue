@@ -5,18 +5,18 @@
       <li>
         <p>取车城市</p>
         <div>
-          <router-link to="/city">
-            <span>城市</span>
+          <p @click="to">
+            <span v-text='text'></span>
             <img src="./img/xiala@2x.png" />
-          </router-link>
+          </p>
         </div>
       </li>
       <li>
         <p>取还点</p>
         <div>
-          <router-link to="/">
+          <p >
             <span>郑州动物园自助点</span>
-          </router-link>
+          </p>
         </div>
       </li>
     </ul>

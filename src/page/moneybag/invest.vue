@@ -72,41 +72,47 @@ export default {
       show: false,
       active: true,
       value: "",
-      nus: "2030",
+      nus: 2030,
       list: [
         {
           num1: "1000",
           text1: "充值1000元平驾币赠送100积分",
+          num2: 100,
           text2: "赠100元",
           show: true
         },
         {
           num1: "2000",
           text1: "充值2000元平驾币赠送300积分",
+          num2: 300,
           text2: "赠300元",
           show: true
         },
         {
           num1: "3000",
           text1: "充值3000元平驾币赠送500积分",
+          num2: 500,
           text2: "赠500元",
           show: true
         },
         {
           num1: "5000",
           text1: "充值5000元平驾币赠送800积分",
+          num2: 800,
           text2: "赠800元",
           show: true
         },
         {
           num1: "8000",
           text1: "充值8000元平驾币赠送1000积分",
+          num2: 1000,
           text2: "赠1000元",
           show: true
         },
         {
           num1: "10000",
           text1: "充值10000元平驾币赠送1200积分",
+          num2: 1200,
           text2: "赠1200元",
           show: true
         }
@@ -122,7 +128,8 @@ export default {
         });
         this.list[num].show = false;
       }
-       this.$store.commit("add", this.list[num].num1);
+      this.$store.commit("add", this.list[num].num1);
+      this.$store.commit("addscore", this.list[num].num2);
     },
     dele() {
       // this.active = false;
@@ -131,12 +138,11 @@ export default {
       });
     },
     next() {
-       if(this.value===''){
-       this.list.forEach(item => {
-      });
-       }else{
-         this.$store.commit("add2", this.value);
-       }
+      if (this.value === "") {
+        this.list.forEach(item => {});
+      } else {
+        this.$store.commit("add2", this.value);
+      }
     }
   },
   components: {},
@@ -151,12 +157,16 @@ export default {
         item.list = false;
       });
     }
-     let fill = document.getElementsByClassName('van-number-keyboard__close')[0];
-     fill.onclick=()=>{
-        this.active = false;
-      }
-    if(this.value !==''){
+    let fill = document.getElementsByClassName("van-number-keyboard__close")[0];
+    fill.onclick = () => {
       this.active = false;
+    };
+    if (this.value !== "") {
+      this.active = false;
+    };
+    //修改钱
+    if(this.$store.state.num !== ''){
+      this.nus = parseInt(this.$store.state.num) + this.nus;
     }
   }
 };
@@ -279,8 +289,8 @@ export default {
           }
         }
       }
-      /deep/.van-cell{
-        padding: 0 .15rem;
+      /deep/.van-cell {
+        padding: 0 0.15rem;
       }
       /deep/.van-cell__value--alone {
         border: 1px solid #ccc;

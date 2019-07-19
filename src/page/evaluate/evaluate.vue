@@ -1,7 +1,7 @@
 <template>
   <div class="evaluate">
       <div class="common_head">
-        <router-link to="#" class="common_head_icon"></router-link>
+        <router-link to="/datt" class="common_head_icon"></router-link>
         评价
     </div>
     <div class="evaluate-buick">
@@ -49,7 +49,7 @@
     <div class="evaluate-place"></div>
     <div class="evaluate-foot">
         <!-- <div class="evaluate-foot-btn">提交评价</div> -->
-        <router-link to="#" class="evaluate-foot-btn">提交评价</router-link>
+        <router-link to="/evaluatedetails" class="evaluate-foot-btn">提交评价</router-link>
     </div>
   </div>
 </template>
@@ -83,11 +83,11 @@ export default {
     .common_head{
       height: .45rem;
       position: relative;
-    //   margin-top: .2rem;
       font-size: .16rem;
       text-align: center;
       line-height: .45rem;
       color: #222;
+      position: relative;
       .common_head_icon{
           position: absolute;
           left: .15rem;

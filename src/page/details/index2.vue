@@ -1,7 +1,7 @@
 <template>
   <div class="top">
       <mt-header title="订单详情" class="hand">
-        <router-link to="/data" slot="left">
+        <router-link to="/erji" slot="left">
       <mt-button class="button"> <img class="left" src="./img/fanhui@2x.png" alt=""></mt-button>
         </router-link>
       <mt-button class="button" slot="right"><img class="right" src="./img/gengduo@2x.png" alt=""  id="show" @click="show1=!show1" ></mt-button>
@@ -52,7 +52,7 @@
     </div>
     <div  id="hide" v-show="show1" @click="show1=!show1">
          <div class="clear">
-        <router-link to="/datd"><p id="zi">取消订单</p></router-link>
+        <router-link to=""><p id="zi">修改规则</p></router-link>
         <div class="small">
              <span></span>
         </div>
@@ -123,10 +123,12 @@ export default {
     }
     .hao{
         color:#888888;
+        font-size: .12rem;
         /* padding-top: .03rem;
         padding-bottom: .03rem; */
     }
     .gong{
+        font-size: .13rem;
         color:#FFCC00;
     }
     .car{
@@ -190,7 +192,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.69rem;
+            padding-left: 0.25rem;
             width: 1.68rem;
             color:#FFCC00;
             text-align: center;
@@ -200,7 +202,8 @@ export default {
         }
         .time>span:nth-child(3){
             float: right;
-            margin-right: 0.15rem;margin-top: .1rem;
+            margin-right: 0.08rem;
+            margin-top: .1rem;
         }
         .time>span>span{
             font-size:.08rem;

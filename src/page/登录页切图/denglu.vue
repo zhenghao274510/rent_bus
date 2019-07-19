@@ -1,7 +1,7 @@
 <template>
   <div class=".box">
     <div class="top">
-      <mt-header class="text" title>
+      <mt-header class="text" title="登录">
         <router-link to="/" slot="left">
           <mt-button>
            <img class="img" src="./fanhui@2x.png" alt />
@@ -14,18 +14,21 @@
       <div class="box1">
         <img src="./shouji@2x.png" />
         <span>+86</span>
-        <input id="ipt1" type="text" placeholder="请输入手机号" />
+        <input id="ipt1" type="text" placeholder="请输入手机号" v-model="phone" name="phone"/>
       </div>
       <div class="box2">
         <img src="./yanzhengma@2x.png" />
-        <input type="text" placeholder="请输入验证码" />
+        <input type="text" placeholder="请输入验证码" v-model="value2"/>
         <span id="btn" @click="btn">获取验证码</span>
       </div>
       <p>
         <router-link to="/pass"> <span id="p_">用密码登录</span> </router-link>  <router-link to="/pass"><span id="span" style="display:none">密码登陆</span></router-link>
       </p>
-      <button class="btn">登录</button>
+      <!-- <router-link to="/city"> -->
+      <button class="btn"  @click="axios_">登录</button>
+      <!-- </router-link> -->
       <p>
+        <!-- :disabled='active' -->
         登录即已同意
         <span>《服务协议》</span>和
         <span>《服务协议及补充协议》</span>
@@ -35,16 +38,50 @@
 </template>
 
 <script>
+import jsonp from 'jsonp'
 export default {
   data() {
     return {
-        timer:1
+        timer:1,
+        phone:'',
+        value2:'',
+        active:true
     }
   },
   methods: {
+    axios_(){
+      // this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
+      //   console.log(data)
+      // }).catch((err)=>{console.log(err)})
+
+
+        //jsonp请求数据
+        // headers('content-type:text/html;charset=utf-8');
+  
+        // var val='#code#=1234&#company#=pingjia'
+        // var key='2192f0036c60393639df82aad576aec9'
+        // var moban='173881'
+        // var keyword = this.value1;
+        // var baseUrl = "http://v.juhe.cn/sms/send";
+        // var _url = baseUrl + '?mobile='+ keyword + '&tpl_id='+moban +'&tpl_value=' + val +'&key='+ 'key'+'&cb=callback';
+      //  var _url='http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=159690&tpl_value=urlencode&key=2192f0036c60393639df82aad576aec9'
+       
+       jsonp('http://172.25.1.42:8080/register/send?phone=18595646418',(res)=>{
+            callback(res);
+        })
+
+    //注意:callback需挂载到window下
+        window.callback = function(data){
+            console.log(data)
+        }
+    },
+    
+    right(){
+      
+    },
       btn(){
         var inp1=document.getElementById('ipt1').val
-        var inp2=document.getElementById('ipt2')
+        var inp2=document.getElementById('ipt2');
         if(inp1==''){
 
         }
@@ -59,7 +96,7 @@ export default {
             num--;
             if(num<=0){
                 clearInterval(time);
-                b.innerHTML='重新获取验证码';
+                b.innerHTML='重发验证码';
                 num=6;
                 p_.innerHTML='没有收到验证码?';
                 span.style.display='inline'
@@ -76,18 +113,33 @@ export default {
 
       }
   },
+  updated(){
+    if(this.value1!==''&& this.value2!==''){
+      this.active = false
+    }
+  },
   components: {
 
+  },
+  mounted(){
+    this.right();
   }
 }
 </script>
 
 <style scoped lang='less'>
+.mint-header{
+   background-color: #f6f6f6;
+}
 .box {
   display: flex;
   height: 100%;
 }
+input{
+    background-color:#f6f6f6 ;
+}
 .top {
+  background-color: #f6f6f6;
   overflow: hidden;
   // height: .46rem;
   .text {
@@ -100,10 +152,6 @@ export default {
     // width: .22rem;
     height: 0.22rem;
   }
-}
-
-.mint-header {
-  background-color: white;
 }
 .foot {
   font-size: 0.15rem;
@@ -140,6 +188,7 @@ export default {
   }
   .box2 {
     padding: 0.22rem 0 0.18rem 0;
+    overflow: hidden;
     input {
       padding-left: 0.1rem;
     }
@@ -149,8 +198,8 @@ export default {
       text-align: right;
       display: flex;
       white-space: nowrap;
-      color: #ffcc00;
-      justify-content: flex-end;
+      color: #CFCFCF;
+      justify-content: flex-start;
       padding-right: 0;
     }
   }
@@ -159,6 +208,7 @@ export default {
     height: 0.4rem;
     border-radius: 0.075rem;
     color: #ffff;
+    background-color: yellow;
     font-size: 0.18rem;
   }
   p:nth-child(6) {

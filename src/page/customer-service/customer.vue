@@ -3,16 +3,16 @@
       <CustomerHead></CustomerHead>
       <ul>
           <li>
-              <router-link to="/domestic">国内租</router-link>
+              <router-link to="/customer/domestic">国内租</router-link>
           </li>
           <li>
-              <router-link to="/timesharing">分时共享</router-link>
+              <router-link to="/customer/timesharing">分时共享</router-link>
           </li>
           <li>
-              <router-link to="/testdrive">试驾</router-link>
+              <router-link to="/customer/testdrive">试驾</router-link>
           </li>
           <li>
-              <router-link to="/globalrent">全球租</router-link>
+              <router-link to="/customer/globalrent">全球租</router-link>
           </li>
       </ul>
       <router-view></router-view>
@@ -43,10 +43,13 @@ export default {
             display: flex;
             flex-direction: row;
             height: .32rem;
-            // margin-left: -0.4rem;
             margin-top: 0;
             margin-bottom: 0;
             border-bottom: 1px solid #dfdfdf;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            top: .45rem;
             li{
                 flex:1;
                 a{

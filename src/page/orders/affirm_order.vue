@@ -127,7 +127,7 @@
     <div class="confirm_order">
       <router-link to="">
         <div class="suer_con">
-          <p>确认订单</p>
+          <router-link to="/success"><p>确认订单</p></router-link>
         </div>
       </router-link>
     </div>

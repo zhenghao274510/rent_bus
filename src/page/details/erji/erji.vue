@@ -2,7 +2,7 @@
   <div>
       <ul class="big">
         <li class="box"  v-for="(item,index) in shuju" :key="index">
-        <p> <span>订单号：{{ item.hao }}</span> <span class="right">{{ item.right }}</span> </p>
+        <p> <span>订单号：{{ item.hao }}</span> <router-link :to="item.luyou"><span class="right">{{ item.right }}</span></router-link> </p>
         <ul>
           <li class="one">
            <img :src="item.img" alt="">  
@@ -38,11 +38,12 @@ export default {
                 "zheng1":"郑州  郑州郑汴路店",
           
                "img3":require('../img/anniu4-2@2x.png'),
-               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人"
+               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人",
+               "luyou":"/data"
             },
             {
                 "hao":15623758043654,
-                "right":"预定成功",
+                "right":"使用中",
                 "img":require('../img/anniu3-2@2x.png'),
                 "time":"2019-07-07 10:00 至 2019-07-09 10:00 （2天）",
             
@@ -53,11 +54,12 @@ export default {
                 "zheng1":"郑州  郑州郑汴路店",
           
                "img3":require('../img/anniu4-2@2x.png'),
-               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人"
+               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人",
+               "luyou":"/date"
             },
             {
                 "hao":15623758043654,
-                "right":"预定成功",
+                "right":"已取消",
                 "img":require('../img/anniu3-2@2x.png'),
                 "time":"2019-07-07 10:00 至 2019-07-09 10:00 （2天）",
             
@@ -68,11 +70,12 @@ export default {
                 "zheng1":"郑州  郑州郑汴路店",
           
                "img3":require('../img/anniu4-2@2x.png'),
-               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人"
+               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人",
+               "luyou":"/details"
             },
             {
                 "hao":15623758043654,
-                "right":"预定成功",
+                "right":"已完成",
                 "img":require('../img/anniu3-2@2x.png'),
                 "time":"2019-07-07 10:00 至 2019-07-09 10:00 （2天）",
             
@@ -83,7 +86,8 @@ export default {
                 "zheng1":"郑州  郑州郑汴路店",
           
                "img3":require('../img/anniu4-2@2x.png'),
-               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人"
+               "paizi":"丰田凯美瑞 三箱 2.0T自动 乘坐5人",
+               "luyou":"/datt"
             }
         ]
 
@@ -106,6 +110,7 @@ export default {
 }
  .box{
         width: 100%;
+        background-color: #fff;
         /* height: 100%; */
         font-size: 0;
         /* overflow: visible; */

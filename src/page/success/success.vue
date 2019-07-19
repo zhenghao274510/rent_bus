@@ -6,8 +6,8 @@
       <div class="success-text">芝麻信用700分且通过综合评估，可免车辆和违章押金</div>
       <!-- <div class="success-btn1">芝麻信用授权</div>
       <div class="success-btn2">查看订单</div> -->
-      <router-link class="success-btn1" to="payment">芝麻信用授权</router-link>
-      <router-link class="success-btn2" to="">查看订单</router-link>
+      <router-link class="success-btn1" to="">芝麻信用授权</router-link>
+      <router-link class="success-btn2" to="/data">查看订单</router-link>
   </div>
 </template>
 

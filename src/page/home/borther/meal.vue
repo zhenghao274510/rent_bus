@@ -21,7 +21,7 @@
         <ul>
           <li>
             <div class="left">
-              <img src="./img/up.png" alt />
+              <img src="./img/up.png" alt/>
               <span @click="from" v-text="text"></span>
               <img src="./../img/xiala@2x.png" alt />
             </div>
@@ -29,31 +29,32 @@
               <span>郑州动物园自助点</span>
               <span>该门店仅支持自助还车</span>
             </div>
-            <div class="right" @click="one">
-              <span :class="show?'right active':''">上门</span>
-              <span :class="show?'':'reach active'">到店</span>
+            <div class="right">
+              <span id="door" :class="{door:flay1}" @click="flay1=!flay1">上门</span>
+              <span id="store" :class="{store:!flay1}" @click="flay1=false">到店</span>
             </div>
           </li>
           <li>
             <div class="left">
-              <img src="./img/up.png" alt />
-              <span @click="to" v-text='text1'></span>
+             <img src="./img/down.png" alt />
+              <span @click="to" v-text="text1"></span>
               <img src="./../img/xiala@2x.png" alt />
             </div>
             <div class="c_center">
               <span>郑州动物园自助点</span>
               <span>该门店仅支持自助还车</span>
             </div>
-            <div class="right" @click="two">
-              <span :class="show1?'right active':''" >上门</span>
-              <span :class="show1?'':'reach active'">到店</span>
+            <div class="right">
+              <span id="door" :class="{door:flay2}" @click="flay2=!flay2">上门</span>
+              <span id="store" :class="{store:!flay2}" @click="flay2=false">到店</span>
             </div>
           </li>
         </ul>
       </div>
       <Wtime></Wtime>
       <div class="btn">
-        <button>立即选车</button>
+        <router-link to="/type">
+        <button>立即选车</button></router-link>
       </div>
     </section>
   </div>
@@ -64,39 +65,31 @@ import Wtime from "./../child/time";
 export default {
   data() {
     return {
-      text:'郑州',
-      text1:'郑州',
-      show:false,
-      show1:false
+      text: "郑州",
+      text1: "郑州",
+      flay2: true,
+      flay1: true,
     };
   },
   methods: {
-      from(){
-          console.log('1');
-          this.$store.commit('addcity','city1');
-          this.$router.push('/city');
-      },
-      to(){
-          console.log('2');
-          this.$store.commit('addcity','city2');
-          this.$router.push('/city');
-      },
-      one(){
-        this.show = !this.show;
-      },
-      two(){
-        this.show1 = !this.show1;
-      }
+    from() {
+      this.$store.commit("addcity", "city1");
+      this.$router.push("/city");
+    },
+    to() {
+      this.$store.commit("addcity", "city2");
+      this.$router.push("/city");
+    }
   },
   components: { Wtime },
-  mounted(){
-     if(this.$store.state.city1!==''){
-        this.text = this.$store.state.city1;
-      }
-      if(this.$store.state.city2!==''){
-        this.text1 = this.$store.state.city2;
-      } 
-  }
+  mounted() {
+    if (this.$store.state.city1 !== "") {
+      this.text = this.$store.state.city1;
+    }
+    if (this.$store.state.city2 !== "") {
+      this.text1 = this.$store.state.city2;
+    }
+  },
 };
 </script>
 
@@ -137,8 +130,8 @@ export default {
       a {
         display: inline-block;
         padding: 0.1rem 0.25rem;
-        &:nth-child(1){
-            color: #ffcc00;
+        &:nth-child(1) {
+          color: #ffcc00;
         }
       }
     }
@@ -181,7 +174,7 @@ export default {
               width: 1.3rem;
               height: 0.18rem;
               font-size: 0.12rem;
-              padding: 0 .01rem;
+              padding: 0 0.01rem;
               transform: scale(0.7);
               color: #fff;
               text-align: center;
@@ -191,29 +184,35 @@ export default {
           }
           .right {
             font-size: 0.12rem;
-            span {
-              color: #666;
+            width: 0.76rem;
+            height: 100%;
+            background: #efefef;
+            display: flex;
+            border-radius: 0.5rem;
+            #door {
               display: inline-block;
-              text-align: center;
               width: 0.38rem;
-              height: 0.2rem;
-              line-height: 0.2rem;
-              background: #EFEFEF;
-              border-radius: .5rem;
-              padding: 0 .01rem;
+              color: #666;
+              border-radius: 0.5rem;
+              text-align: center;
+              // margin-right:-.11rem;
             }
-            .reach {
-              margin-left: -.11rem;
-            }
-            .right{
-              margin-right: -.11rem;
-            }
-            .active {
-              // background: #ffcc00;
-              color: #fff;
-              z-index: 999;
+            #store {
+              display: inline-block;
+              width: 0.38rem;
+              color: #666;
+              border-radius: 0.5rem;
+              text-align: center;
             }
           }
+          .door {
+              background: #ffcc00;
+              color: #fff !important;
+            }
+            .store {
+              background: #ffcc00;
+              color: #fff !important;
+            }
         }
       }
     }
@@ -222,8 +221,8 @@ export default {
       background: #fff;
       display: flex;
       align-items: center;
+      justify-content: center;
       button {
-        // display: block;
         width: 3.45rem;
         height: 0.4rem;
         margin: 0.1rem auto;

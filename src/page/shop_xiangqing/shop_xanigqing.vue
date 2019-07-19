@@ -2,7 +2,7 @@
   <div class="box">
 <div class="top">
       <mt-header class="text" title='门店详情'>
-        <router-link to="/" slot="left">
+        <router-link to="/choseshop" slot="left">
           <mt-button>
            <img class="img" src="./img/fanhui@2x.png" alt />
           </mt-button>
@@ -40,7 +40,8 @@
         </p>
         </div>
         <p>办理便捷，服务态度很好，车辆干净整洁</p>
-        <p>查看全部22589条评论></p>
+        <router-link to="">
+        <p class="p4">查看全部22589条评论></p></router-link>
     </div>
     <div class="foot">
         <button class="btn">选此门店</button>
@@ -68,6 +69,9 @@ export default {
 // #app{
 //     background:rgba(246,246,246,1);
 // }
+.p4{
+        text-align: right;
+}
 .box{
     font-size: .15rem;
 }
