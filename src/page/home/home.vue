@@ -4,7 +4,7 @@
      <!-- home 顶部 -->
      <div class="home_top">
          <a href="#" class="back" @click='mine'><span class="self icon"></span></a> <span class="logo"></span>
-          <div class="twoicon"><a href="#"><i  class="search"></i></a> <a href="#"><i class="see"></i></a></div>
+          <div class="twoicon"><a href="#/choseshop" @click="tochoose"><i  class="search"></i></a> <a href="#"><i class="see"></i></a></div>
      </div>
      <!-- home 导航 -->
      <ul class="home_nav">
@@ -29,7 +29,7 @@ import Mine from './navigation'
 export default{
     data(){
         return{
-
+           towhere:true,
           transitionName:'',
           //  控制我的信息显示隐藏
           show:false,
@@ -50,6 +50,12 @@ export default{
    Mine
     },
   methods:{
+    // 控制跳转方向
+    tochoose(){
+      this.towhere=false;
+       this.$store.commit('changeor',this.towhere)
+
+    },
       //  控制影藏
       mine(){
         this.show=true;
@@ -150,7 +156,7 @@ export default{
               .search{
                 width: .22rem;
                 height: .22rem;
-            background: url('./img/mendianchaxen@2x.png') no-repeat;
+            background: url('./img/sousuo@2x.png') no-repeat;
           background-size: 100% 100%;
           }
           .see{

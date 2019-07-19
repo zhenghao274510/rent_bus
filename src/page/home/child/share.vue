@@ -16,7 +16,8 @@ export default {
     }
   },
   mounted () {
-   
+
+
   },
   methods: {
 
@@ -28,5 +29,6 @@ export default {
 </script>
 
 <style scoped lang='less'>
+
 
 </style>

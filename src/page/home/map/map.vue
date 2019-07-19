@@ -1,4 +1,7 @@
 <template>
+<!-- <div class="map"> -->
+
+
     <baidu-map
      :center="center"
      :zoom="zoom"
@@ -7,15 +10,17 @@
      class="map"
      @ready="handler">
        <!-- <bm-local-search :keyword="keyword" :auto-viewport="true" :location="location"></bm-local-search> -->
-     <bm-geolocation anchor="BMAP_ANCHOR_TOP_LEFT" :showAddressBar="false" :autoLocation="true"></bm-geolocation>
-     <bm-marker :position="center" :dragging="true" animation="BMAP_ANIMATION_BOUNCE" 
-     :icon="{url: './static/homeimg/dingweiweizhi@2x.png', size: {width: 30, height: 30}}">
+     <bm-geolocation anchor="BMAP_ANCHOR_TOP_LEFT"></bm-geolocation>
+     <bm-marker :position="center" :dragging="true" animation="BMAP_ANIMATION_BOUNCE"
+     :icon="{url: './static/homeimg/dingweiweizhi@2x.png', size: {width: 30, height: 50}}">
+
 
 
 
 
     </bm-marker>
    </baidu-map>
+   <!-- </div> -->
 </template>
 
 <script>
@@ -45,10 +50,10 @@ export default {
 
 //点击获取到当前经纬度
 getClickInfo(e) {
-  // console.log(e.point.lng);
-  // console.log(e.point.lat);
   this.center.lng = e.point.lng;
   this.center.lat = e.point.lat;
+
+
 },
 //双向绑定经纬度以及缩放尺寸
 syncCenterAndZoom(e) {
@@ -63,10 +68,9 @@ baidumap(){
  this.baiduDevicelocationy = this.center.lat
 },
 
-  },
-  components: {
-
   }
+
+
 }
 </script>
 
@@ -74,5 +78,6 @@ baidumap(){
 .map{
   height: 2.5rem;
   margin-top: .76rem;
+ 
 }
 </style>

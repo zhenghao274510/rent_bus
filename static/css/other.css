@@ -3,25 +3,47 @@
 .slide-right-leave-active,
  .slide-left-enter-active,
  .slide-left-leave-active {
-    /* will-change: transform; */
+      /* will-change: transform; */
       transition: all 500ms;
-        /* position: absolute; */
-      }
+      /* position: absolute; */
+      -webkit-transition: all 500ms;
+      -moz-transition: all 500ms;
+      -ms-transition: all 500ms;
+      -o-transition: all 500ms;
+      -webkit-transition: all 500ms;
+
+}
 .slide-right-enter {
-  opacity: 0;
-   /* transform: translate3d(-100%, 0, 0); */
- }
+   opacity: 0;
+   /* transform: translate3d(-100%, 0, 0);
+   -webkit-transform: translate3d(-100%, 0, 0);
+   -moz-transform: translate3d(-100%, 0, 0);
+   -ms-transform: translate3d(-100%, 0, 0);
+   -o-transform: translate3d(-100%, 0, 0); */
+}
  .slide-right-leave-active {
-   opacity: 1;
-   /* transform: translate3d(100%, 0, 0); */
- }
+ opacity: 1;
+   /* transform: translate3d(100%, 0, 0);
+   -webkit-transform: translate3d(100%, 0, 0);
+   -moz-transform: translate3d(100%, 0, 0);
+   -ms-transform: translate3d(100%, 0, 0);
+   -o-transform: translate3d(100%, 0, 0); */
+}
  .slide-left-enter {
    opacity: 1;
-   /* transform: translate3d(100%, 0, 0); */
- }
+   /* transform: translate3d(100%,0, 0);
+   -webkit-transform: translate3d(100%,0, 0);
+   -moz-transform: translate3d(100%,0, 0);
+   -ms-transform: translate3d(100%,0, 0);
+   -o-transform: translate3d(100%,0, 0); */
+}
  .slide-left-leave-active {
    opacity: 0;
-   /* transform: translate3d(-100%, 0, 0); */
+  /* transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+   -moz-transform: translate3d(-100%, 0, 0);
+   -ms-transform: translate3d(-100%, 0, 0);
+   -o-transform: translate3d(-100%, 0, 0); */
  }
   /* 修改框架默认样式 */
   .mint-swipe-indicator {
@@ -39,5 +61,35 @@
 /* .anchorBL{
   display: none
 } */
+/* 地图样式 */
+.BMap_geolocationIcon{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-image: url('./../homeimg/zhuanghaodingwei@2x.png') !important;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+
+}
+.BMap_geolocationContainer{
+  border-radius: 50% !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -ms-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+}
+.BMap_geolocationIcon:hover{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-image: url('./../homeimg/ziyuan@2x.png') !important;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+
+}
 
 
