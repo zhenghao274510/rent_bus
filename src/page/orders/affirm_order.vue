@@ -8,11 +8,11 @@
     </mt-header>
     <!-- 车型 -->
     <div class="vehicle_model">
-      <img slot="icon" src="./img/61-1@2x.png" width="24" height="24" name='carPicture'/>
+      <img slot="icon" src="./img/61-1@2x.png" width="24" height="24" name="carPicture" />
       <div class="car_name">
-        <span class="car_names" name='carBrand'>丰田凯瑞美</span>
+        <span class="car_names" name="carBrand">丰田凯瑞美</span>
         <br />
-        <span class="car_cfig" name='carLease'>三箱5座&nbsp;|&nbsp;2.0T自动</span>
+        <span class="car_cfig" name="carLease">三箱5座&nbsp;|&nbsp;2.0T自动</span>
       </div>
     </div>
     <!-- 车地图 -->
@@ -20,8 +20,8 @@
       <li @click="car_maps=false">
         <a href="javaScript:;">
           <div class="img">
-            <img src="./img/yuandian1@2x.png" v-if="car_maps"/>
-            <img src="./img/yuandian2@2x.png" v-else/>
+            <img src="./img/yuandian1@2x.png" v-if="car_maps" />
+            <img src="./img/yuandian2@2x.png" v-else />
           </div>
 
           <div class="car_site">
@@ -34,8 +34,8 @@
       <li @click="car_maps=true">
         <a href="javaScript:;">
           <div class="img">
-            <img src="./img/yuandian1@2x.png" v-if="!car_maps"/>
-            <img src="./img/yuandian2@2x.png" v-else/>
+            <img src="./img/yuandian1@2x.png" v-if="!car_maps" />
+            <img src="./img/yuandian2@2x.png" v-else />
           </div>
           <div class="car_site">
             <p>郑州郑州郑汴路店</p>
@@ -51,8 +51,8 @@
       <ul class="cap_detal">
         <li>
           <p>车辆租赁及服务费</p>
-          <span class="cap_num">150x2</span>
-          <span class="cap_price">{{data.cap_price1}}元</span>
+          <span class="cap_num">{{prices.insurance}}x{{days}}</span>
+          <span class="cap_price" name="insurance">{{data.insurance}}元</span>
         </li>
         <li>
           <p>
@@ -60,13 +60,13 @@
             <img src="./img/wenhao@2x.png" class="question" @click="basic_service" />
           </p>
           <Basicservice v-show="$store.state.basic_service"></Basicservice>
-          <span class="cap_num">50x2</span>
-          <span class="cap_price">{{data.cap_price2}}元</span>
+          <span class="cap_num">{{prices.royalty}}x{{days}}</span>
+          <span class="cap_price" name="royalty">{{data.royalty}}元</span>
         </li>
         <li>
           <p>车辆整备费</p>
           <span class="cap_num"></span>
-          <span class="cap_price">20元</span>
+          <span class="cap_price" name="charge">{{data.charge}}元</span>
         </li>
         <li>
           <p class="choss">选择服务</p>
@@ -80,13 +80,13 @@
             <img src="./img/wenhao@2x.png" class="question" @click="enjoyable_service" />
           </p>
           <Enjoyable v-show="$store.state.enjoyable_service"></Enjoyable>
-          <span class="cap_num">50x2</span>
-          <span class="cap_price">{{data.cap_price4}}元</span>
+          <span class="cap_num">{{prices.oilCost}}x{{days}}</span>
+          <span class="cap_price" name="oilCost">{{data.oilCost}}元</span>
         </li>
       </ul>
       <div class="rent">
         <p>租金合计</p>
-        <span>{{sum}}元</span>
+        <span name="money">{{sum}}元</span>
       </div>
     </div>
     <!-- 违约金 -->
@@ -125,7 +125,7 @@
     </div>
     <!-- 确认订单 -->
     <div class="confirm_order">
-      <router-link to="/">
+      <router-link to="">
         <div class="suer_con">
           <p>确认订单</p>
         </div>
@@ -142,16 +142,21 @@ export default {
   data() {
     return {
       //车地图
-      car_maps:false,
+      car_maps: false,
       index: 1,
       arr: ["去绑卡免押金", "芝麻信用免押金", "支付押金"],
+      //基本费用天数
+      days: 2,
+      //基本费用单价
+      prices: { insurance: 150, royalty: 50, oilCost: 50 },
+      //基本费用最右一栏
       data: {
-        cap_price1: 300,
-        cap_price2: 100,
-        cap_price3: 20,
-        cap_price4: 100
-      },
-      cap_prhe: 0
+        insurance: 0,
+        royalty: 0,
+        charge: 20,
+        oilCost: 0,
+        money: 0
+      }
     };
   },
   methods: {
@@ -176,19 +181,22 @@ export default {
   computed: {
     sum() {
       let add = this.$store.state.affirm_order;
+      this.data.insurance = this.prices.insurance * this.days;
+      this.data.royalty = this.prices.royalty * this.days;
+      this.data.oilCost = this.prices.oilCost * this.days;
       if (!add) {
-        this.cap_prhe = Number(
-          this.data.cap_price1 +
-            this.data.cap_price2 +
-            this.data.cap_price3 +
-            this.data.cap_price4
+        this.data.cap_prhe = Number(
+          this.data.insurance +
+            this.data.royalty +
+            this.data.charge +
+            this.data.oilCost
         );
       } else {
-        this.cap_prhe = Number(
-          this.data.cap_price1 + this.data.cap_price2 + this.data.cap_price3
+        this.data.cap_prhe = Number(
+          this.data.insurance + this.data.royalty + this.data.charge
         );
       }
-      return this.cap_prhe;
+      return this.data.cap_prhe;
     }
   }
 };

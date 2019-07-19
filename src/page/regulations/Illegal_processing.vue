@@ -3,9 +3,9 @@
   <div class="Illegal_processing">
     <!-- 头部 -->
     <Branch :title="title" style="border:none">
-      <router-link to="/home" class="leftImg" slot="left">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./../Main_branch/img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
       <router-link slot="right" class="rightImg" to="/rule_description">
         <p>规则说明</p>
       </router-link>
@@ -36,7 +36,13 @@ export default {
       title: "违章处理"
     };
   },
-  methods: {},
+  methods: {
+     wein(){
+       let arr=this.$store.state.homedata.myarr;
+       let ind=this.$store.state.homedata.index;
+       this.$router.push(arr[ind]);
+    }
+  },
   mounted() {
     this.$router.push("/Illegal_processing/pending");
   },

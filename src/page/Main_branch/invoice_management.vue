@@ -2,9 +2,9 @@
   <div class="invoice">
     <!-- 头部 -->
     <Branch :title="title">
-      <router-link to='/home' class="leftImg" slot="left">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
     </Branch>
     <!-- 内容 -->
     <router-link to="/make_invoice">
@@ -30,6 +30,11 @@ export default {
     };
   },
   methods: {
+     wein(){
+       let arr=this.$store.state.homedata.myarr;
+       let ind=this.$store.state.homedata.index;
+       this.$router.push(arr[ind]);
+    }
   },
   components: {
     Setinvoce,Branch
