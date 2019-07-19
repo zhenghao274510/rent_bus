@@ -1,14 +1,14 @@
 <template>
   <div class="top">
       <mt-header title="订单详情" class="hand">
-        <router-link to="/" slot="left">
+        <router-link to="/erji" slot="left">
       <mt-button class="button"> <img class="left" src="./img/fanhui@2x.png" alt=""></mt-button>
         </router-link>
       <mt-button class="button" slot="right"><img class="right" src="./img/gengduo@2x.png" alt=""  id="show" @click="show1=!show1" ></mt-button>
       </mt-header>
     <div class="box">
         <mt-header  class="hand2">
-  <router-link to="/" slot="left">
+  <router-link to="" slot="left">
     <mt-button ><span  class="hao">订单号：15623758043654</span></mt-button>
   </router-link>
   <mt-button slot="right"  class="gong">使用中</mt-button>
@@ -68,7 +68,7 @@
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
         <div class="clear">
-        <router-link to="/datt"><p id="zi">取消订单</p></router-link>
+        <router-link to=""><p id="zi">修改规则</p></router-link>
         <div class="small">
              <span></span>
         </div>
@@ -140,11 +140,13 @@ export default {
     }
     .hao{
         color:#888888;
+        font-size: .12rem;
         /* padding-top: .03rem;
         padding-bottom: .03rem; */
     }
     .gong{
         color:#FFCC00;
+        font-size: .13rem;
     }
     .car{
         font-size:0;

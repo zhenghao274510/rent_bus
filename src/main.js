@@ -40,7 +40,7 @@ Vue.use(Vant);
 
 //引入axios
 import axios from 'axios'
-Vue.prototype.$axios=axios;
+Vue.prototype.axios=axios;
 // Vue.use(axios)
 
 

@@ -39,7 +39,7 @@
               <div class='trylist'>
                    <div class="try_title">
                    <span>试驾车型</span>
-                   <router-link to="">郑州 <i class="down"></i></router-link>
+                   <router-link to="/city">郑州 <i class="down"></i></router-link>
                     </div>
                     <ul>
                       <li class="tryitem">

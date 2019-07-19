@@ -14,7 +14,7 @@
       <div class="box1">
         <img src="./shouji@2x.png" />
         <span>+86</span>
-        <input id="ipt1" type="text" placeholder="请输入手机号" v-model="value1"/>
+        <input id="ipt1" type="text" placeholder="请输入手机号" v-model="phone" name="phone"/>
       </div>
       <div class="box2">
         <img src="./yanzhengma@2x.png" />
@@ -38,11 +38,12 @@
 </template>
 
 <script>
+import jsonp from 'jsonp'
 export default {
   data() {
     return {
         timer:1,
-        value1:'',
+        phone:'',
         value2:'',
         active:true
     }
@@ -52,6 +53,27 @@ export default {
       // this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
       //   console.log(data)
       // }).catch((err)=>{console.log(err)})
+
+
+        //jsonp请求数据
+        // headers('content-type:text/html;charset=utf-8');
+  
+        // var val='#code#=1234&#company#=pingjia'
+        // var key='2192f0036c60393639df82aad576aec9'
+        // var moban='173881'
+        // var keyword = this.value1;
+        // var baseUrl = "http://v.juhe.cn/sms/send";
+        // var _url = baseUrl + '?mobile='+ keyword + '&tpl_id='+moban +'&tpl_value=' + val +'&key='+ 'key'+'&cb=callback';
+      //  var _url='http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=159690&tpl_value=urlencode&key=2192f0036c60393639df82aad576aec9'
+       
+       jsonp('http://172.25.1.42:8080/register/send?phone=18595646418',(res)=>{
+            callback(res);
+        })
+
+    //注意:callback需挂载到window下
+        window.callback = function(data){
+            console.log(data)
+        }
     },
     
     right(){
