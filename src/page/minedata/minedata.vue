@@ -1,14 +1,14 @@
 <template>
   <div class="minedata">
     <div class="common_head">
-        <router-link to="/identity" class="common_head_icon"></router-link>
+        <router-link to="/home" class="common_head_icon"></router-link>
         个人资料
     </div>
     <div class="minedata-authentication">
         <img src="./img/shenfenzheng@2x.png" class="img1">
         <span class="text1">身份认证</span>
         <span class="text2">已完成</span>
-        <img src="./img/fanhui-2@2x.png" class="img2">
+        <router-link to="/identity"><img src="./img/fanhui-2@2x.png" class="img2"></router-link>
     </div>   
     <div class="minedata-authentication">
         <img src="./img/jiashizheng@2x.png" class="img1">
@@ -50,6 +50,7 @@ export default {
             text-align: center;
             line-height: .45rem;
             color: #222;
+            background-color: #fff;
             position: relative;
             border-bottom: 1px solid #dfdfdf;
             .common_head_icon{
@@ -63,6 +64,7 @@ export default {
             }
         }
         .minedata-authentication{
+            background-color: #fff;
             height: .45rem;
             position: relative;
             border-bottom: 1px solid #dfdfdf;

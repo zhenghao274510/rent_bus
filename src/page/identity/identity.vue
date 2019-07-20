@@ -1,7 +1,7 @@
 <template>
   <div class="identity">
     <div class="common_head">
-        <router-link to="/evaluatedetails" class="common_head_icon"></router-link>
+        <router-link to="/minedata" class="common_head_icon"></router-link>
         身份认证
     </div>
     <div class="identity-authentication">
@@ -58,6 +58,7 @@ export default {
 <style scoped lang="less">
     .identity{
         .common_head{
+            background-color: #fff;
             height: .45rem;
             font-size: .16rem;
             text-align: center;
@@ -76,6 +77,7 @@ export default {
             }
         }
         .identity-authentication{
+            background-color: #fff;
             height: .45rem;
             position: relative;
             border-bottom: 1px solid #dfdfdf;

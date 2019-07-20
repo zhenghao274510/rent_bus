@@ -46,6 +46,10 @@ export default {
             margin-top: 0;
             margin-bottom: 0;
             border-bottom: 1px solid #dfdfdf;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            top: .45rem;
             li{
                 flex:1;
                 a{

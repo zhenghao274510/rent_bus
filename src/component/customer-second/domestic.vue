@@ -35,7 +35,7 @@
       <div class="domestic-foot">
           <!-- <div class="domestic-foot-left">客服热线</div>
           <div class="domestic-foot-right">在线客服</div> -->
-          <router-link to="/evaluate" class="domestic-foot-left">客服热线</router-link>
+          <router-link to="#" class="domestic-foot-left">客服热线</router-link>
           <router-link to="#" class="domestic-foot-right">在线客服</router-link>
       </div>
   </div>
@@ -61,6 +61,8 @@ export default {
     .domestic{
         margin-top: 0;  
         background: #f6f6f6;
+        padding-top: .77rem;
+        padding-bottom: .55rem;
         ul{
             list-style: none;
             margin: 0;
@@ -96,6 +98,8 @@ export default {
             background: #fff;
             display: flex;
             flex-direction: row;
+            position: fixed;
+            bottom: 0;
             .domestic-foot-left{
                 text-decoration: none;
                 width: 1.2rem;

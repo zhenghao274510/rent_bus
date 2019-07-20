@@ -72,7 +72,7 @@ export default {
       show: false,
       active: true,
       value: "",
-      nus: "2030",
+      nus: 2030,
       list: [
         {
           num1: "1000",
@@ -163,6 +163,10 @@ export default {
     };
     if (this.value !== "") {
       this.active = false;
+    };
+    //修改钱
+    if(this.$store.state.num !== ''){
+      this.nus = parseInt(this.$store.state.num) + this.nus;
     }
   }
 };

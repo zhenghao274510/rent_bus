@@ -2,9 +2,9 @@
   <div class="setting">
     <!-- 头部 -->
     <Branch :title="title">
-      <router-link to="/home" class="leftImg" slot="left">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
     </Branch>
     <!-- 内容 -->
     <router-link to>

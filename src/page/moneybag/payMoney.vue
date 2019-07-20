@@ -91,6 +91,10 @@ export default {
     }
   },
   components: {},
+  mounted(){
+    // console.log(this.payList[0].vg)
+    this.payList[0].vg = true;
+  },
   filters: {
     num1: function(num) {
       return "￥" + num;

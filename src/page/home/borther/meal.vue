@@ -53,7 +53,8 @@
       </div>
       <Wtime></Wtime>
       <div class="btn">
-        <button>立即选车</button>
+        <router-link to="/type">
+        <button>立即选车</button></router-link>
       </div>
     </section>
   </div>
@@ -220,6 +221,7 @@ export default {
       background: #fff;
       display: flex;
       align-items: center;
+      justify-content: center;
       button {
         width: 3.45rem;
         height: 0.4rem;

@@ -3,7 +3,8 @@
     <div class="navigation_main">
       <div class="hader">
         <a href="javaScript:;" class="toux" @click="changeph">
-          <img src="./img/touxiang@2x.png" />
+          <router-link to="/minedata">
+          <img src="./img/touxiang@2x.png" /></router-link>
         </a>
         <p>名字</p>
         <div>
