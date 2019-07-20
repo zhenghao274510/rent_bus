@@ -61,7 +61,7 @@
         <router-link to="/meal"><i class="icon super"></i><p>超值套餐</p></router-link>
       </li>
       <li>
-        <router-link to=""><i class="icon car"></i><p>顺风车</p></router-link>
+        <router-link to="/ride_sharing"><i class="icon car"></i><p>顺风车</p></router-link>
       </li>
       <li>
         <router-link to="/choseshop"><i class="icon shop"></i><p>门店查询</p></router-link>

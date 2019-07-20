@@ -2,7 +2,7 @@
   <div class="payment">
       <div class="payment-head">
           <!-- <div class="payment-head-icon"></div> -->
-          <router-link to="#" class="payment-head-icon"></router-link>
+          <router-link to="/data" class="payment-head-icon"></router-link>
           支付订单</div>
       <div class="payment-details">
           <div class="details1">丰田凯美瑞 订单详情 <img src="./img/zhifufanhui-1@2x.png"></div>

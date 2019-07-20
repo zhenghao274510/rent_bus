@@ -2,8 +2,8 @@
   <div class="affirm_order">
     <!-- 头部 -->
     <mt-header title="确认订单" class="header">
-      <router-link to="/" slot="left">
-        <img src="./img/fanhui@2x.png" />
+      <router-link to="" slot="left">
+        <img @click="fn" src="./img/fanhui@2x.png" />
       </router-link>
     </mt-header>
     <!-- 车型 -->
@@ -127,7 +127,7 @@
     <div class="confirm_order">
       <router-link to="">
         <div class="suer_con">
-          <router-link to="/success"><p>确认订单</p></router-link>
+          <router-link to="/success"><p @click="add">确认订单</p></router-link>
         </div>
       </router-link>
     </div>
@@ -135,6 +135,7 @@
 </template>
 
 <script>
+import jsonp from 'jsonp'
 import AffirmBut from "./affirm_order_butt";
 import Basicservice from "./basic_service";
 import Enjoyable from "./enjoyable_service";
@@ -160,6 +161,19 @@ export default {
     };
   },
   methods: {
+    add(){
+  //  jsonp('http://172.25.5.215:8080/ordermessage/save?money='+this.data.money,(res)=>{
+  //           callback(res);
+  //       })
+
+  //   //注意:callback需挂载到window下
+  //       window.callback=(res)=>{
+  //         console.log(res)
+  //       }
+    },
+    fn(){
+      this.$router.go(-1)
+    },
     //选择服务
     tag(num) {
       this.index = num;

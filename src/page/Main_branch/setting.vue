@@ -19,7 +19,8 @@
     <!-- 底部 -->
     <div class="foot">
       <div class="footer">
-        <p>退出登录</p>
+        <router-link to="/pass">
+        <p>退出登录</p></router-link>
       </div>
     </div>
   </div>

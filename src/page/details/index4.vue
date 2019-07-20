@@ -63,7 +63,7 @@
     <div class="foot">
         <!-- <p>车辆正在准备中，完成支付可节省取车时间</p> -->
         <router-link to="/evaluate"><button>立即评价</button></router-link>
-        <p></p>
+        <!-- <p></p> -->
     </div>
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
@@ -113,7 +113,7 @@ export default {
         color:black;
         height: .33rem;
         font-size:.15rem;
-        margin-top: .1rem;
+        /* margin-top: .1rem; */
         /* margin-bottom: .11rem; */
         border-bottom:0.01rem solid #cccccc;
         
@@ -151,7 +151,7 @@ export default {
     .car{
         font-size:0;
         border-bottom: .08rem solid #f6f6f6;
-        
+        background-color: #fff;        
     }
     .car>img{
         display: inline-block;
@@ -195,6 +195,7 @@ export default {
         }
         .time{
             font-size:0;
+        background-color: #fff;
             border-bottom: 1px solid #DFDFDF;
         }
         .time>span{
@@ -332,7 +333,7 @@ export default {
         }
         #p{
             height: 0.3rem;
-            border-bottom:.08rem solid #f6f6f6;
+            border-bottom:.08rem solid #fff;
         }
         .foot{
             font-size:.16rem;
@@ -347,7 +348,7 @@ export default {
             color:#888888;
         }
         .foot>p:last-child{
-             height: 0.1rem;
+             /* height: 0.1rem; */
         }
         /* .foot>a{
             padding-bottom: .3rem;
@@ -406,5 +407,8 @@ export default {
             left: 0;
             background: rgba(102, 102, 102,.3);
 
+        }
+        .lie,.black{
+        background-color: #fff;
         }
 </style>

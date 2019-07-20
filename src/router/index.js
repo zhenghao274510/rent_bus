@@ -31,6 +31,7 @@ import Evaluate from './../page/evaluate/evaluate.vue'
 import Minedata from './../page/minedata/minedata.vue'
 import Identity from './../page/identity/identity.vue'
 import Evaluatedetails from './../page/evaluatedetails/evaluatedetails.vue'
+import pingjiaduo from './../page/evaluatedetails/pingjiaduo.vue'
 
 import Domestic from './../component/customer-second/domestic.vue'
 import Timesharing from './../component/customer-second/timesharing.vue'
@@ -106,6 +107,11 @@ export default new Router({
       path: '/identity',
       name: 'Identity',
       component: Identity
+    },
+    {
+      path: '/pingjiaduo',
+      name: 'pingjiaduo',
+      component: pingjiaduo
     },
     {
       path: '/evaluatedetails',
