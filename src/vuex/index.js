@@ -30,11 +30,17 @@ export default new vuex.Store({
       spto: 2,
       spfrom: 2,
       lon: false,
+      //  决定 显示门店 还是 选择门店
+      toshop:false,
       myarr: ['/home/china', '/home/share', '/home/try', '/home/allearth', '/home/long']
 
     },
   },
   mutations: {
+    // 跳转页面定向
+    changeor(state,val){
+       state.homedata.toshop=val;
+    },
     //  跳回数据
     changeback(state, val) {
       state.back -= val;
@@ -45,6 +51,12 @@ export default new vuex.Store({
     },
     changedir(state, val) {
       state.homedata.dir = val;
+    },
+    changeto(state, val) {
+      state.homedata.to = val;
+    },
+    changefrom(state, val) {
+      state.homedata.from = val;
     },
     changecome(state, val) {
       if (state.homedata.dir == 'to') {
@@ -66,6 +78,13 @@ export default new vuex.Store({
         state.homedata.spfrom = val;
       }
     },
+    changhomespanto(state, val){
+      state.homedata.spto = val;
+    },
+    changhomespanfrom(state, val){
+      state.homedata.spfrom = val;
+    },
+
     //确认订单fan
     affirm_orders(state, value) {
       state.affirm_order = value;

@@ -10,6 +10,7 @@ import Long from './../page/home/child/long'
 import Guide from './../page/guide/guide'
 import Star from './../page/guide/star'
 import Choseshop from './../page/choseshop/choseshop'
+import Searchshop from './../page/choseshop/Searchshop'
 //  长租子路由
 import Year from './../page/home/child/longzu/annual_rental'
 import Chang from './../page/home/child/longzu/business_car'
@@ -156,57 +157,33 @@ export default new Router({
       path: '/home',
       name: '',
       component: Home,
+      children:[
+      { path: 'china', name: 'china', component: China },
+      { path: 'allearth', name: 'allearth', component: Allearth },
+      { path: 'share', name: 'share', component: Share },
+      { path: 'try', name: 'try', component: Try },
+      {
+        path: 'long', name: 'long', component: Long,
+        children: [
+          { path: '/', name: '', redirect: 'annual_rental' },
+          { path: 'annual_rental', name: '', component: Year },
+          { path: 'business_car', name: '', component: Chang },
+        ]
+      }
+    ]
+  },
+  {
+    path: '/searchshop',
+    name: 'searchshop',
+    component: Searchshop
+  },
 
-      children: [
-
-        {
-          path: 'china',
-          name: 'china',
-          component: China
-        },
-        {
-          path: 'allearth',
-          name: 'allearth',
-          component: Allearth
-        },
-        {
-          path: 'share',
-          name: 'share',
-          component: Share
-        },
-        {
-          path: 'try',
-          name: 'try',
-          component: Try
-        },
-        {
-          path: 'long',
-          name: 'long',
-          component: Long,
-          children: [{
-              path: '/',
-              name: '',
-              redirect: 'annual_rental'
-            },
-            {
-              path: 'annual_rental',
-              name: '',
-              component: Year
-            },
-            {
-              path: 'business_car',
-              name: '',
-              component: Chang
-            },
-          ]
-        }
-      ]
-    },
-    {
-      path: '/choseshop',
-      name: 'Choseshop',
-      component: Choseshop
-    },
+  {
+    path: '/choseshop',
+    name: 'Choseshop',
+    component: Choseshop
+  },
+  
 
     {
       path: '/success',
