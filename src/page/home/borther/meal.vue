@@ -26,8 +26,10 @@
               <img src="./../img/xiala@2x.png" alt />
             </div>
             <div class="c_center">
-              <span>郑州动物园自助点</span>
-              <span>该门店仅支持自助还车</span>
+              <span v-if="flay1">{{text}}动物园自助点</span>
+              <span v-else>请选择门店</span>
+              <span v-if="flay1">该地点仅支持自助还车</span>
+              <span v-else>该门店仅支持自助还车</span>
             </div>
             <div class="right">
               <span id="door" :class="{door:flay1}" @click="flay1=!flay1">上门</span>
@@ -40,12 +42,14 @@
               <span @click="to" v-text="text1"></span>
               <img src="./../img/xiala@2x.png" alt />
             </div>
-            <div class="c_center">
-              <span>郑州动物园自助点</span>
-              <span>该门店仅支持自助还车</span>
+            <div class="c_center" style="dispaly:none">
+              <span v-if="flay2">郑州动物园自助点</span>
+              <span v-else>请选择门店</span>
+              <span v-if="flay2">该地点仅支持自助还车</span>
+              <span v-else>该门店仅支持自助还车</span>
             </div>
             <div class="right">
-              <span id="door" :class="{door:flay2}" @click="flay2=!flay2">上门</span>
+              <span id="door" :class="{door:flay2}" @click="door">上门</span>
               <span id="store" :class="{store:!flay2}" @click="flay2=false">到店</span>
             </div>
           </li>
@@ -69,6 +73,7 @@ export default {
       text1: "郑州",
       flay2: true,
       flay1: true,
+      show: true
     };
   },
   methods: {
@@ -79,6 +84,10 @@ export default {
     to() {
       this.$store.commit("addcity", "city2");
       this.$router.push("/city");
+    },
+    door(){
+      this.flay2 = !this.flay2;
+      this.show = true;
     }
   },
   components: { Wtime },

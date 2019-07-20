@@ -9,7 +9,7 @@
       </router-link>
     </mt-header>
     <!-- 搜索 -->
-    <van-search fiexd v-model="value" placeholder="请输入送车地址" show-action @click="onSearch">
+    <van-search fiexd v-model="value" placeholder="请输入送车地址" show-action @click="onSearch" @input='get'>
       <div slot="action" @click="remove">取消</div>
     </van-search>
     <!-- 地图 -->
@@ -124,6 +124,16 @@ export default {
     };
   },
   methods: {
+    get(){
+       for(let i = 0 ; i < this.list.length;i++){
+        if(this.list[i].text2.indexOf(this.value)!==-1){
+          let val = this.list[i];
+          // console.log(this.list.splice(i,1))
+           this.list.splice(i,1);
+          this.list.unshift(val);
+        }
+      }
+    },
     onSearch() {
       this.show = true;
     },
