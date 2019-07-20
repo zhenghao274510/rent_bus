@@ -57,7 +57,7 @@ export default {
    mounted(){
 
            //  数据请求
-   this.axios.get('./static/data/choseshopdata.json').then((res)=>{
+   this.$axios.get('./static/data/choseshopdata.json').then((res)=>{
         this.list=res.data.shop;
            this.datilelist=res.data.result;
    }).catch((err)=>{

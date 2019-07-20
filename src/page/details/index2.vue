@@ -190,7 +190,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.69rem;
+            padding-left: 0.25rem;
             width: 1.68rem;
             color:#FFCC00;
             text-align: center;
@@ -200,7 +200,8 @@ export default {
         }
         .time>span:nth-child(3){
             float: right;
-            margin-right: 0.15rem;margin-top: .1rem;
+            margin-right: 0.08rem;
+            margin-top: .1rem;
         }
         .time>span>span{
             font-size:.08rem;

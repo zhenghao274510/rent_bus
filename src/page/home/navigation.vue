@@ -25,7 +25,7 @@
       </router-link>
         </li>
         <li>
-         <router-link to=''>
+         <router-link to='/erji'>
             <img src="./img/dingdan@2x.png" alt />
             <span>订单</span>
          </router-link>
@@ -43,7 +43,7 @@
         </router-link>
         </li>
         <li>
-           <router-link to=''>
+           <router-link to='/customer/domestic'>
             <img src="./img/kefu@2x.png" alt />
             <span>客服</span>
          </router-link>
