@@ -6,8 +6,8 @@
       </a>
       <span v-if="$store.state.homedata.toshop">选择门店</span>
       <span v-else>门店</span>
-      <router-link to v-if="$store.state.homedata.toshop">
-        <i class="icon search"></i>
+      <router-link to='/searchshop' v-if="$store.state.homedata.toshop">
+      <i class="icon search"></i>
       </router-link>
       <router-link to v-else>
         <i class="icon ding"></i>
@@ -20,8 +20,7 @@
         <span class="currentcity"></span>
       </div>
     </div>
-
-    <div class="chosecont" ref="all" :class="{'pone':$store.state.homedata.toshop,'ptwo':!$store.state.homedata.toshop}">
+  <div class="chosecont" ref="all" :class="{'pone':$store.state.homedata.toshop,'ptwo':!$store.state.homedata.toshop}">
       <!-- 左侧导航 -->
       <div class="left" ref="left" :class="{'ulone':$store.state.homedata.toshop,'ultwo':!$store.state.homedata.toshop}">
         <ul>
@@ -127,10 +126,8 @@ export default {
     //  左侧栏点击事件
     selectItem(index, event) {
       // this.clickEvent=true;
-
-      let leftItem = this.$refs.left.getElementsByTagName("li");
-
-      //  添加类名
+    let leftItem = this.$refs.left.getElementsByTagName("li");
+    //  添加类名
       for (let i = 0; i < leftItem.length; i++) {
         leftItem[i].className = "";
       }
@@ -163,8 +160,7 @@ export default {
           return 0;
         }
       }
-
-      //  如果长度为0 返回0
+    //  如果长度为0 返回0
       return 0;
     }
   },
@@ -188,8 +184,7 @@ export default {
     left: 0;
     z-index: 99;
     width: 100%;
-
-    height: 0.44rem;
+  height: 0.44rem;
     border-bottom: 0.01rem solid #ccc;
     background: rgba(255, 255, 255, 1);
     display: flex;
@@ -204,14 +199,12 @@ export default {
       &:last-child {
         width: 0.6rem;
       }
-
-      .icon {
+    .icon {
         display: block;
         width: 0.22rem;
         height: 0.22rem;
       }
-
-      .back {
+    .back {
         background: url("./img/fanhui@2x.png") no-repeat;
         background-size: 100% 100%;
       }
@@ -297,10 +290,8 @@ export default {
           width: 2.95rem;
           overflow: hidden;
           .pos {
-
-            position: fixed;
-
-            z-index: 99999;
+          position: fixed;
+          z-index: 99999;
           }
           .title {
             display: block;

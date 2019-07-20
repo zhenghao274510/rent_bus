@@ -1,12 +1,10 @@
 <template>
   <div ref="container" class="all">
     <div class="adverbial_commp">
-      <!-- <div class="backtop" v-if="gotop" @click="hidden">
-         <img src="./img/xiala@2x.png" alt="">
-      </div>-->
+
       <ul class="list">
         <li>
-          <a @click="changefrom('from')">
+          <a href="#/city">
             <div class="list_icon">
               <img src="./img/anniu1-2@2x.png" alt />
             </div>
@@ -14,18 +12,20 @@
               <span>郑州</span>
               <img src="./img/xiala@2x.png" alt />
             </div>
+          </a>
+           <a href="#" @click="changefrom('from')">
             <div class="list_auto" ref="from">
               <p>{{$store.state.homedata.from}}</p>
               <span class="self" v-if="$store.state.homedata.spfrom==2">该门店仅支持自助还车</span>
             </div>
-          </a>
+            </a>
           <div class="list_take" @click="frombg">
             <span class="list_bg" :class="{'active':fromflag}">上门</span>
             <span class="list_bg reach" :class="{'active':!fromflag}">到店</span>
           </div>
         </li>
         <li>
-          <a @click="changeto('to')">
+          <a href="#/city">
             <div class="list_icon">
               <img src="./img/anniu2-2@2x.png" alt />
             </div>
@@ -33,11 +33,13 @@
               <span>郑州</span>
               <img src="./img/xiala@2x.png" alt />
             </div>
+          </a>
+          <a  @click="changeto('to')">
             <div class="list_auto" ref="to">
               <p>{{$store.state.homedata.to}}</p>
               <span class="self" v-if="$store.state.homedata.spto==2">该门店仅支持自助还车</span>
             </div>
-          </a>
+            </a>
           <div class="list_take" @click="tobg">
             <span class="list_bg reach1" :class="{'active':toflag}">上门</span>
             <span class="list_bg reach" :class="{'active':!toflag}">到店</span>
@@ -118,32 +120,56 @@ export default {
       scrolly: 0,
       toflag: false,
       fromflag: false,
-      // gotop:false,
-      towhere: true
+
+      towhere: false,
+      tobgok:'请选择门店',
+      tobgno:'请选择地址'
     };
   },
   methods: {
     tochoose() {
-      // this.towhere=false;
       this.$store.commit("changeor", this.towhere);
+
     },
     //  选择上门 和 送
     tobg() {
       this.toflag = !this.toflag;
-      //  this.changespan();
+       this.$store.commit('changhomespanto',0);
+      if(!this.toflag){
+        this.$store.commit('changeto',this.tobgok);
+      }else{
+        this.$store.commit('changeto',this.tobgno);
+      };
+
+
     },
     frombg() {
       this.fromflag = !this.fromflag;
-      // this.changespan();
+        this.$store.commit('changhomespanfrom',0);
+      if(!this.fromflag){
+        this.$store.commit('changefrom',this.tobgok);
+      }else{
+        this.$store.commit('changefrom',this.tobgno);
+      }
+
     },
     //  选择门店
     changefrom(a) {
+
       this.$store.commit("changedir", a);
-      this.$router.push("/choseshop");
+
+      if(this.fromflag){
+         this.$router.push("/choseshop");
+      }
     },
     changeto(b) {
       this.$store.commit("changedir", b);
       this.$router.push("/choseshop");
+    },
+    //  选车状态
+    btncanel(){
+      // let to
+      //  if()
     },
     // 多状态修改
     changespan() {
@@ -161,8 +187,8 @@ export default {
         probeType: 3
       });
     this.container.on("scroll", pos => {
+      this.scrolly = Math.abs(Math.round(pos.y));
 
-        this.scrolly = Math.abs(Math.round(pos.y));
       });
     }
   },
@@ -174,10 +200,11 @@ export default {
     Wtime
   },
   mounted() {
+     this.btncanel();
     this.$nextTick(() => {
       this._initScroll();
-      //  this.changespan();
     });
+
   }
 };
 </script>
@@ -189,6 +216,7 @@ export default {
   left: 0;
   width: 100%;
   height: 3.93rem;
+  z-index: 33;
 }
 
 .adverbial_commp {
@@ -211,6 +239,7 @@ export default {
     padding: 0 0.16rem;
     li {
       padding: 0.1rem 0;
+      height:.6rem;
       border-bottom: 1px solid #dfdfdf;
       display: flex;
       justify-content: space-between;
@@ -218,7 +247,7 @@ export default {
       a {
         font-size: 0.14rem;
         display: flex;
-        flex: 1;
+        // flex: 1;
         align-items: center;
         .list_icon {
           img {
@@ -253,6 +282,9 @@ export default {
             height: 0.18rem;
             font-size: 0.12rem;
             line-height: 0.16rem;
+          }
+          p{
+            color:#AAAAAA;
           }
         }
       }
@@ -317,6 +349,7 @@ export default {
         p {
           font-size: 0.14rem;
           letter-spacing: 2px;
+
         }
         .icon {
           width: 0.22rem;

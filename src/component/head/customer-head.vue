@@ -1,7 +1,7 @@
 <template>
   <div class="customer_common_head">
     <div class="common_head">
-      <router-link to="#" class="common_head_icon"></router-link>
+      <router-link to="/home/china" class="common_head_icon"></router-link>
       客服
     </div>
   </div>
@@ -27,7 +27,6 @@ export default {
     .common_head{
       height: .45rem;
       position: relative;
-      // margin-top: .2rem;
       font-size: .16rem;
       text-align: center;
       line-height: .45rem;

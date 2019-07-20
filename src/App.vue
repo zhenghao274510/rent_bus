@@ -47,7 +47,6 @@ export default {
 @import url('./../static/css/common.css');
 @import url('./../static/css/other.css');
 
-
 #app {
   width: 100%;
   height: 100%;

@@ -88,8 +88,20 @@
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.van-picker{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 
+ z-index: 9999;
+}
+.van-picker__toolbar{
+  width:100%;
+  background:#FFCC00;
 
 }
+
+
 
 

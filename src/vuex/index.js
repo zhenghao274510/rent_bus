@@ -4,11 +4,20 @@ Vue.use(vuex)
 export default new vuex.Store({
   state: {
     //确认订单fan
+    //钱包
+    num: '',
+    //积分
+    score: '',
     affirm_order: false,
     basic_service: false,
     enjoyable_service: false,
-    //钱包
-    num: '',
+    //城市
+    city: '',
+    citys: '',
+    direct: 'city',
+    //city
+    city1: '郑州',
+    city2: '郑州',
     homedata: {
       show: false,
       to: '郑州动物园自助点',
@@ -23,13 +32,6 @@ export default new vuex.Store({
       myarr: ['/home/china', '/home/share', '/home/try', '/home/allearth', '/home/long']
 
     },
-    //城市
-    city: '城市',
-    citys: '请选择',
-    direct: 'city',
-    //city
-    city1: '郑州',
-    city2: '郑州',
   },
   mutations: {
     // 跳转页面定向
@@ -73,6 +75,13 @@ export default new vuex.Store({
         state.homedata.spfrom = val;
       }
     },
+    changhomespanto(state, val){
+      state.homedata.spto = val;
+    },
+    changhomespanfrom(state, val){
+      state.homedata.spfrom = val;
+    },
+
     //确认订单fan
     affirm_orders(state, value) {
       state.affirm_order = value;
@@ -93,6 +102,9 @@ export default new vuex.Store({
     //城市
     addcity(state, val) {
       state.direct = val;
+    },
+    addscore(state, val) {
+      state.score = val;
     },
     //长租获取城市
     changecity(state, val) {

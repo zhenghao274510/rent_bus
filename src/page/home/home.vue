@@ -59,7 +59,6 @@ export default {
   methods: {
     // 控制跳转方向
     tochoose() {
-      this.towhere = false;
       this.$store.commit("changeor", this.towhere);
     },
     //  控制影藏
@@ -71,10 +70,7 @@ export default {
     changetop(e, ind) {
       console.log(ind);
       this.$store.commit("changeindex", ind);
-      //  if(ind!=0){
-      //   this.$refs.add[0].className="";
-      //  }
-      // this.num=this.$store.state.homedata.index;
+   
       e.target.className = "active";
     }
   },
@@ -175,7 +171,6 @@ export default {
     position: fixed;
     top: 0.43rem;
     z-index: 99;
-
     li {
       width: 20%;
       height: 100%;
