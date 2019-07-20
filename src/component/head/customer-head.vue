@@ -31,6 +31,9 @@ export default {
       text-align: center;
       line-height: .45rem;
       color: #222;
+      background: #fff;
+      position: fixed;
+      width: 100%;
       .common_head_icon{
           position: absolute;
           left: .15rem;

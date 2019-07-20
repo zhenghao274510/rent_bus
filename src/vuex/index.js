@@ -117,7 +117,7 @@ export default new vuex.Store({
       } else {
         state.citys = val;
       }
-    }
+    },
   },
   getters: {},
 });

@@ -2,7 +2,7 @@
   <div>
       <div class="hand">
         <mt-header title="我的订单" class="hand1" > 
-        <router-link to="/" slot="left">
+        <router-link to="/home/china" slot="left">
             <mt-button> <img class="left" src="./img/fanhui@2x.png" alt=""></mt-button>
         </router-link>
         </mt-header>

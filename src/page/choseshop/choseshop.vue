@@ -32,32 +32,25 @@
             :class="{'active':currentIndex===index}"
           >{{ item }}</li>
         </ul>
-      </div>
-      <!-- 右侧内容 -->
-      <div class="right" ref="right" >
-        <div class="content"  >
-          <div class="rightlist" v-for="(item,index) in datilelist" :key="index" ref="rightlist">
-            <p class="title"   ref="tit">{{item.title}}</p>
-            <ul >
-              <li
-                v-for="(con,ind) in item.datalist"
-                :key="ind"
-                @click="changeinfo(con.name,con.type)"
-              >
-                <router-link to>
-                  <div>
-                    <span>{{con.name}}</span>
-                    <div>
-                      <span class="self" v-if="con.type==2"></span>
-                      <i class="car" v-else-if="con.type==1"></i>
-                      <span class="nearby" v-if="item.nearby==0">{{con.space}}</span>
-                      <i class="more" v-else></i>
-                    </div>
-                  </div>
-                  <p class="info">{{con.details}}</p>
-                </router-link>
-              </li>
-            </ul>
+  </div>
+ <!-- 右侧内容 -->
+   <div class="right" ref="right">
+  <div class="content">
+       <div class="rightlist" v-for="(item,index) in datilelist" :key="index" ref="rightlist">
+        <p class="title" ref="tit">{{item.title}}</p>
+         <ul>
+           <li v-for="(con,ind) in item.datalist" :key="ind" @click="changeinfo(con.name,con.type)">
+             <router-link to="/home/china">
+                 <div>
+                   <span>{{con.name}}</span>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
+                  <router-link to="/shop_xiangqing"> <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i></router-link> </div>
+                 </div>
+                 <p class="info">
+                {{con.details}}
+                 </p>
+           </router-link>
+           </li>
+         </ul>
           </div>
         </div>
       </div>

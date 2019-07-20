@@ -2,9 +2,9 @@
   <div class="setting">
     <!-- 头部 -->
     <Branch :title="title">
-      <router-link to="" class="leftImg" slot="left" @click="wein">
+      <a @click="wein" class="leftImg" slot="left">
         <img src="./img/fanhui@2x.png" alt />
-      </router-link>
+      </a>
     </Branch>
     <!-- 内容 -->
     <router-link to>
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
      wein(){
-  
+
        let arr=this.$store.state.homedata.myarr;
        let ind=this.$store.state.homedata.index;
        this.$router.push(arr[ind]);

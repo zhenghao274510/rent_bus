@@ -1,7 +1,7 @@
 <template>
   <div class="top">
       <mt-header title="订单详情" class="hand">
-        <router-link to="/" slot="left">
+        <router-link to="/erji" slot="left">
       <mt-button class="button"> <img class="left" src="./img/fanhui@2x.png" alt=""></mt-button>
         </router-link>
       <mt-button class="button" slot="right"><img class="right" src="./img/gengduo@2x.png" alt=""  id="show" @click="show1=!show1" ></mt-button>
@@ -62,13 +62,13 @@
     </div>
     <div class="foot">
         <!-- <p>车辆正在准备中，完成支付可节省取车时间</p> -->
-        <router-link to="./"><button>立即评价</button></router-link>
+        <router-link to="/evaluate"><button>立即评价</button></router-link>
         <p></p>
     </div>
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
         <div class="clear">
-        <router-link to="/details"><p id="zi">取消订单</p></router-link>
+        <router-link to=""><p id="zi">修改规则</p></router-link>
         <div class="small">
              <span></span>
         </div>
@@ -139,11 +139,13 @@ export default {
         border-bottom:0.01rem solid #cccccc;
     }
     .hao{
+        font-size: .12rem;
         color:#888888;
         /* padding-top: .03rem;
         padding-bottom: .03rem; */
     }
     .gong{
+        font-size: .13rem;
         color:#FFCC00;
     }
     .car{

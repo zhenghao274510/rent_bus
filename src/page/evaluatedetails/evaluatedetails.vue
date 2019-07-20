@@ -1,7 +1,7 @@
 <template>
   <div class="evaluatedetails">
     <div class="common_head">
-      <router-link to="#" class="common_head_icon"></router-link>
+      <router-link to="/evaluate" class="common_head_icon"></router-link>
       评价详情
     </div>
     <div class="evaluatedetails-hao">
