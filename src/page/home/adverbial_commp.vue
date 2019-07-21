@@ -73,7 +73,7 @@
           </a>
         </li>
         <li>
-          <router-link to>
+          <router-link to='/gation'>
             <i class="icon dao"></i>
             <p>导航</p>
           </router-link>
