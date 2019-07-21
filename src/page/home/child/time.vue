@@ -110,9 +110,16 @@ export default {
     }
   },
   beforeDestroy(){
-    let day=this.sixTime.slice(0,1)
-    this.$store.commit('Xday',day);
-  }
+  
+
+      let day=this.sixTime.slice(0,1);
+      this.$store.commit('Xday',day);
+    
+
+
+   
+  },
+ 
 };
 </script>
 

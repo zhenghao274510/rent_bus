@@ -41,49 +41,49 @@ export default {
       keyword: "请输入搜索关键词",
       markers: [
         {
-          title:'兰德',
+          title:'兰德中心门店',
           lng: 113.693604,
           lat: 34.785049,
           showFlag: false //flag放在每一条数据里
         },
         {
-          title:'丹尼斯停车场',
+          title:'丹尼斯门店',
          lng: 113.693604,
           lat: 34.78768,
           showFlag: false
         },
         {
-          title:'丹尼斯百货花园店地下停车场',
+          title:'丹尼斯百货花园店',
          lng: 113.694609,
           lat: 34.787610,
           showFlag: false
         },
          {
-          title:'金珠广场停车场',
+          title:'金珠广场门店',
             lng: 113.694609,
           lat: 34.784610,
           showFlag: false
         },
          {
-          title:'动物园停车场',
+          title:'动物园门店',
           lng: 113.695609,
           lat: 34.787610,
           showFlag: false
         },
          {
-          title:'豫博大厦-停车场',
+          title:'豫博大厦门店',
           lng:113.696609,
           lat: 34.787610,
           showFlag: false
         },
         {
-          title:'新田360广场-停车场',
+          title:'新田360广场门店',
            lng: 113.696609,
           lat: 34.785610,
           showFlag: false
         },
         {
-          title:'关虎屯生活广场-停车场',
+          title:'关虎屯生活广场门店',
           lng: 113.695609,
           lat: 34.785610,
           showFlag: false

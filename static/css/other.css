@@ -17,3 +17,10 @@
 .BMap_bubble_content,.iw_poi_title{
   font-size: .14rem !important;
 }
+.BMap_geolocationIconBackground{
+  display: none;
+}
+.BMap_geolocationContainer{
+  height: 0 !important;
+
+}

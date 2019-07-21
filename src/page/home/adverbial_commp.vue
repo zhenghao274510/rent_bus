@@ -215,7 +215,7 @@ export default {
 <style scoped lang='less'>
 .all {
   position: absolute;
-  top: 3.05rem;
+  top: 3.45rem;
   left: 0;
   width: 100%;
   height: 3.93rem;
