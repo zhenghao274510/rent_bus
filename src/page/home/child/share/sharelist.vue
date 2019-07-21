@@ -1,44 +1,41 @@
 <template>
-  <div ref="container" class="all">
-
-  <div class="sharelist">
-    <div class="shareinfo">
-      <p>郑州花园路店</p>
-      <p>郑州市金水区花园路145号润达商务一楼大厅</p>
+  <div ref="container" class="all" v-if="$store.state.showshare">
+    <div class="sharelist">
+      <div class="shareinfo">
+        <p>郑州花园路店</p>
+        <p>郑州市金水区花园路145号润达商务一楼大厅</p>
+      </div>
+      <div>
+        <ul>
+          <li v-for="(item,index) in sharelist" :key="index">
+            <router-link to>
+              <div class="shareleft">
+                <img :src="item.src" alt />
+                <p class="sharename">{{item.name}}</p>
+              </div>
+              <div class="shareright">
+                <p class="sharehao">{{item.card}}</p>
+                <p class="sharemore">
+                  <span v-for="(con,ind) in item.info" :key="ind">{{con}}</span>
+                </p>
+                <p class="sharetime">
+                  <i>0.19</i>元/分钟+
+                  <i>0.99</i>元/公里
+                </p>
+              </div>
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <ul>
-        <li v-for="(item,index) in sharelist" :key="index">
-          <router-link to>
-            <div class="shareleft">
-              <img :src="item.src" alt />
-              <p class="sharename">{{item.name}}</p>
-            </div>
-            <div class="shareright">
-              <p class="sharehao">{{item.card}}</p>
-              <p class="sharemore">
-                <span v-for="(con,ind) in item.info" :key="ind">{{con}}</span>
-              </p>
-              <p class="sharetime">
-                <i>0.19</i>元/分钟+
-                <i>0.99</i>元/公里
-              </p>
-            </div>
-          </router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
   </div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
 export default {
   data() {
     return {
       sharelist: []
-      //  gotop:false
     };
   },
   mounted() {
@@ -50,59 +47,35 @@ export default {
       })
       .catch(err => {
         console.log(err);
-      }),
-      this.$nextTick(() => {
-        this._initScroll();
       });
   },
-  methods: {
-    _initScroll() {
-      this.container = new BScroll(this.$refs.container, {
-        click: true,
-        probeType:2,
-         stopPropagation:true,  //取消冒泡
-          bindToWrapper:true,
-          scrollY:true,
-
-      });
-      this.container.on("scroll", pos => {
-
-             this.scrolly = Math.abs(Math.round(pos.y));
-
-      });
-
-    }
-
-
-  },
+  methods: {},
   components: {}
 };
 </script>
 
 <style scoped lang='less'>
-  .all{
+.all {
   width: 100%;
   height: 4.93rem;
-
+  position: absolute;
+  top: 3.7rem;
+  transition: all .6s ease;
 }
 .sharelist {
   width: 100%;
-
-  position: absolute;
-  top: 3.05rem;
   background: #fff;
   z-index: 99;
-  // transition: all 0.6s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
 
   .shareinfo {
-    // position: fixed;
-    // top: 3.03rem;
-    // width: 100%;
     height: 0.64rem;
     padding: 0.15rem;
     border-bottom: 0.01rem solid #dfdfdf;
-    background: #FFF;
+    background: #fff;
     z-index: 999;
     p {
       &:first-child {
@@ -117,11 +90,14 @@ export default {
   }
 
   ul {
+    height: 3rem;
+    overflow-y: auto;
     padding: 0 0.15rem;
     // margin-top: 0.63rem;
     width: 100%;
     // height: 100%;
     // overflow-y: scroll;
+    overflow-y: auto;
     li {
       width: 100%;
       height: 0.84rem;

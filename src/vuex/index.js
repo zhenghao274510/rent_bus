@@ -35,6 +35,15 @@ export default new vuex.Store({
       myarr: ['/home/china', '/home/share', '/home/try', '/home/allearth', '/home/long']
 
     },
+    //  分享列表 显示
+    showshare:false,
+
+  },
+  mutations: {
+   
+    share_show(state,val){
+       state.showshare=val;
+    },
     //  保存全局数据
     alldata:{
        starTime:{},
