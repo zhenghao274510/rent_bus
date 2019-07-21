@@ -33,97 +33,99 @@
           </li>
         </ul>
         <!-- 列表部分 -->
-        <div class="trylist">
-          <div class="try_title">
-            <span>试驾车型</span>
-            <router-link to>
-              郑州
-              <i class="down"></i>
-            </router-link>
+        <div class="content">
+          <div class="trylist">
+            <div class="try_title">
+              <span>试驾车型</span>
+              <router-link to>
+                郑州
+                <i class="down"></i>
+              </router-link>
+            </div>
+            <ul>
+              <li class="tryitem">
+                <router-link to>
+                  <div class="left">
+                    <img src="./../img/try/868@2x.png" />
+                    <div class="info">
+                      <p>宝沃BX5</p>
+                      <p class="minx">免费试驾:领劵后免费租1天</p>
+                      <p class="minx">深度试驾:日均148元起</p>
+                    </div>
+                  </div>
+                  <div class="right">领取</div>
+                </router-link>
+              </li>
+              <li class="tryitem">
+                <router-link to>
+                  <div class="left">
+                    <img src="./../img/try/869@2x.png" />
+                    <div class="info">
+                      <p>宝沃BX6</p>
+                      <p class="minx">免费试驾:领劵后免费租1天</p>
+                      <p class="minx">深度试驾:日均148元起</p>
+                    </div>
+                  </div>
+                  <div class="right">领取</div>
+                </router-link>
+              </li>
+              <li class="tryitem">
+                <router-link to>
+                  <div class="left">
+                    <img src="./../img/try/870@2x.png" />
+                    <div class="info">
+                      <p>宝沃BX7两驱</p>
+                      <p class="minx">免费试驾:领劵后免费租1天</p>
+                      <p class="minx">深度试驾:日均148元起</p>
+                    </div>
+                  </div>
+                  <div class="right">领取</div>
+                </router-link>
+              </li>
+              <li class="tryitem">
+                <router-link to>
+                  <div class="left">
+                    <img src="./../img/try/870@2x.png" />
+                    <div class="info">
+                      <p>宝沃BX7四驱</p>
+                      <p class="minx">免费试驾:领劵后免费租1天</p>
+                      <p class="minx">深度试驾:日均148元起</p>
+                    </div>
+                  </div>
+                  <div class="right">领取</div>
+                </router-link>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li class="tryitem">
-              <router-link to>
-                <div class="left">
-                  <img src="./../img/try/868@2x.png" />
-                  <div class="info">
-                    <p>宝沃BX5</p>
-                    <p class="minx">免费试驾:领劵后免费租1天</p>
-                    <p class="minx">深度试驾:日均148元起</p>
-                  </div>
-                </div>
-                <div class="right">领取</div>
-              </router-link>
-            </li>
-            <li class="tryitem">
-              <router-link to>
-                <div class="left">
-                  <img src="./../img/try/869@2x.png" />
-                  <div class="info">
-                    <p>宝沃BX6</p>
-                    <p class="minx">免费试驾:领劵后免费租1天</p>
-                    <p class="minx">深度试驾:日均148元起</p>
-                  </div>
-                </div>
-                <div class="right">领取</div>
-              </router-link>
-            </li>
-            <li class="tryitem">
-              <router-link to>
-                <div class="left">
-                  <img src="./../img/try/870@2x.png" />
-                  <div class="info">
-                    <p>宝沃BX7两驱</p>
-                    <p class="minx">免费试驾:领劵后免费租1天</p>
-                    <p class="minx">深度试驾:日均148元起</p>
-                  </div>
-                </div>
-                <div class="right">领取</div>
-              </router-link>
-            </li>
-            <li class="tryitem">
-              <router-link to>
-                <div class="left">
-                  <img src="./../img/try/870@2x.png" />
-                  <div class="info">
-                    <p>宝沃BX7四驱</p>
-                    <p class="minx">免费试驾:领劵后免费租1天</p>
-                    <p class="minx">深度试驾:日均148元起</p>
-                  </div>
-                </div>
-                <div class="right">领取</div>
-              </router-link>
-            </li>
-          </ul>
+          <!-- icon图标部分 -->
+          <div class="iconlist">
+            <p class="iconlist_title">试驾平台保障</p>
+            <ul>
+              <li>
+                <router-link to>
+                  <span class="icon one"></span>
+                  <p>车况保障更安全</p>
+                </router-link>
+              </li>
+              <li>
+                <router-link to>
+                  <span class="icon two"></span>
+                  <p>免押尊享更无忧</p>
+                </router-link>
+              </li>
+              <li>
+                <router-link to>
+                  <span class="icon three"></span>
+                  <p>时间可选更自由</p>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 底部电话 -->
+          <div class="tryend">咨询电话：400666666</div>
         </div>
       </div>
-      <!-- icon图标部分 -->
-      <div class="iconlist">
-        <p class="iconlist_title">试驾平台保障</p>
-        <ul>
-          <li>
-            <router-link to>
-              <span class="icon one"></span>
-              <p>车况保障更安全</p>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <span class="icon two"></span>
-              <p>免押尊享更无忧</p>
-            </router-link>
-          </li>
-          <li>
-            <router-link to>
-              <span class="icon three"></span>
-              <p>时间可选更自由</p>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 底部电话 -->
-      <div class="tryend">咨询电话：400666666</div>
     </div>
   </div>
 </template>
@@ -133,36 +135,18 @@ import BScroll from "better-scroll";
 export default {
   data() {
     return {
-      scrolly:0
+      scrolly: 0
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      this._initScroll();
-    });
-  },
-  methods: {
-    _initScroll() {
-      this.container = new BScroll(this.$refs.container, {
-        click: true,
-        probeType: 3,
-        scrollY:true
-      });
-      this.container.on("scroll", pos => {
-           this.scrolly = Math.abs(Math.round(pos.y));
-           console.log(this.scrolly)
-
-      });
-    }
-  },
-
+  mounted() {},
+  methods: {},
 
   components: {}
 };
 </script>
 
 <style scoped lang='less'>
-.all{
+.all {
   width: 100%;
   height: 3.56rem;
 }
@@ -244,6 +228,10 @@ export default {
   .giftend {
     background: #fff;
     width: 100%;
+    .content{
+      height: 3rem;
+      overflow-y: auto;
+    }
     .moregift {
       display: flex;
       justify-content: space-between;
@@ -369,6 +357,7 @@ export default {
     ul {
       width: 100%;
       height: 100%;
+      overflow-y: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;

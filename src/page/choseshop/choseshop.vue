@@ -95,7 +95,7 @@ export default {
       console.log(b);
       this.$store.commit("changecome", a);
       this.$store.commit("changespan", b);
-      window.history.go(-1);
+      // window.history.go(-1);
     },
     //  返回上一页
     back() {

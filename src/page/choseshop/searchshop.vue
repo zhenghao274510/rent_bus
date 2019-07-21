@@ -13,13 +13,14 @@
           type="text"
           placeholder="输入地址寻找周边门店"
           v-focus
-          @keyup="sear_star(keyword)"
+          v-on:input="sear_star(keyword)"
           v-model.trim="keyword"
         />
       </div>
-      <span>取消</span>
+      <span @click="del">取消</span>
     </div>
     <div class="right" ref="right">
+      <!-- <div class="noinfo" v-if="show">没有相关信息,请多输入几次</div> -->
       <div class="content">
         <div class="rightlist">
           <ul>
@@ -30,7 +31,7 @@
                   <div>
                     <span class="self" v-if="item.type==2"></span>
                     <i class="car" v-else-if="item.type==1"></i>
-                  <i class="more"></i>
+                    <i class="more"></i>
                   </div>
                 </div>
                 <p class="info">{{item.details}}</p>
@@ -47,6 +48,7 @@
 export default {
   data() {
     return {
+      show: false,
       datilelist: [],
       keyword: "",
       keylist: []
@@ -56,23 +58,30 @@ export default {
     this.axios
       .get("./static/data/searshop.json")
       .then(res => {
-      this.datilelist = res.data.datalist;
-    })
+        this.datilelist = res.data.datalist;
+        console.log(this.datilelist);
+      })
       .catch(err => {
         console.log(err);
       });
   },
   methods: {
+    del() {
+      this.keylist = [];
+      this.keyword = "";
+    },
     //  返回上一页
     back() {
       window.history.go(-1);
     },
     sear_star(key) {
+      if (key == "") {
+        this.keylist = [];
+      }
       let reg = /[\u4e00-\u9fa5]/g;
       if (key != "" && reg.test(key)) {
-        console.log(2);
         this.datilelist.forEach(item => {
-          if (item.name.indexOf(key) != -1 || item.details.indexOf(key) != -1) {
+          if (item.details.indexOf(key) != -1) {
             this.keylist.push(item);
           }
         });
@@ -103,7 +112,7 @@ export default {
     text-align: center;
     height: 0.44rem;
     line-height: 0.44rem;
-  background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
     a {
       display: flex;
       justify-content: center;
@@ -142,7 +151,7 @@ export default {
       width: 3.05rem;
       height: 0.3rem;
       border-radius: 0.02rem;
-    position: relative;
+      position: relative;
       .search {
         display: block;
         position: absolute;
@@ -160,6 +169,10 @@ export default {
         font-size: 0.14rem;
         background: #efefef;
         border-radius: 0.04rem;
+        color: #AAA;
+      }
+      input::-webkit-input-placeholder {
+        color: #AAA;
       }
     }
     span {
@@ -168,11 +181,18 @@ export default {
       height: 100%;
       line-height: 0.5rem;
       font-size: 0.14rem;
+      text-align: center;
       margin-left: 0.15rem;
     }
   }
   .right {
     width: 100%;
+    .noinfo {
+      width: 100%;
+      font-size: 0.18rem;
+      line-height: 0.4rem;
+      text-align: center;
+    }
     // padding-left: 0.8rem;
     .content {
       width: 100%;
@@ -180,7 +200,7 @@ export default {
       .rightlist {
         width: 100%;
         overflow: hidden;
-      ul {
+        ul {
           width: 100%;
           padding-left: 0.14rem;
           background: #fff;
