@@ -72,12 +72,18 @@ export default {
         this.starD = time.getDate();
         this.starH = time.getHours();
         this.starW = myArr[W];
+        let obj1={tostarM:this.starM,tostarD:this.starD,tostarH:this.starH,tostarW:this.starW}
+        this.$store.commit('tostartime',obj1);
       } else {
         this.endM = time.getMonth() + 1;
         this.endD = time.getDate();
         this.endH = time.getHours();
         this.endW = myArr[W];
+        let obj2={toendM:this.endM,toendD:this.endD,toendH:this.endH,toendW:this.endW}
+        this.$store.commit('toendtime',obj2);
+
       }
+      
     }
   },
   computed: {
@@ -95,12 +101,17 @@ export default {
         return "选择时间";
       }
     }
+
   },
   filters: {
     Time(val) {
       val < 10 ? (val = "0" + val) : val;
       return val;
     }
+  },
+  beforeDestroy(){
+    let day=this.sixTime.slice(0,1)
+    this.$store.commit('Xday',day);
   }
 };
 </script>

@@ -165,8 +165,8 @@ export default {
       this.active = false;
     };
     //修改钱
-    if(this.$store.state.num !== ''){
-      this.nus = parseInt(this.$store.state.num) + this.nus;
+    if(this.$store.state.money !== ''){
+      this.nus = parseInt(this.$store.state.money) + this.nus;
     }
   }
 };

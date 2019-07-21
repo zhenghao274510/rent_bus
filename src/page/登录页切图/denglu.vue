@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { Dialog } from 'vant';
 import jsonp from 'jsonp'
 export default {
   data() {
@@ -45,11 +46,24 @@ export default {
         timer:1,
         phone:'',
         value2:'',
+        yanzheng:'',
         active:true
     }
   },
   methods: {
     axios_(){
+      
+    if(this.value2==this.yanzheng){
+      this.$router.push('/home/china')
+    }
+    else{
+      Dialog.alert({
+            message: '验证码错误！！！'
+          }).then(() => {
+            // on close
+          });
+          return false
+    }
       // this.$axios.get('http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=2192f0036c60393639df82aad576aec9').then((data)=>{
       //   console.log(data)
       // }).catch((err)=>{console.log(err)})
@@ -66,32 +80,64 @@ export default {
         // var _url = baseUrl + '?mobile='+ keyword + '&tpl_id='+moban +'&tpl_value=' + val +'&key='+ 'key'+'&cb=callback';
       //  var _url='http://v.juhe.cn/sms/send?mobile=18848870980&tpl_id=159690&tpl_value=urlencode&key=2192f0036c60393639df82aad576aec9'
        
-       jsonp('http://172.25.1.42:8080/register/send?phone=18595646418',(res)=>{
-            callback(res);
-        })
+    //    jsonp('http://172.25.1.42:8080/register/send?phone=18595646418',(res)=>{
+    //         callback(res);
+    //     })
 
-    //注意:callback需挂载到window下
-        window.callback = function(data){
-            console.log(data)
-        }
+    // //注意:callback需挂载到window下
+    //     window.callback = function(data){
+    //         console.log(data)
+    //     }
     },
     
     right(){
       
     },
       btn(){
-        var inp1=document.getElementById('ipt1').val
+        var inp1=document.getElementById('ipt1')
         var inp2=document.getElementById('ipt2');
-        if(inp1==''){
-
+        var phone_reg = /^1[3-9]\d{9}$/;
+        var phone_ = inp1.value;
+        if(!(phone_reg.test(phone_))){
+            Dialog.alert({
+            message: '手机号格式错误'
+          }).then(() => {
+            // on close
+          });
+          return false
         }
           if(this.timer==1){
               this.timer=2
               var b=document.getElementById('btn')
               var span=document.getElementById('span')
           var p_=document.getElementById('p_')
-           var num=3;
+           var num=15;
         var time=null;
+           jsonp('http://172.25.1.42:8080/register/send?phone='+this.phone,(res)=>{
+            callback(res);
+        })
+
+    //注意:callback需挂载到window下
+        window.callback=(res)=>{
+            // console.log(data)
+    //         jsonp('http://172.25.1.42:8080/register/send?phone=phone&callback=__jp0',(res)=>{
+    //         callback1(res);
+    //         // console.log(res.auth)
+    //     })
+
+    // //注意:callback需挂载到window下
+    //     window.callback = function(data){
+    //         // console.log(data)
+    //         console.log(data)
+            
+    //     }
+     
+        },
+        this.axios.get('http://172.25.1.42:8080/register/send?phone='+this.phone+'&callback=__jp0').then((res)=>{
+      console.log(res.data.auth)
+      this.yanzheng=res.data.auth
+    })
+       
         time=setInterval( ()=>{
             num--;
             if(num<=0){
@@ -208,7 +254,7 @@ input{
     height: 0.4rem;
     border-radius: 0.075rem;
     color: #ffff;
-    background-color: yellow;
+    background-color: #FFCC00;
     font-size: 0.18rem;
   }
   p:nth-child(6) {

@@ -66,9 +66,9 @@ export default {
       });
   },
   methods: {
-    del() {
-      this.keylist = [];
-      this.keyword = "";
+    del(){
+      this.keylist=[];
+      this.keyword=''
     },
     //  返回上一页
     back() {

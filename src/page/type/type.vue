@@ -22,7 +22,7 @@
       </ul>
       <ul class="right">
         <router-link to="/affirm_order">
-        <li v-for="(item,index) in list[p] " :key='index'>
+        <li v-for="(item,index) in list[p] " :key='index'  @click="choose(index)">
           <div class="le">
             <img :src='item.img'>
           </div>
@@ -42,7 +42,7 @@
       </ul>
       <ul class="right">
         <router-link to="/affirm_order">
-        <li v-for="(item,index) in list[pp] " :key='index'>
+        <li v-for="(item,index) in list[pp] " :key='index' @click="choose(index)">
           <div class="le">
             <img :src='item.img'>
           </div>
@@ -310,6 +310,12 @@ selected:'1'
     }
   },
   methods: {
+    choose(ind){
+      let currentcar=this.list[this.pp][ind];
+     
+     this.$store.commit('choosecar',currentcar);
+    
+    },
    addbg(index){
      this.$refs.leftlist.forEach(item => {
        item.className='';
@@ -412,6 +418,7 @@ selected:'1'
       width: 1rem;
       img{
         width: 1.11rem;
+        margin: .2rem .08rem;
         // height: .65rem;
         // padding: .17rem 0 .18rem .13rem; 
       }

@@ -8,6 +8,9 @@ export default new vuex.Store({
     num: '',
     //积分
     score: '',
+    money:'',
+    //传的积分
+    c_money:'',
     affirm_order: false,
     basic_service: false,
     enjoyable_service: false,
@@ -41,6 +44,36 @@ export default new vuex.Store({
     share_show(state,val){
        state.showshare=val;
     },
+    //  保存全局数据
+    alldata:{
+       starTime:{},
+       endTime:{},
+       dayX:2,
+       carinfo:{},
+       affirm_orderss:'',
+       affsum:0
+    },
+  },
+  mutations: {
+    //  大数据传递
+    tostartime(state,val){
+        state.alldata.starTime=val;
+    },
+    toendtime(state,val){
+      state.alldata.endTime=val;
+  },
+  Xday(state,val){
+     state.alldata.dayX=val;
+  },
+  choosecar(state,val){
+    state.alldata.carinfo=val;
+  },
+  affchos(state,value){
+    state.alldata.affirm_orderss=value;
+  },
+  sum(state,val){
+    state.alldata.affsum=val;
+  },
     // 跳转页面定向
     changeor(state,val){
        state.homedata.toshop=val;
@@ -105,6 +138,14 @@ export default new vuex.Store({
     },
     add2(state, val1) {
       state.num = val1;
+    },
+    //支付钱
+    addMoney(state,val){
+      state.money = val;
+    },
+    //积分
+    addScore(state,val){
+      state.c_money = val;
     },
     //城市
     addcity(state, val) {

@@ -48,10 +48,13 @@
       </ul>
       <!-- 时间 -->
       <Wtime></Wtime>
-      <div class="btn">
-        <button>立即选车</button>
-      </div>
-
+    <div class="btn">
+      <router-link to="/type">
+      <button>
+        立即选车
+      </button>
+</router-link>
+    </div>
       <!-- 选择 服务 图标部分 -->
       <ul class="iconlist">
         <li>
@@ -319,6 +322,7 @@ export default {
     background: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
     button {
       // display: block;
       width: 3.45rem;
