@@ -20,7 +20,7 @@ export default {
         // console.log(11)
       if(index==2){
         setTimeout(()=>{
-          this.$router.push('./home/china');
+          this.$router.push('/denglu');
         },1000)
 
       }

@@ -9,20 +9,23 @@
           <div class="details2"><span>￥</span>{{$store.state.alldata.affsum}}</div>
       </div>
       <div class="payment-list">
-          <div class="payment-list1">
+          <div class="payment-list1" @click="fn1()">
             <img src="./img/yue@2x.png" class="img1">
             <span>余额支付</span>
             <img src="./img/zhifuoption_off@2x.png" class="img2">
+            <img src="./img/zhifuxuanzhong@2x.png" class="img2" v-show="show">
           </div>
-          <div class="payment-list1 payment-list2">
+          <div class="payment-list1 payment-list2" @click="fn2()">
             <img src="./img/weixinzhifu@2x.png" class="img1">
             <span>微信支付</span>
             <img src="./img/zhifuoption_off@2x.png" class="img2">
+            <img src="./img/zhifuxuanzhong@2x.png" class="img2" v-show="show1">
           </div>
-          <div class="payment-list1">
+          <div class="payment-list1" @click="fn3()">
             <img src="./img/zhifubaozhifu@2x.png" class="img1">
             <span>支付宝支付</span>
-            <img src="./img/zhifuxuanzhong@2x.png" class="img2">
+            <img src="./img/zhifuoption_off@2x.png" class="img2">
+            <img src="./img/zhifuxuanzhong@2x.png" class="img2" v-show="show2">
           </div>
       </div>
       <div class="payment-out">
@@ -39,11 +42,27 @@
 export default {
   data() {
     return {
-
+        show:false,
+        show1:false,
+        show2:true
     }
   },
   methods: {
-
+      fn1(){
+          this.show = true;
+          this.show1 = false;
+          this.show2 = false;
+      },
+      fn2(){
+          this.show = false;
+          this.show1 = true;
+          this.show2 = false;
+      },
+      fn3(){
+          this.show = false;
+          this.show1 = false;
+          this.show2 = true;
+      },
   },
   components: {
 
@@ -74,22 +93,27 @@ export default {
         .payment-details{
             height: 1.12rem;
             background: #f6f6f6;
+            display: flex;
+            flex-direction: column;
             .details1{
-                display: flex;
-                align-items: center;
+                flex: 1;
                 font-size: .14rem;
-                margin-left: 1.2rem;
                 line-height: .74rem;
                 color: #888;
                 position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 img{
                     // position: absolute;
                     // top: .13rem;
                     display: inline-block;
-                    
+                    width: .35rem;
+                    height: .35rem;
                 }
             }
             .details2{
+                flex: 1;
                 font-size: .3rem;
                 text-align: center;
                 line-height: .01rem;

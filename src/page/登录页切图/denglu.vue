@@ -52,11 +52,14 @@ export default {
   },
   methods: {
     axios_(){
-      
-    if(this.value2==this.yanzheng){
+      if(this.value2==''){
+        return false
+    }
+    else if(this.value2==this.yanzheng){
       this.$router.push('/home/china')
     }
     else{
+      
       Dialog.alert({
             message: '验证码错误！！！'
           }).then(() => {
@@ -159,17 +162,22 @@ export default {
 
       }
   },
-  updated(){
+  updated(){ 
+    var btn =document.getElementsByClassName('btn')[0]
     if(this.value1!==''&& this.value2!==''){
-      this.active = false
+     
+      btn.style.background='#FFCC00'
+    }
+    else if(this.value1==''|| this.value2==''){
+      btn.style.background='#E5E5E5'
     }
   },
   components: {
 
   },
-  mounted(){
-    this.right();
-  }
+  // mounted(){
+  //   this.right();
+  // }
 }
 </script>
 
@@ -183,6 +191,9 @@ export default {
 }
 input{
     background-color:#f6f6f6 ;
+    &::placeholder{
+        color: #CFCFCF
+      }
 }
 .top {
   background-color: #f6f6f6;
@@ -237,6 +248,10 @@ input{
     overflow: hidden;
     input {
       padding-left: 0.1rem;
+      background-color: none;
+      &::placeholder{
+        color: #CFCFCF
+      }
     }
     span {
       display: inline-block;
@@ -254,7 +269,7 @@ input{
     height: 0.4rem;
     border-radius: 0.075rem;
     color: #ffff;
-    background-color: #FFCC00;
+    background-color: #E5E5E5;
     font-size: 0.18rem;
   }
   p:nth-child(6) {

@@ -62,6 +62,9 @@ export default {
 }
 input{
     background-color:#f6f6f6 ;
+    &::placeholder{
+        color: #CFCFCF
+      }
 }
 .mint-header{
   background-color: #f6f6f6;
@@ -102,6 +105,9 @@ input{
         //    }
         input{
                 padding-left: .14rem;
+                &::placeholder{
+        color: #CFCFCF
+      }
             }
            img{
                width: .16rem;
