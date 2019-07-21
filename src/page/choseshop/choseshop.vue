@@ -40,15 +40,15 @@
         <p class="title" ref="tit">{{item.title}}</p>
          <ul>
            <li v-for="(con,ind) in item.datalist" :key="ind" @click="changeinfo(con.name,con.type)">
-             <router-link to="/home/china">
+            <a href="javaScript:;">
                  <div>
-                   <span>{{con.name}}</span>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
+                    <router-link to="/home/china"><span>{{con.name}}</span></router-link>  <div>   <span class="self" v-if="con.type==2"></span><i class="car" v-else-if="con.type==1"></i>
                   <router-link to="/shop_xiangqing"> <span class="nearby" v-if="item.nearby==0">{{con.space}}</span><i class="more" v-else></i></router-link> </div>
                  </div>
                  <p class="info">
                 {{con.details}}
                  </p>
-           </router-link>
+           </a>
            </li>
          </ul>
           </div>
@@ -95,7 +95,7 @@ export default {
       console.log(b);
       this.$store.commit("changecome", a);
       this.$store.commit("changespan", b);
-      window.history.go(-1);
+      // window.history.go(-1);
     },
     //  返回上一页
     back() {

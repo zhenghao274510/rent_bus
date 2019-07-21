@@ -2,17 +2,23 @@
   <div class="affirm_order">
     <!-- 头部 -->
     <mt-header title="确认订单" class="header">
-      <router-link to="/" slot="left">
-        <img src="./img/fanhui@2x.png" />
+      <router-link to slot="left">
+        <img @click="fn" src="./img/fanhui@2x.png" />
       </router-link>
     </mt-header>
     <!-- 车型 -->
     <div class="vehicle_model">
-      <img slot="icon" src="./img/61-1@2x.png" width="24" height="24" name="carPicture" />
+      <img
+        slot="icon"
+        :src="$store.state.alldata.carinfo.img"
+        width="24"
+        height="24"
+        name="carPicture"
+      />
       <div class="car_name">
-        <span class="car_names" name="carBrand">丰田凯瑞美</span>
+        <span class="car_names" name="carBrand">{{$store.state.alldata.carinfo.p1}}</span>
         <br />
-        <span class="car_cfig" name="carLease">三箱5座&nbsp;|&nbsp;2.0T自动</span>
+        <span class="car_cfig" name="carLease">{{$store.state.alldata.carinfo.p2}}</span>
       </div>
     </div>
     <!-- 车地图 -->
@@ -25,8 +31,9 @@
           </div>
 
           <div class="car_site">
-            <p>郑州郑州花园路店</p>
-            <span>07月05日（周五）10:00</span>
+            <p>{{$store.state.homedata.to}}</p>
+            <!-- <span>07月05日（周五）10:00</span> -->
+            <span>{{$store.state.alldata.starTime.tostarM}}月{{$store.state.alldata.starTime.tostarD}}日（{{$store.state.alldata.starTime.tostarW}}）{{$store.state.alldata.starTime.tostarH}}:00</span>
           </div>
           <p>到店取车</p>
         </a>
@@ -38,8 +45,8 @@
             <img src="./img/yuandian2@2x.png" v-else />
           </div>
           <div class="car_site">
-            <p>郑州郑州郑汴路店</p>
-            <span>07月07日（周日）10:00</span>
+            <p>{{$store.state.homedata.from}}</p>
+            <span>{{$store.state.alldata.endTime.toendM}}月{{$store.state.alldata.endTime.toendD}}日（{{$store.state.alldata.endTime.toendW}}）{{$store.state.alldata.endTime.toendH}}:00</span>
           </div>
           <p>到店还车</p>
         </a>
@@ -51,7 +58,7 @@
       <ul class="cap_detal">
         <li>
           <p>车辆租赁及服务费</p>
-          <span class="cap_num">{{prices.insurance}}x{{days}}</span>
+          <span class="cap_num">{{price}}x{{days}}</span>
           <span class="cap_price" name="insurance">{{data.insurance}}元</span>
         </li>
         <li>
@@ -97,7 +104,7 @@
         <span>芝麻信用700分且通过综合评估</span>
       </div>
       <ul class="penal_payment">
-        <li v-for="(item,i) in arr" :key="i">
+        <li v-for="(item,i) in arr" :key="i" @click="affchos(index)">
           <a href="javaScript:;" :class="{a:true,active:i==index}" @click="tag(i)">
             <img src="./img/duihao@2x.png" v-show="i==index?true:false" />
             <img src="./img/option_off@2x.png" v-show="i==index?false:true" />
@@ -125,9 +132,11 @@
     </div>
     <!-- 确认订单 -->
     <div class="confirm_order">
-      <router-link to="">
+      <router-link to>
         <div class="suer_con">
-          <router-link to="/success"><p>确认订单</p></router-link>
+          <router-link to="/success">
+            <p>确认订单</p>
+          </router-link>
         </div>
       </router-link>
     </div>
@@ -135,6 +144,7 @@
 </template>
 
 <script>
+import jsonp from "jsonp";
 import AffirmBut from "./affirm_order_butt";
 import Basicservice from "./basic_service";
 import Enjoyable from "./enjoyable_service";
@@ -146,9 +156,9 @@ export default {
       index: 1,
       arr: ["去绑卡免押金", "芝麻信用免押金", "支付押金"],
       //基本费用天数
-      days: 2,
+      days: this.$store.state.alldata.dayX,
       //基本费用单价
-      prices: { insurance: 150, royalty: 50, oilCost: 50 },
+      prices: { royalty: 50, oilCost: 50 },
       //基本费用最右一栏
       data: {
         insurance: 0,
@@ -160,6 +170,14 @@ export default {
     };
   },
   methods: {
+    affchos(ind) {
+      let affchoscen = this.arr[ind];
+
+      this.$store.commit("affchos", affchoscen);
+    },
+    fn() {
+      this.$router.go(-1);
+    },
     //选择服务
     tag(num) {
       this.index = num;
@@ -178,10 +196,14 @@ export default {
     Basicservice,
     Enjoyable
   },
+  beforeDestroy(){
+    this.$store.commit('sum',this.sum);
+  },
+
   computed: {
     sum() {
       let add = this.$store.state.affirm_order;
-      this.data.insurance = this.prices.insurance * this.days;
+      this.data.insurance = this.price * this.days;
       this.data.royalty = this.prices.royalty * this.days;
       this.data.oilCost = this.prices.oilCost * this.days;
       if (!add) {
@@ -197,6 +219,12 @@ export default {
         );
       }
       return this.data.cap_prhe;
+    },
+    price() {
+      let pr = this.$store.state.alldata.carinfo.span;
+      if (pr != undefined) {
+        return pr.slice(0, pr.length - 1);
+      }
     }
   }
 };

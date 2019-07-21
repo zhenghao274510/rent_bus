@@ -1,107 +1,19 @@
-/* 组件切换动画 */
-.slide-right-enter-active,
-.slide-right-leave-active,
- .slide-left-enter-active,
- .slide-left-leave-active {
-      /* will-change: transform; */
-      transition: all 500ms;
-      /* position: absolute; */
-      -webkit-transition: all 500ms;
-      -moz-transition: all 500ms;
-      -ms-transition: all 500ms;
-      -o-transition: all 500ms;
-      -webkit-transition: all 500ms;
-
+.slide-left-enter-active,.slide-left-leave-active,.slide-right-enter-active,.slide-right-leave-active{transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-ms-transition:all .5s;-o-transition:all .5s;-webkit-transition:all .5s}
+.slide-right-enter{opacity:0}
+.slide-right-leave-active{opacity:1}
+.slide-left-enter{opacity:1}
+.slide-left-leave-active{opacity:0}
+.mint-swipe-indicator{background:#00f}
+.mint-swipe-indicator.is-active{background:red}
+::-webkit-scrollbar{width:0;display:none}
+.BMap_geolocationIcon{width:32px;height:32px;cursor:pointer;background-image:url(../homeimg/zhuanghaodingwei@2x.png)!important;background-size:20px 20px;background-repeat:no-repeat;background-position:center center;position:fixed;left:.1rem;top:2.7rem}
+.BMap_geolocationContainer{border-radius:50%!important;-webkit-border-radius:50%!important;-moz-border-radius:50%!important;-ms-border-radius:50%!important;-o-border-radius:50%!important}
+.BMap_geolocationIcon:hover{width:32px;height:32px;cursor:pointer;background-image:url(../homeimg/ziyuan@2x.png)!important;background-size:20px 20px;background-repeat:no-repeat;background-position:center center}
+.van-picker{width:100%;position:fixed;bottom:0;z-index:9999}
+.van-picker__toolbar{width:100%;background:#fc0}
+.selInfoWndBtn{
+  font-size: .13rem !important;
 }
-.slide-right-enter {
-   opacity: 0;
-   /* transform: translate3d(-100%, 0, 0);
-   -webkit-transform: translate3d(-100%, 0, 0);
-   -moz-transform: translate3d(-100%, 0, 0);
-   -ms-transform: translate3d(-100%, 0, 0);
-   -o-transform: translate3d(-100%, 0, 0); */
+.BMap_bubble_content,.iw_poi_title{
+  font-size: .14rem !important;
 }
- .slide-right-leave-active {
- opacity: 1;
-   /* transform: translate3d(100%, 0, 0);
-   -webkit-transform: translate3d(100%, 0, 0);
-   -moz-transform: translate3d(100%, 0, 0);
-   -ms-transform: translate3d(100%, 0, 0);
-   -o-transform: translate3d(100%, 0, 0); */
-}
- .slide-left-enter {
-   opacity: 1;
-   /* transform: translate3d(100%,0, 0);
-   -webkit-transform: translate3d(100%,0, 0);
-   -moz-transform: translate3d(100%,0, 0);
-   -ms-transform: translate3d(100%,0, 0);
-   -o-transform: translate3d(100%,0, 0); */
-}
- .slide-left-leave-active {
-   opacity: 0;
-  /* transform: translate3d(-100%, 0, 0);
-    -webkit-transform: translate3d(-100%, 0, 0);
-   -moz-transform: translate3d(-100%, 0, 0);
-   -ms-transform: translate3d(-100%, 0, 0);
-   -o-transform: translate3d(-100%, 0, 0); */
- }
-  /* 修改框架默认样式 */
-  .mint-swipe-indicator {
-    background: blue;
-
-  }
-  .mint-swipe-indicator.is-active{
-    background: red;
-  }
-  /* 隐藏滚动条 */
- ::-webkit-scrollbar {
-     width: 0px;
-    display: none;
-  }
-/* .anchorBL{
-  display: none
-} */
-/* 地图样式 */
-.BMap_geolocationIcon{
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  background-image: url('./../homeimg/zhuanghaodingwei@2x.png') !important;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-position: center center;
-
-
-}
-.BMap_geolocationContainer{
-  border-radius: 50% !important;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  -ms-border-radius: 50% !important;
-  -o-border-radius: 50% !important;
-}
-.BMap_geolocationIcon:hover{
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  background-image: url('./../homeimg/ziyuan@2x.png') !important;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.van-picker{
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-
- z-index: 9999;
-}
-.van-picker__toolbar{
-  width:100%;
-  background:#FFCC00;
-
-}
-
-
-
-
