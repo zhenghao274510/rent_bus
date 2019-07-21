@@ -39,9 +39,11 @@ export default {
   },
   methods: {
      wein(){
+
        let arr=this.$store.state.homedata.myarr;
        let ind=this.$store.state.homedata.index;
        this.$router.push(arr[ind]);
+
     }
   },
   components: {

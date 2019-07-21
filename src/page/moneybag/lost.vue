@@ -34,7 +34,7 @@
         </div>
         <div class="bottom">
            <router-link to="/invest">
-            <input type="button" value="确认支付">
+            <input type="button" value="充值">
             </router-link>
         </div>
     </section>

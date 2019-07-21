@@ -5,8 +5,8 @@
           <router-link to="/data" class="payment-head-icon"></router-link>
           支付订单</div>
       <div class="payment-details">
-          <div class="details1">丰田凯美瑞 订单详情 <img src="./img/zhifufanhui-1@2x.png"></div>
-          <div class="details2"><span>￥</span>520</div>
+          <div class="details1">{{$store.state.alldata.carinfo.p1}} <img src="./img/zhifufanhui-1@2x.png"></div>
+          <div class="details2"><span>￥</span>{{$store.state.alldata.affsum}}</div>
       </div>
       <div class="payment-list">
           <div class="payment-list1">

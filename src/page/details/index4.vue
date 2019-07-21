@@ -347,9 +347,9 @@ export default {
             font-size: .11rem;
             color:#888888;
         }
-        .foot>p:last-child{
+        /* .foot>p:last-child{
              /* height: 0.1rem; */
-        }
+        /* } */ 
         /* .foot>a{
             padding-bottom: .3rem;
         } */
