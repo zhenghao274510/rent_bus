@@ -53,11 +53,11 @@ export default {
   components: {
   },
   mounted(){
-    if(this.$store.state.num !== ''){
-      this.num1 = parseInt(this.$store.state.num) + this.num1;
+    if(this.$store.state.money !== ''){
+      this.num1 = parseInt(this.$store.state.money) + this.num1;
     }
-    if(this.$store.state.score !== ''){
-      this.num2 = parseInt(this.$store.state.score) + this.num2;
+    if(this.$store.state.c_money !== ''){
+      this.num2 = parseInt(this.$store.state.c_money) + this.num2;
     }
   }
 };

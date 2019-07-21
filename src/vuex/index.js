@@ -8,6 +8,9 @@ export default new vuex.Store({
     num: '',
     //积分
     score: '',
+    money:'',
+    //传的积分
+    c_money:'',
     affirm_order: false,
     basic_service: false,
     enjoyable_service: false,
@@ -126,6 +129,14 @@ export default new vuex.Store({
     },
     add2(state, val1) {
       state.num = val1;
+    },
+    //支付钱
+    addMoney(state,val){
+      state.money = val;
+    },
+    //积分
+    addScore(state,val){
+      state.c_money = val;
     },
     //城市
     addcity(state, val) {
