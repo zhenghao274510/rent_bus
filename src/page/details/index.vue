@@ -219,7 +219,8 @@ body {
   color: black;
   height: 0.33rem;
   font-size: 0.15rem;
-  margin-top: 0.1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   border-bottom: 0.01rem solid #cccccc;
 }
 .right {
@@ -255,6 +256,7 @@ button {
 .car {
   font-size: 0;
   border-bottom: 0.08rem solid #f6f6f6;
+  background: white;
 }
 .car > img {
   display: inline-block;
@@ -300,6 +302,8 @@ button {
 .time {
   font-size: 0;
   border-bottom: 1px solid #dfdfdf;
+  background: white;
+
 }
 .time > span {
   font-size: 0.12rem;
@@ -313,7 +317,7 @@ button {
   padding-bottom: 0.1rem;
 }
 .time > span:nth-child(2) {
-  padding-left: 0.25rem;
+  padding-left: 0.6rem;
   width: 1.68rem;
 
   color: #ffcc00;
@@ -333,6 +337,8 @@ button {
 }
 .black {
   font-size: 0;
+  background: white;
+
 }
 .yellow {
   border-bottom: 1px solid #dfdfdf;
@@ -368,6 +374,7 @@ button {
   margin-left: 0;
 }
 .zheng {
+  background: white;
   font-size: 0;
   border-bottom: 0.08rem solid #f6f6f6;
 }
@@ -391,6 +398,7 @@ button {
   padding-bottom: 0.1rem;
 }
 .lie {
+  background: white;
   font-size: 0;
 }
 .lie > ul {
