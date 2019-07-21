@@ -113,8 +113,8 @@ export default {
         color:black;
         height: .33rem;
         font-size:.15rem;
-        /* margin-top: .1rem; */
-        /* margin-bottom: .11rem; */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
         border-bottom:0.01rem solid #cccccc;
         
     }
@@ -209,7 +209,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.25rem;
+            padding-left: 0.6rem;
             width: 1.68rem;
             color:#FFCC00;
             text-align: center;
