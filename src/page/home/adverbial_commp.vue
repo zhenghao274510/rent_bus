@@ -76,7 +76,7 @@
           </a>
         </li>
         <li>
-          <router-link to>
+          <router-link to='/gation'>
             <i class="icon dao"></i>
             <p>导航</p>
           </router-link>
@@ -215,7 +215,7 @@ export default {
 <style scoped lang='less'>
 .all {
   position: absolute;
-  top: 3.05rem;
+  top: 3.45rem;
   left: 0;
   width: 100%;
   height: 3.93rem;

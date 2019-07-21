@@ -35,26 +35,23 @@ export default new vuex.Store({
       myarr: ['/home/china', '/home/share', '/home/try', '/home/allearth', '/home/long']
 
     },
+      //  保存全局数据
+      alldata:{
+        starTime:{},
+        endTime:{},
+        dayX:2,
+        carinfo:{},
+        affirm_orderss:'芝麻信用免押金',
+        affsum:0
+     },
     //  分享列表 显示
     showshare:false,
 
   },
   mutations: {
-   
     share_show(state,val){
-       state.showshare=val;
-    },
-    //  保存全局数据
-    alldata:{
-       starTime:{},
-       endTime:{},
-       dayX:2,
-       carinfo:{},
-       affirm_orderss:'',
-       affsum:0
-    },
-  },
-  mutations: {
+      state.showshare=val;
+   },
     //  大数据传递
     tostartime(state,val){
         state.alldata.starTime=val;

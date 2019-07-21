@@ -98,7 +98,7 @@ export default {
       // window.history.go(-1);
     },
     //  返回上一页
-    back() {
+    back(){
       window.history.go(-1);
     },
     //  三栏联动
