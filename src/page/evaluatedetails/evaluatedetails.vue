@@ -1,7 +1,7 @@
 <template>
   <div class="evaluatedetails">
     <div class="common_head">
-      <router-link to="/evaluate" class="common_head_icon"></router-link>
+      <router-link to="/pingjiaduo" class="common_head_icon"></router-link>
       评价详情
     </div>
     <div class="evaluatedetails-hao">
@@ -15,7 +15,7 @@
         <span>车辆情况</span> <van-rate v-model="value4" />
     </div>
     <div class="evaluatedetails-text">
-      <div class="text">越来越便利，车况非常好，手续简单，租还方便</div>
+      <div class="text" v-text="text"></div>
       <div class="place"></div>
     </div>
   </div>
@@ -26,9 +26,10 @@ export default {
   data() {
     return {
       value1:4,
-      value2:5,
-      value3:5,
+      value2:4,
+      value3:4,
       value4:4,
+      text:'越来越便利，车况非常好，手续简单，租还方便',
     }
   },
   methods: {
@@ -36,7 +37,12 @@ export default {
   },
   components: {
 
-  }
+  },
+   mounted(){
+    if(this.$store.state.text!==''){
+      this.text = this.$store.state.text;
+    }
+  },
 }
 </script>
 

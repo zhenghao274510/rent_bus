@@ -32,6 +32,7 @@ import Evaluate from './../page/evaluate/evaluate.vue'
 import Minedata from './../page/minedata/minedata.vue'
 import Identity from './../page/identity/identity.vue'
 import Evaluatedetails from './../page/evaluatedetails/evaluatedetails.vue'
+import pingjiaduo from './../page/evaluatedetails/pingjiaduo.vue'
 
 import Domestic from './../component/customer-second/domestic.vue'
 import Timesharing from './../component/customer-second/timesharing.vue'
@@ -94,7 +95,12 @@ import Ridesharing from './../page/rideSharing/ride_sharing'
 import Meal from './../page/home/borther/meal'
 //送车
 import Car from './../page/car/car'
-
+//导航 路线
+import Gation from './../page/home/banner/gation.vue'
+import Line from './../page/home/banner/line.vue'
+import Stop from './../page/home/banner/stop.vue'
+import Store from './../page/home/banner/store.vue'
+import Station from './../page/home/banner/station.vue'
 
 Vue.use(Router)
 export default new Router({
@@ -109,9 +115,47 @@ export default new Router({
       component: Identity
     },
     {
+      path: '/pingjiaduo',
+      name: 'pingjiaduo',
+      component: pingjiaduo
+    },
+    {
       path: '/evaluatedetails',
       name: 'Evaluatedetails',
       component: Evaluatedetails
+    },
+    {
+      //导航
+      path :'/gation',
+      name :'Gation',
+      component:Gation,
+      children:[
+        {
+          path :'/',
+          name :'Line',
+          redirect:"line",
+        },
+        {
+          path :'line',
+          name :'Line',
+          component:Line,
+        },
+        {
+          path :'stop',
+          name :'Stop',
+          component:Stop,
+        },
+        {
+          path :'store',
+          name :'Store',
+          component:Store,
+        },
+        {
+          path :'station',
+          name :'Station',
+          component:Station,
+        }
+      ]
     },
     {
       //我的钱包

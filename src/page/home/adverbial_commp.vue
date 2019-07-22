@@ -48,10 +48,13 @@
       </ul>
       <!-- 时间 -->
       <Wtime></Wtime>
-      <div class="btn">
-        <button>立即选车</button>
-      </div>
-
+    <div class="btn">
+      <router-link to="/type">
+      <button>
+        立即选车
+      </button>
+</router-link>
+    </div>
       <!-- 选择 服务 图标部分 -->
       <ul class="iconlist">
         <li>
@@ -61,7 +64,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to>
+          <router-link to="/ride_sharing">
             <i class="icon car"></i>
             <p>顺风车</p>
           </router-link>
@@ -73,7 +76,7 @@
           </a>
         </li>
         <li>
-          <router-link to>
+          <router-link to='/gation'>
             <i class="icon dao"></i>
             <p>导航</p>
           </router-link>
@@ -212,7 +215,7 @@ export default {
 <style scoped lang='less'>
 .all {
   position: absolute;
-  top: 3.05rem;
+  top: 3.45rem;
   left: 0;
   width: 100%;
   height: 3.93rem;
@@ -319,6 +322,7 @@ export default {
     background: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
     button {
       // display: block;
       width: 3.45rem;

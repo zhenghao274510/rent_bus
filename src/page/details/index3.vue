@@ -63,7 +63,7 @@
     <div class="foot">
         <!-- <p>车辆正在准备中，完成支付可节省取车时间</p> -->
         <router-link to="./type"><button>再来一单</button></router-link>
-        <p></p>
+        <!-- <p></p> -->
     </div>
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
@@ -113,8 +113,8 @@ export default {
         color:black;
         height: .33rem;
         font-size:.15rem;
-        margin-top: .1rem;
-        /* margin-bottom: .11rem; */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
         border-bottom:0.01rem solid #cccccc;
         
     }
@@ -150,6 +150,7 @@ export default {
     }
     .car{
         font-size:0;
+        background: white;
         border-bottom: .08rem solid #f6f6f6;
         
     }
@@ -195,6 +196,7 @@ export default {
         }
         .time{
             font-size:0;
+            background: white;
             border-bottom: 1px solid #DFDFDF;
         }
         .time>span{
@@ -208,7 +210,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.25rem;width: 0.88rem;
+            padding-left: .6rem;width: 0.88rem;
             color:#FFCC00;
             width: 1.68rem;
             text-align: center;
@@ -227,6 +229,7 @@ export default {
         }
         .black{
             font-size:0;
+            background: white;
         }
         .yellow{
             border-bottom: 1px solid #DFDFDF;
@@ -261,6 +264,7 @@ export default {
         }
         .zheng{
             font-size: 0;
+            background: white;
             border-bottom: .08rem solid #cccccc;
         }
         .zheng>ul{
@@ -283,6 +287,7 @@ export default {
         }
         .lie{
             font-size:0;
+            background: white;
             
         }
         .lie>ul{
@@ -330,7 +335,7 @@ export default {
         }
         #p{
             height: 0.3rem;
-            border-bottom:.08rem solid #f6f6f6;
+            border-bottom:.08rem solid #fff;
         }
         .foot{
             font-size:.16rem;

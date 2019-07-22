@@ -12,7 +12,8 @@
     <section>
       <div class="top">
         <span>充值金额</span>
-        <span class="num1">{{$store.state.num|num1}}</span>
+        <span hidden>{{userID}}</span>
+        <span class="num1" name='userMoney'>{{money|num1}}</span>
       </div>
       <div class="center_content">
         <div class="in" v-for="(item,index) in payList" :key="index" @click="change(index)">
@@ -51,6 +52,7 @@
 export default {
   data() {
     return {
+      userID:1,
       payList: [
         {
           img: require("./img/bankcard.png"),
@@ -74,25 +76,40 @@ export default {
           vg: false
         }
       ],
-      right: true
+      right: true,
+      payment:'银行卡支付',
+      money:this.$store.state.num,
+      M_score:this.$store.state.score
     };
   },
   methods: {
     change(index) {
+      this.payment = this.payList[index].text;
       this.payList.forEach(item => {
         item.vg = false;
       });
       this.payList[index].vg = true;
     },
     confirm() {
-      setTimeout(() => {
-        this.$router.push("/lost");
-      }, 1000);
+      this.axios.get('http://172.25.5.215:8080/account/integral',{
+       params:{
+         userID:this.userID,
+         userMoney:2000
+       }
+     }).then(res=>{
+       console.log(res);
+       if(res.data === true){
+         this.$store.commit("addMoney", this.money);
+         this.$store.commit("addScore", this.M_score);
+         this.$router.push('/lost');
+       }
+      }).catch(err=>{
+
+      })
     }
   },
   components: {},
   mounted(){
-    // console.log(this.payList[0].vg)
     this.payList[0].vg = true;
   },
   filters: {

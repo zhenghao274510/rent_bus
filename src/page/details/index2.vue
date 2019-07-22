@@ -24,7 +24,7 @@
     </div>
     <div class="time">
         <span>07月05日<br> <span>周五10：00</span></span>
-        <span>2天
+        <span id="dong">2天
             <br>
             <img src="./img/jiantou@2x.png" alt="">
         </span>
@@ -96,8 +96,8 @@ export default {
         color:black;
         height: .33rem;
         font-size:.15rem;
-        margin-top: .1rem;
-        /* margin-bottom: .11rem; */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
         border-bottom:0.01rem solid #cccccc;
         
     }
@@ -133,6 +133,7 @@ export default {
     }
     .car{
         font-size:0;
+        background: white;
         border-bottom: .08rem solid #f6f6f6;
         
     }
@@ -179,6 +180,7 @@ export default {
         }
         .time{
             font-size:0;
+            background: white;
             border-bottom: 1px solid #DFDFDF;
         }
         .time>span{
@@ -192,7 +194,7 @@ export default {
             padding-bottom: .1rem;
         }
         .time>span:nth-child(2){
-            padding-left: 0.25rem;
+            padding-left: .6rem;
             width: 1.68rem;
             color:#FFCC00;
             text-align: center;
@@ -211,6 +213,7 @@ export default {
         }
         .black{
             font-size:0;
+            background: white;
         }
         .yellow{
             border-bottom: 1px solid #DFDFDF;
@@ -245,6 +248,7 @@ export default {
         }
         .lie{
             font-size:0;
+            background: white;
             
         }
         .lie>ul{
@@ -292,7 +296,7 @@ export default {
         }
         #p{
             height: 0.3rem;
-            border-bottom:.08rem solid #f6f6f6;
+            border-bottom:.08rem solid #fff;
         }
         .clear{
             width: 1.16rem;
