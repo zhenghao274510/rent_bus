@@ -75,6 +75,7 @@ export default {
       window.history.go(-1);
     },
     sear_star(key) {
+    
       if (key == "") {
         this.keylist = [];
       }
@@ -82,6 +83,7 @@ export default {
       if (key != "" && reg.test(key)) {
         this.datilelist.forEach(item => {
           if (item.details.indexOf(key) != -1) {
+
             this.keylist.push(item);
           }
         });
