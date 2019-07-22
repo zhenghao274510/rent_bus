@@ -32,7 +32,7 @@
           <!-- <div class="payment-out-place"></div> -->
           <div class="payment-out-btn">
               <!-- <div>确认支付</div> -->
-              <router-link to="customer" class="payment-out-btn-div">确认支付</router-link>
+              <router-link to="" class="payment-out-btn-div">确认支付</router-link>
           </div>
       </div>
   </div>

@@ -2,14 +2,14 @@
   <div class="evaluatedetails">
     <div class="common_head">
       <router-link to="/evaluate" class="common_head_icon"></router-link>
-      评价详情
+      内容评价
     </div>
-    <div class="evaluatedetails-hao">
+    <div class="evaluatedetails-hao" @click="fn">
         <p><span class="phone">139*******9</span> <img src="./img/huiyanka-huangjin@2x.png"> <span class="vip">黄金会员</span><span class="time">今天 08:35</span></p>
         <div class="city">同城异地</div>
     </div>
     <div class="evaluatedetails-text">
-      <div class="text">越来越便利，车况非常好，手续简单，租还方便</div>
+      <div class="text" v-text="text1"></div>
       <div class="place"></div>
     </div>
   </div>
@@ -19,11 +19,18 @@
 export default {
   data() {
     return {
-      
+      text1:'越来越便利，车况非常好，手续简单，租还方便'
     }
   },
   methods: {
-
+    fn(){
+      this.$router.push('/evaluatedetails')
+    }
+  },
+  mounted(){
+    if(this.$store.state.text!==''){
+      this.text1 = this.$store.state.text;
+    }
   },
   components: {
 
@@ -118,7 +125,7 @@ export default {
         } 
         .evaluatedetails-text{
           // margin-top: .15rem;
-          border-top: 1px solid #dfdfdf;
+          // border-top: 1px solid #dfdfdf;
           .text{
             font-size: .12rem;
             height: .52rem;

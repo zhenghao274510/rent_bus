@@ -63,7 +63,7 @@
     <div class="foot">
         <!-- <p>车辆正在准备中，完成支付可节省取车时间</p> -->
         <router-link to="./type"><button>再来一单</button></router-link>
-        <p></p>
+        <!-- <p></p> -->
     </div>
     
     <div  id="hide" v-show="show1" @click="show1=!show1">
@@ -335,7 +335,7 @@ export default {
         }
         #p{
             height: 0.3rem;
-            border-bottom:.08rem solid #f6f6f6;
+            border-bottom:.08rem solid #fff;
         }
         .foot{
             font-size:.16rem;

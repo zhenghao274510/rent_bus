@@ -144,10 +144,10 @@ export default {
           }
           .licen_top_mod {
             text-align: center;
-            flex: 3;
+            flex: 2;
             img {
               width: 1.51rem;
-              margin-left: 0.35rem;
+              margin-left: 0.14rem;
             }
             p {
               font-size: 0.16rem;

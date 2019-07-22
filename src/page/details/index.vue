@@ -131,7 +131,7 @@
       <router-link to="/Payment">
         <button>订单支付</button>
       </router-link>
-      <p></p>
+      <!-- <p></p> -->
     </div>
 
     <div id="hide" v-show="show1" @click="show1=!show1">
@@ -446,7 +446,7 @@ button {
 }
 #p {
   height: 0.3rem;
-  border-bottom: 0.08rem solid #f6f6f6;
+  border-bottom: 0.08rem solid #fff;
 }
 .foot {
   font-size: 0.16rem;

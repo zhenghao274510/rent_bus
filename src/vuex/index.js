@@ -21,6 +21,8 @@ export default new vuex.Store({
     //city
     city1: '郑州',
     city2: '郑州',
+    //文本
+    text:'',
     homedata: {
       show: false,
       to: '郑州动物园自助点',
@@ -163,6 +165,10 @@ export default new vuex.Store({
         state.citys = val;
       }
     },
+    //文本
+    addtext(state,val){
+      state.text = val;
+    }
   },
   getters: {},
 });

@@ -64,7 +64,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to>
+          <router-link to="/ride_sharing">
             <i class="icon car"></i>
             <p>顺风车</p>
           </router-link>

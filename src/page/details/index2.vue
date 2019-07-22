@@ -296,7 +296,7 @@ export default {
         }
         #p{
             height: 0.3rem;
-            border-bottom:.08rem solid #f6f6f6;
+            border-bottom:.08rem solid #fff;
         }
         .clear{
             width: 1.16rem;
